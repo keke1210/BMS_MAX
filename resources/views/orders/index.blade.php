@@ -7,7 +7,7 @@
 @endsection
 @section('content')
     @role('kamarier')
-    <h1>Orders:</h1> <a href="orders/create" class="btn btn-primary">Krijo Porosi te re</a> <br> <br>
+    <a href="orders/create" class="btn btn-primary">Krijo Porosi te re</a> <br> <br>
     <table class="table table-striped">
         <tr>
             <th>Order_ID</th>

@@ -2,7 +2,7 @@
 @extends('layouts.dashboard')
 @section('dash-title')
      <h2>
-        <div class="m-l-lg">Produkte</div>
+        <div class="m-l-lg">Porosi</div>
      </h2> 
 @endsection
 @section('content')
