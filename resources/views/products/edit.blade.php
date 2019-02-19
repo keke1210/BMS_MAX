@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @extends('layouts.dashboard')
+@section('dash-title')
+     <h2>
+        <div class="m-l-lg">Edito Produkt</div>
+     </h2> 
+@endsection
 @section('content')
 <div class="container">
     <h1>Edit Product</h1>

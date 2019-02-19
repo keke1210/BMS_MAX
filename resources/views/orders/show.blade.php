@@ -58,7 +58,7 @@
             
             {{-- @php $user = App\Order::find(4)->user->name; @endphp --}}
             
-            <footer>Fatura u krijua nga: {{$user->name}}</footer>
+            <footer>Fatura u krijua nga: {{empty($user->name)?$useradmin:$user->name}}</footer>
         </div>
             
 

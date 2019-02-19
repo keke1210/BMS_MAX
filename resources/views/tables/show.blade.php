@@ -1,5 +1,10 @@
 @extends('layouts.app')
-
+@extends('layouts.dashboard')
+@section('dash-title')
+     <h2>
+        <div class="m-l-lg">Tavolina</div>
+     </h2> 
+@endsection
 @section('content')
     @php
         $id = $table->id;

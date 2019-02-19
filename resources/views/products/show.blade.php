@@ -1,5 +1,10 @@
 @extends('layouts.app')
-
+@extends('layouts.dashboard')
+@section('dash-title')
+     <h2>
+        <div class="m-l-lg">Shfaq Produkte</div>
+     </h2> 
+@endsection
 @section('content')
     <h1>Product: {{$product->prod_id}}:</h1>
             <div class="jumbotron">

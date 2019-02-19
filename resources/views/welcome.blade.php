@@ -1,10 +1,11 @@
 @extends('layouts.welcome')
 @section('login')
+@if(Auth::guest(0))
         <div class="main-title text-center">
                 <img class="site-logo" src="images/BMS-LOGO.png">
             </div>
     <div class="row align-middle" style="margin-top: 20%;">
-                
+        
         <div class="col-md-16 col-lg-6 column">
             <div class="card gr-1 gr-6">
                 <div class="txt">
@@ -32,7 +33,7 @@
                 </div>
             </div>
         </div>
-
+        @endif
     </div>
 
     <script src="{{asset('js/jquery.min.js')}}"></script>
