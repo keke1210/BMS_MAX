@@ -33,6 +33,7 @@
             <th class="text-right">Fshi</th>
         </tr>
       </thead>
+      <tbody>
     @if(count($users)>0)
         @foreach ($users as $key=>$user)
         @php
@@ -59,6 +60,7 @@
                     </td>
             </tr>
         @endforeach
+    </tbody>
     </table>
             </div>
     @endif

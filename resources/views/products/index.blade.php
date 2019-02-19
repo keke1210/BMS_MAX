@@ -6,7 +6,6 @@
      </h2> 
 @endsection
 @section('content')
-
     <a href="products/create" class="btn btn-primary">Krijo Produkt te ri</a> <br> <br>
     <div class="table-wrapper">
         <div class="table-title">

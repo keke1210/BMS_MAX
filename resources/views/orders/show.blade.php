@@ -1,5 +1,10 @@
 @extends('layouts.app')
-
+@extends('layouts.dashboard')
+@section('dash-title')
+     <h2>
+        <div class="m-l-lg">Produkte</div>
+     </h2> 
+@endsection
 @section('content')
     <h1>Order Details</h1>
         <div class="jumbotron" id='DivIdToPrint'>

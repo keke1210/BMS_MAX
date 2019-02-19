@@ -1,7 +1,7 @@
 @extends('layouts.welcome-auth')
 
 @section('login')
-<div class="col-xs-12 col-sm-10 col-md-6 col-lg-5 text-center d-flex flex-column flex-nowrap no-m-res" style="height:calc(100% - 65px); margin-top: 65px;">
+
     <div class="d-flex flex-center flex-wrap" style="height:90%;align-content: start;">
        <div class="box-login global-box-back" style="padding-top: 20px !important;padding-bottom: 0 !important;">
           <h1 class="m-t-xl m-b-sm flex-row flex-center" id="logo">
@@ -55,7 +55,7 @@
           </form>
        </div>
     </div>
- </div>
+
 
 
 @endsection

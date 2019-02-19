@@ -8,7 +8,7 @@
         <div class="col-md-16 col-lg-6 column">
             <div class="card gr-1 gr-6">
                 <div class="txt">
-                    <h1>LOG IN </br>
+                    <h1>LOG IN <br>
                         </h1>
                     <p>Log in with email and password</p>
                 </div>
@@ -22,7 +22,7 @@
         <div class="col-md-16 col-lg-6 column">
             <div class="card gr-2 gr-6">
                 <div class="txt">
-                    <h1>REGISTER </br>
+                    <h1>REGISTER <br>
                         </h1>
                     <p>Register and start working</p>
                 </div>
