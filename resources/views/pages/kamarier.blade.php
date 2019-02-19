@@ -7,7 +7,7 @@
 @endsection
 @section('content')
 @role('kamarier|admin')
-</div>
+
 <div class="wrapper wrapper-content ng-scope" style="">
     <a href="/orders" class="btn btn-primary">
         Shiko Fatura

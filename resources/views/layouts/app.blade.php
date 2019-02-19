@@ -39,7 +39,7 @@
 
         <div class="container h-100">
                
-               @yield('login')
+            
               
             <div id="page-wrapper" style="min-height: calc(100vh - 55.5px) !important;">
                 <div class="row wrapper page-heading" style="margin-top: 55px">
