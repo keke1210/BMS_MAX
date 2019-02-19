@@ -28,6 +28,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('products','ProductsController')->middleware('role:menaxher|admin');
 Route::resource('users','UsersController')->middleware('role:menaxher|admin');
+Route::resource('profile', 'ProfileController')->middleware('role:menaxher|admin|kamarier|ekonomist');
 
 Route::get('orders','OrdersController@index')->middleware('role:kamarier|menaxher|admin');
 Route::get('orders/create','OrdersController@create')->middleware('role:kamarier|menaxher|admin');

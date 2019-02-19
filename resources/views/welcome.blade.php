@@ -35,9 +35,6 @@
 
     </div>
 
-    
-
-    <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     <script src="{{asset('js/jquery.min.js')}}"></script>
 
     <script>

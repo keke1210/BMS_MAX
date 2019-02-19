@@ -62,7 +62,7 @@
                         <input id="password-confirm" type="password" placeholder="Konfirmo Password" class="validate global-box-full form-control"
                             name="password_confirmation" required>
                     </div>
-                    <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                    <span toggle="#password-confirm" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 </div>
 
 
