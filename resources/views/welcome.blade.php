@@ -1,34 +1,40 @@
-@extends('layouts.app')
+@extends('layouts.welcome')
+@section('login')
+        <div class="main-title text-center">
+                <img class="site-logo" src="images/BMS-LOGO.png">
+            </div>
+    <div class="row align-middle" style="margin-top: 20%;">
+                
+        <div class="col-md-16 col-lg-6 column">
+            <div class="card gr-1 gr-6">
+                <div class="txt">
+                    <h1>LOG IN </br>
+                        </h1>
+                    <p>Log in with email and password</p>
+                </div>
+                <a href="/login" role="button">Login</a>
+                <div class="ico-card">
+                    <i class="manager-logo"></i>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-16 col-lg-6 column">
+            <div class="card gr-2 gr-6">
+                <div class="txt">
+                    <h1>REGISTER </br>
+                        </h1>
+                    <p>Register and start working</p>
+                </div>
+                <a href="register" role="button">Register</a>
+                <div class="ico-card">
+                    <i class="kamarier-logo"></i>
+                </div>
+            </div>
+        </div>
 
-@section('content')
-@if(Auth::guest())
-<div class="jumbotron text-center">
-        <h1>Bar Managment System</h1>
-        <p>This is the web for managing your Lounge Bar</p>
-        <p> 
-            <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
-            <a class="btn btn-success btn-lg" href="/register" role="button">Register</a>
-        </p>
-    </div> 
+    </div>
 
-   
-
-    @else
-        @role('admin')
-        <h1>Welcome <strong>admini</strong></h1>
-        @endrole
-        @role('menaxher')
-        <h1>Welcome menaxher <strong>{{Auth::user()->name}}</strong></h1>
-        @endrole
-        @role('ekonomist')
-        <h1>Welcome ekonomist <strong>{{Auth::user()->name}}</strong> </h1>
-        @endrole
-        @role('kamarier')
-        <h1>Welcome kamarier <strong>{{Auth::user()->name}}</strong> </h1>
-        @endrole
-    @endif
-
-    <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     <script src="{{asset('js/jquery.min.js')}}"></script>
 
     <script>

@@ -14,29 +14,50 @@
     <script src="{{ asset('js/myJs.js') }}" defer></script>
 
 
-    {{-- jquery print-page --}}
+    {{-- jquery print-page
     <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script type="text/javascript" src="js/jquery.printPage.js"></script>
+    <script type="text/javascript" src="js/jquery.printPage.js"></script> --}}
+ <!-- Scripts -->
+ <script src="{{ asset('js/app.js') }}" defer></script>
+ <script src="{{ asset('js/myJs.js') }}" defer></script>
+ @yield('dashscripts')
+ <!-- Fonts -->
+ <link rel="dns-prefetch" href="//fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+ <link href="/css/app.css" rel="stylesheet" type="text/css">
+ <link href="/css/myStyle.css" rel="stylesheet" type="text/css">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    <link href="/css/app.css" rel="stylesheet" type="text/css">
-    <link href="/css/myStyle.css" rel="stylesheet" type="text/css">
+ <!-- Styles -->
+ <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+ @yield('dashstyles')
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="page">
         @include('inc.navbar')
-        <main class="py-4">
-            <div class="container">
-                @include('inc.messages')
-                    @yield('content')
+
+        <div class="container h-100">
+               
+            
+              
+            <div id="page-wrapper" style="min-height: calc(100vh - 55.5px) !important;">
+                <div class="row wrapper page-heading" style="margin-top: 55px">
+                    <div class="col-lg-5 col-xs-12 col-md-5 no-padding">
+                        @yield('dash-title')
+                        @include('inc.messages')
+                    </div>
+                </div>
+                
+                        <div class="row m-t-sm" id="dashboard-page">
+                                <div class="col-xs-12" id="dashboard">
+                                       @yield('content')
+                      </div>     
+                </div>
             </div>
-        </main>
+            
+        </div>
+
     </div>
 </body>
 </html>

@@ -1,0 +1,296 @@
+/* @import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700|Roboto:300,400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@import url(https://fonts.googleapis.com/css?family=Oswald:400); */
+
+.align-baseline    { vertical-align: baseline !important; } 
+.align-top         { vertical-align: top !important; }
+.align-middle      { vertical-align: middle !important; }
+.align-bottom      { vertical-align: bottom !important; }
+.align-text-bottom { vertical-align: text-bottom !important; }
+.align-text-top    { vertical-align: text-top !important; }
+
+.navigation {
+  width: 100%;
+  background-color: black;
+}
+
+.profileimg {
+  width: 25px;
+  border-radius: 50px;
+  float: left;
+}
+
+.logout {
+  font-size: .8em;
+  font-family: 'Oswald', sans-serif;
+	position: relative;
+  right: -18px;
+  bottom: -4px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+  
+}
+
+.button {
+	text-decoration: none;
+	float: right;
+  padding: 12px;
+  margin: 15px;
+  color: white;
+  width: 25px;
+  background-color: black;
+  transition: width .35s;
+  -webkit-transition: width .35s;
+  overflow: hidden
+}
+
+a:hover {
+  width: 100px;
+}
+
+a:hover .logout{
+  opacity: .9;
+}
+
+a.kliko:hover
+{
+    cursor: pointer;
+}
+
+button.btn.btn-primary.close
+{
+    margin-left: 44%;
+    margin-right: 44%;
+    margin-top: 30px;
+    border-radius: 50%;
+    background-color: #B00020;
+    padding:10px;
+}
+.container {
+    max-width: 100%!important;
+}
+#page {
+	/* color: #fff;
+	background: linear-gradient(-45deg, #03A9F4, #00ACC1,#00838F, #01579B);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite; */
+	 background-image: url(../images/main-background-5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: auto;
+} 
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.gr-1 {
+  background: linear-gradient(170deg, #01E4F8 0%, #1D3EDE 100%);
+}
+
+.gr-2 {
+  background: linear-gradient(170deg, #B4EC51 0%, #429321 100%);
+}
+
+.gr-3 {
+  background: linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
+}
+
+.gr-4 {
+  background: linear-gradient(170deg, #232F34 0%, #344955 100%);
+}
+
+/* .gr-6
+{
+    background: linear-gradient(170deg, #232f34 0%, #344955 100%);
+} */
+
+* {
+  transition: .5s;
+}
+
+.main-title
+{
+  flex-direction: column;
+  min-width: 0;
+  flex: 0 0 33.333333%;
+  width: 100%;
+  position: inherit;
+  padding: 32px;
+  padding-top: 10%;
+}
+
+.main-title img:hover
+{
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.h-100 {
+  height: 100vh !important;
+}
+
+.align-middle {
+  position: relative;
+  transform: translateY(-30%);
+}
+
+.column {
+  margin-top: 3rem;
+  padding-left: 3rem;
+}
+.column:hover {
+  padding-left: 0;
+}
+.column:hover .card .txt {
+  margin-left: 1rem;
+}
+.column:hover .card .txt h1, .column:hover .card .txt p {
+  color: white;
+  opacity: 1;
+}
+.column:hover a {
+  color: white;
+}
+.column:hover a:after {
+  width: 10%;
+}
+
+.card {
+  min-height: 170px;
+  margin: 0;
+  padding: 1.7rem 1.2rem;
+  border: none;
+  border-radius: 0;
+  color: black;
+  letter-spacing: .05rem;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  box-shadow: 0 0 33px rgba(0, 0, 0, 0.5);
+}
+.card .txt {
+ /* margin-left: -3rem; */
+  z-index: 1;
+}
+.card .txt h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+ /* margin-left: 20%; */
+  width: 170px;
+}
+.card .txt p {
+  font-size: .7rem;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0rem;
+  margin-top: 33px;
+  opacity: 0;
+  color: white;
+ /* margin-left: 20%; */
+  width: 170px;
+  height: 50px;
+}
+.card a {
+  z-index: 3;
+  font-size: .7rem;
+  color: black;
+  margin-left: 1rem;
+  position: relative;
+  bottom: -.5rem;
+  text-transform: uppercase;
+}
+.card a:after {
+  content: "";
+  display: inline-block;
+  height: 0.5em;
+  width: 0;
+  margin-right: -100%;
+  margin-left: 10px;
+  border-top: 1px solid white;
+  transition: .5s;
+}
+.card .ico-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card i {
+    position: relative;
+    right: -50%;
+    width: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%;
+    padding: 60%;
+    top: 60%;
+    font-size: 12rem;
+    line-height: 0;
+    opacity: .2;
+    color: white;
+    z-index: 0;
+}
+
+i.manager-logo
+{
+ background-image: url(../images/Manager-icon.png);   
+}
+
+i.kamarier-logo
+{
+ background-image: url(../images/kamarier-icon.png);   
+}
+
+i.ekonomist-logo
+{
+ background-image: url(../images/ekonomist-icon.png);   
+}
+
+
+@media screen and (max-width:800px)
+{
+    .site-logo {
+    width: 100%;
+    }
+}

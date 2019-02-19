@@ -1,0 +1,50 @@
+button.dim, a.btn-success.dim, span.btn-success.dim, .td_lock.lockTransaction {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 20px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: normal;
+    margin-bottom: 8px !important;
+    }
+    button.btn-primary.dim, a.btn-primary.dim, .td_lock.lockTransaction {
+    box-shadow: inset 0 0 0 #2bc069,0 5px 0 0 #2bc069 !important;
+    }
+    .input-field label.active, #login label.active{
+    color: #FFF !important;
+    font-size: 15px;
+    }
+    .field-icon {
+    float: right;
+    position: relative;
+    z-index: 2;
+    bottom: 45px;
+    right: 10px;
+    color: #a0a0a0;
+    cursor:pointer;
+    }
+    div#alert-ie p{
+    font-size: 1.2em;
+    }
+    #login div.modal, #login div.modal a{
+    color: #676a6c;
+    font-size: 20px;
+    }
+    #login div.modal a:hover{
+    color: inherit;
+    }
+    input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=search-md]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=url]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+    box-shadow:none !important;
+    border-bottom:1px solid #a1a1a1 !important;
+    }
+    .valid, input[type=email].invalid{
+    box-shadow:none !important;
+    }
+    @media (max-width:1000px){
+    .no-m-res{
+    margin-top:0!important;
+    }
+    }
