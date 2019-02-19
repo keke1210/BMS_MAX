@@ -1,0 +1,80 @@
+/*
+
+OVERRIDE THEME CSS
+
+*/
+/*
+@media (min-width: 768px) {
+  #page-wrapper {
+    height: 100% !important;
+  }
+}
+*/
+.dataTables_wrapper {
+    padding-bottom: 0px !important;
+}
+
+.navbar {
+    /*background: url('patterns/logo_sans_baseline.png');*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14%;
+    height: 50px;
+    margin-top: 10px;
+}
+
+/* NAVBAR */
+.md-skin .navbar-static-top {
+    background-color: #ff8847 !important;
+    z-index: 99999;
+}
+.navbar-minimalize {
+    background-color: #929291 !important;
+    border-color: #929291 !important;
+}
+.md-skin .nav-header {
+    background: url("patterns/4.png") no-repeat !important;
+    background-size: 100% auto;
+}
+.md-skin .navbar-top-links li a {
+    padding: 20px 0px;
+}
+.md-skin .navbar-top-links li:last-child {
+    margin-right: 15px;
+    width: 60px;
+    text-align: center;
+}
+.md-skin .navbar-top-links li:last-child a {
+    background-color: #ff8847;
+}
+.md-skin .navbar-top-links li:last-child a:hover {
+    background-color: white !important;
+    color: #ff8847;
+    -webkit-transition: 0.4s; /* Safari */
+    transition: 0.4s;
+}
+.md-skin .navbar-top-links li:last-child a i {
+    margin-right: -3px;
+}
+
+.landing_link a {
+    background: #ff8847 !important;
+}
+.landing_link a:hover {
+    background: #f49e40 !important;
+}
+.special_link a {
+    background: #ff8847 !important;
+}
+.special_link a:hover {
+    background: #dd8423 !important;
+}
+
+/* COLORS */
+
+
+/* SUMMERNOTE */
+
+.note-editor .note-editable{
+    background: white !important;
+}

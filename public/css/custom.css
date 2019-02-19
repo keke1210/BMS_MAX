@@ -202,12 +202,9 @@ LOGIN
 */
 
 #login {
-    /*background: #1d1d1b ;*/
-	background: url('../img/bg_log_in.jpg') center center fixed; background-size: cover;
-    /*background: url(https://myclementine.fr/img/bg_payment_stripe.jpg) center center #F78145;*/
-    /*background: url(https://myclementine.fr/img/bg_payment_stripe.jpg) center center #F78145;*/
-    /*background: url(../img/bg_connexion.jpg) bottom center #F78145;*/
-    background-size: cover;
+
+	background: url('../images/main-background-5.jpg') center center fixed; 
+	background-size: cover;
 }
 
 /* Standard syntax */
