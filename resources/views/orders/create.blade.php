@@ -15,8 +15,12 @@
         @if($nrProduktesh>0)
 
             {{-- Forma --}}
-            @foreach($products as $i=>$product)
+            @foreach($products as $key=>$product)
                 <div><label>{{$product->name}}</label><input type="radio" id="product" name="products" value="{{$product->prod_id}}" required> </div> 
+            @endforeach
+
+
+            @foreach($tables as $i=>$table)
                 <div><label>{{$tables[$i]->id}}</label><input type="radio" id="tables" name="tables" value="{{$tables[$i]->id}}" required> </div>
             @endforeach
 
@@ -63,9 +67,10 @@
     
     <input type="hidden" name="vlerat" value="{{json_encode($existing)}}"/>
         @if(empty($existing))
-        <h1>Need to add at least one product</h1>
+        <h1>Need to add at least one product</h1> <p> {{isset($_REQUEST['table']) ? $_REQUEST['table'] : "" }}</p>
         @else 
         <button type="submit" id="butonPrije">Prije Faturen</button>
+        
         @endif
     </form>
 </div>
