@@ -1,5 +1,10 @@
 @extends('layouts.app')
-
+@extends('layouts.dashboard')
+@section('dash-title')
+     <h2>
+        <div class="m-l-lg">Produkte</div>
+     </h2> 
+@endsection
 @section('content')
     @role('kamarier')
     <h1>Orders:</h1> <a href="orders/create" class="btn btn-primary">Krijo Porosi te re</a> <br> <br>

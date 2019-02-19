@@ -14,17 +14,16 @@
     <script src="{{ asset('js/myJs.js') }}" defer></script>
 
 
-    {{-- jquery print-page
+  <!-- jquery print-page
     <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="js/jquery.printPage.js"></script> --}}
- <!-- Scripts -->
+  Scripts -->
  <script src="{{ asset('js/app.js') }}" defer></script>
  <script src="{{ asset('js/myJs.js') }}" defer></script>
  @yield('dashscripts')
  <!-- Fonts -->
- <link rel="dns-prefetch" href="//fonts.gstatic.com">
- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
  <link href="/css/app.css" rel="stylesheet" type="text/css">
  <link href="/css/myStyle.css" rel="stylesheet" type="text/css">
 

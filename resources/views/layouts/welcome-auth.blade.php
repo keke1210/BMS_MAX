@@ -38,7 +38,7 @@
      <link href="{{ asset('font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     </head>
     <body id="login" class="gray-bg">
-        <div class="loginscreen fadeInDown col-xs-12">
+        <div class="loginscreen col-xs-12">
            
     
             <div class="col-xs-12 col-sm-10 col-md-6 col-lg-5 text-center d-flex flex-column flex-nowrap no-m-res" style="height:calc(100% - 65px); margin-top: 65px;">

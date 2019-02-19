@@ -9,7 +9,7 @@
                     <img src="images/official-logo.png" alt="BMS" style="max-width:350px; max-height:105px"> </a><br>
             </h1>
             <h2 id="baseline" class="m-t-sm m-b-none col-xs-12 flex-row flex-center">
-                Log In
+                Rregjistrohu
             </h2>
             <form method="POST" action="{{ route('register') }}" accept-charset="utf-8" class="p-lg col-xs-12" style="padding-top:5px;">
 
@@ -67,7 +67,7 @@
 
 
 
-                <button type="submit" class="btn  btn-orange">Log In</button>
+                <button type="submit" class="btn  btn-orange">Rregjistrohu</button>
 
             </form>
         </div>
