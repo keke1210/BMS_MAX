@@ -31,7 +31,7 @@
      <!-- Styles -->
     <link href="/css/welcome-style.css" rel="stylesheet" type="text/css">
 
-     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   
      @yield('dashstyles')
     
     </head>
