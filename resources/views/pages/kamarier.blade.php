@@ -4,6 +4,7 @@
 <h2>
     <div class="m-l-lg">Kamarier</div>
 </h2>
+
 @endsection
 @section('content')
 @role('kamarier|admin')
@@ -50,6 +51,7 @@
     </div>
     <br><br>
     <aside>Ktu sheh orarin e vet</aside>
+    
 </div>
 @endrole
 @endsection

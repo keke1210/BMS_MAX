@@ -1,0 +1,130 @@
+
+  
+  .invoice {
+   padding: 50px 30px 30px;
+   transform: scale(0.85);
+  }
+  .invoice header {
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+  .invoice header section:nth-of-type(1) {
+    float: left;
+  }
+  .invoice header section:nth-of-type(1) h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #344760;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  .invoice header section:nth-of-type(1) span {
+    color: #b7bcc3;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  .invoice header section:nth-of-type(2) {
+    float: right;
+  }
+  .invoice header section:nth-of-type(2) span {
+    font-size: 21px;
+    color: #b7bcc3;
+    letter-spacing: 1px;
+  }
+  .invoice header section:nth-of-type(2) span:before {
+    content: "#";
+  }
+  .invoice main {
+    border: 1px dashed #b7bcc3;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .invoice main section {
+    overflow: hidden;
+  }
+  .invoice main section span {
+    float: left;
+    color: #344760;
+    font-size: 16px;
+    letter-spacing: .5px;
+  }
+  .invoice main section span:first-of-type {
+    width: 3%;
+    margin-right: 1%;
+  }
+  .invoice main section span {
+    width: 14%;
+    margin-right: 2%;
+  }
+  
+ .invoice main section span:nth-of-type(3), .invoice main section span:nth-of-type(4), .invoice main section span:nth-of-type(5),.invoice main section span:nth-of-type(6), .invoice main section span:last-of-type {
+    text-align: right;
+  }
+  
+  .invoice main section:nth-of-type(1) {
+    margin-bottom: 30px;
+  }
+  .invoice main section:nth-of-type(1) span {
+    color: #b7bcc3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+  }
+  .invoice main section:nth-of-type(2) {
+    margin-bottom: 30px;
+  }
+  .invoice main section:nth-of-type(2) figure{
+    overflow: hidden;
+    margin: 0;
+    margin-bottom: 20px;
+    line-height: 160%;
+  }
+  .invoice main section:nth-of-type(2) figure:last-of-type {
+    margin-bottom: 0;
+  }
+  .invoice main section:nth-of-type(3) span:nth-of-type(1) {
+    width: 83.5%;
+    font-weight: bold;
+    text-align: right;
+  }
+  .invoice main section:nth-of-type(3) span:nth-of-type(2) {
+    margin-right: 0 !important;
+  }
+  .invoice footer {
+    text-align: right;
+    margin-top: 30px;
+  }
+  .invoice footer a {
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 1px;
+  }
+  .invoice footer a:after {
+    content: "";
+    width: 0%;
+    height: 4px;
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    background-color: inherit;
+    -webkit-transition: width 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out;
+  }
+  .invoice footer a:hover:after {
+    width: 100%;
+  }
+  .invoice footer a:nth-of-type(1) {
+    display: none;
+  }
+  .invoice footer a:nth-of-type(2) {
+    display: none;
+  }
+  
