@@ -54,11 +54,11 @@
             <br>
             <h3>Totali eshte: {{$totali}} Lek</h3>
             <br> <br>
-            <footer>Fatura u krijua ne: {{$orders[0]->updated_at->format('d/m/Y H:i:s')}}</footer>
+            <footer>Fatura u krijua ne: {{isset($orders[0]->created_at)?$orders[0]->created_at->format('d/m/Y H:i:s'):"no date"}}</footer>
             
-            {{-- @php $user = App\Order::find(4)->user->name; @endphp --}}
+             @php $useradmin = App\User::first()->name; @endphp 
             
-            <footer>Fatura u krijua nga: {{$user->name}}</footer>
+            <footer>Fatura u krijua nga: {{empty($user->name)?$useradmin." ne mungese":$user->name}}</footer>
         </div>
             
 

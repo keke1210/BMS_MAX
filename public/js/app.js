@@ -59866,8 +59866,6 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-window.Jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
 __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
 
 __webpack_require__(/*! ./components/Orders */ "./resources/js/components/Orders.js");
@@ -60187,10 +60185,12 @@ function (_Component) {
     key: "componentWillMount",
     value: function componentWillMount() {
       var $this = this;
+      var headers = {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer' + accessToken
+      };
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://127.0.0.1:8000/api/orders').then(function (response) {
-        $this.setState({
-          data: response.data
-        });
+        console.log(response.headers);
       }).catch(function (error) {
         console.log(error);
       });
@@ -60198,7 +60198,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Products Listing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "orders Listing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "table table-boarded"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "ID"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.data.map(function (order, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, order.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -60241,8 +60241,8 @@ if (document.getElementById('orders')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! G:\ProgramFiles\xampp\htdocs\BMS_v1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! G:\ProgramFiles\xampp\htdocs\BMS_v1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\BMS_v1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\BMS_v1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

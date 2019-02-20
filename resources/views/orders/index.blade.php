@@ -11,17 +11,18 @@
     <table class="table table-striped">
         <tr>
             <th>Order_ID</th>
-            <th>Kamarier_id</th>
-            <th>Tavolina_ID</th>
+            <th>Kamarier</th>
+            <th>Tavolina</th>
             <th>Koha e krijimit</th>
             <th>Shiko Detaje</th>
         </tr>
         @foreach ($orders as $order)
+        @php $userfature=App\User::find($order->user_id)->name @endphp
             <tr>
-                <td>{{$order->id}}</td>
-                <td>{{$order->user_id}}</td>
+                <td>{{$order->id}}</td>          
+                <td>{{$userfature}}</td>         
                 <td>{{$order->T_id}}</td>
-                <td>{{$order->created_at->format('H:i:s d/m/Y')}}</td>
+                <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
                 <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td>
             </tr>
         @endforeach
@@ -32,21 +33,26 @@
     <table class="table table-striped">
         <tr>
             <th>Order_ID</th>
-            <th>Kamarier_id</th>
-            <th>Tavolina_ID</th>
+            <th>Kamarier</th>
+            <th>Tavolina</th>
             <th>Koha e krijimit</th>
             <th>Shiko Detaje</th>
         </tr>
         @php
            $orders = App\Order::orderBy('id','desc')->paginate(9);
+           
+           $useradmin =App\User::find(1)->name;
         @endphp
 
         @foreach ($orders as $order)
+        @php 
+           App\User::find($order->user_id)?$userfature=App\User::find($order->user_id)->name:$userfature="*admin* ne mungese";
+        @endphp
             <tr>
                 <td>{{$order->id}}</td>
-                <td>{{$order->user_id}}</td>
+                <td>{{$userfature}}</td>
                 <td>{{$order->T_id}}</td>
-                <td>{{$order->created_at->format('H:i:s d/m/Y')}}</td>
+                <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
                 <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td>
             </tr>
 
