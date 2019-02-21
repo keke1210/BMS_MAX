@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @extends('layouts.dashboard')
+@include('inc.liste')
 @section('dash-title')
      <h2>
         <div class="m-l-lg">Tavolina</div>
