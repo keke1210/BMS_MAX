@@ -2,7 +2,7 @@
 @extends('layouts.dashboard')
 @section('dash-title')
      <h2>
-        <div class="m-l-lg">Produkte</div>
+        <div class="m-l-lg">Porosi</div>
      </h2> 
 @endsection
 @section('content')
@@ -55,10 +55,7 @@
             <h3>Totali eshte: {{$totali}} Lek</h3>
             <br> <br>
             <footer>Fatura u krijua ne: {{isset($orders[0]->created_at)?$orders[0]->created_at->format('d/m/Y H:i:s'):"no date"}}</footer>
-            
-             @php $useradmin = App\User::first()->name; @endphp 
-            
-            <footer>Fatura u krijua nga: {{empty($user->name)?$useradmin." ne mungese":$user->name}}</footer>
+            <footer>Fatura u krijua nga: {{empty($user->name)?"*admin* ne mungese":$user->name}}</footer>
         </div>
             
 

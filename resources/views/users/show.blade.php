@@ -1,5 +1,10 @@
 @extends('layouts.app')
-
+@extends('layouts.dashboard')
+@section('dash-title')
+     <h2>
+        <div class="m-l-lg">Perdorues</div>
+     </h2> 
+@endsection
 @section('content')
     @if($user && $user->id > 2)
     <h1>User: {{$user->id}}:</h1>
