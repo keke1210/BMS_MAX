@@ -49,7 +49,7 @@
                 <td>{{$user->name}}</td>
                 <td>{{$role}}</td>
                 <td>{{$user->email}}</td>
-                <td>{{'+355'}} {{rand(67, 69)}} {{rand(10, 99)}} {{rand(10, 99)}} {{rand(100, 999)}}</td>
+                <td>{{'0'}}{{rand(67, 69)}} {{rand(10, 99)}}{{rand(10, 99)}} {{rand(100, 999)}}</td>
                 <td><a href="/users/{{$user->id}}/edit">Ndrysho {{$user->name}}</a></td>
                 <td class="text-right">
                     <button href="#editProductModal" class="btn edit" data-target="#editProductModal" data-toggle="modal"

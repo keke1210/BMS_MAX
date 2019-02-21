@@ -8,6 +8,7 @@ use App\Order;
 use Validator;
 use App\OrderDetail;
 use App\Product;
+use App\Table;
 use Illuminate\Support\Facades\DB;
 
 class OrdersController extends Controller
@@ -31,7 +32,8 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        return view('orders.create');
+        $table = Table::all();
+        return view('orders.create',compact('table'));
     }
 
     /**
@@ -59,7 +61,7 @@ class OrdersController extends Controller
         }
         
         //return json_encode((int)$input[0]->T_id);
-        dd($request->table);
+       // dd($request->table);
         $order = new Order;
         $order->user_id = auth()->id();
         $order->T_id = json_encode((int)$input[count($input)-1]->T_id);
