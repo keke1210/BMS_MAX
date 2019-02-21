@@ -8,7 +8,7 @@
 @endsection
 @section('content')
 @role('kamarier|admin')
-
+@if(1)
 <div class="wrapper wrapper-content ng-scope" style="">
     <a href="/orders" class="btn btn-primary">
         Shiko Fatura
@@ -58,7 +58,7 @@
                   <div class="day-header">Monday</div>
                   <div class="day-content">
                     <div class="event gray">
-                        <span class="title">Filan Fisteku</span>
+                        <span class="title">{{$users[2]->name}}</span>
                         <footer>
                           <span>Orari</span>
                           <span>20:00</span>
@@ -66,7 +66,7 @@
                     </div>
                     
                     <div class="event blue">
-                        <span class="title">Filan Fisteku</span>
+                        <span class="title">{{$users[3]->name}}</span>
                         <footer>
                           <span>Orari</span>
                           <span>20:30</span>
@@ -180,5 +180,6 @@
             </div>
           </div>
 </div>
+@endif
 @endrole
 @endsection
