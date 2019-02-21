@@ -8,7 +8,7 @@
 @section('content')
 
 <div class="container">
-<<<<<<< HEAD
+
     <div class="wrapper wrapper-content ng-scope" style="">
 
         <a href="/orders" class="btn btn-primary">Anulo order</a> <br><br>
@@ -19,18 +19,17 @@
             $tables = App\Table::all();
             $nrProduktesh = count($products);
             @endphp
-             @php
-             $count=1;
-             $rezervim=0;
-             @endphp
+            @php
+            $count=1;
+            @endphp
             @if($nrProduktesh>0)
 
             {{-- Forma --}}
             @foreach($products as $key=>$product)
             @if ($count%3==1)
             <div class="col-sm-12 ">
-            @endif    
-            
+                @endif
+
                 <div class="col-md-3 col-sm-3 card red">
                     <i class=" fa fa-code-fork"></i>
                     <div>
@@ -38,22 +37,22 @@
                         <p class="text-center">{{$product->cmimi}}</p>
                         <p class="text-center">Sasia : 10</p>
                         <div class="text-center">
-                        <div class="plusminus horiz">
-                            <button></button>
-                            <input type="number" name="productQty" value="1" min="1" max="10">
-                            <button></button>
+                            <div class="plusminus horiz">
+                                <button></button>
+                                <input type="number" name="productQty" value="1" min="1" max="10">
+                                <button></button>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
                 @if($count%3==0)
             </div>
-            @endif      
+            @endif
             @php
             $count++;
-            @endphp 
-            <div><label>{{$product->name}}</label><input type="radio" id="product" name="products" class="radio-button" value="{{$product->prod_id}}"
-                    required></label> </div>
+            @endphp
+            <div><label>{{$product->name}}</label><input type="radio" id="product" name="products" class="radio-button"
+                    value="{{$product->prod_id}}" required></label> </div>
             @endforeach
 
 
