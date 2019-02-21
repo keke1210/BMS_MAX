@@ -7,12 +7,12 @@
      </h2> 
 @endsection
 @section('content')
-    <h1>Tables:</h1> <a href="tables/create" class="btn btn-primary">Krijo Table te ri</a> <br> <br>
+    <a href="tables/create" class="btn btn-primary">Krijo Table te ri</a> <br> <br>
     <div class="table-wrapper">
     <div class="table-title">
         <div class="row">
             <div class="col-sm-6">
-                <h2>Liste <b>Produktesh</b></h2>
+                <h2>Liste <b>Tavolinash</b></h2>
             </div>
             <div class="col-sm-6">
                 <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
@@ -21,13 +21,14 @@
             </div>
         </div>
     </div>
-    
-        <table class="table table-striped table-hover table-responsive">
+        <div class="table-responsive">
+        <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Description</th>
                     <th>Rezervuar</th>
+                    <th>Ndrysho</th>
                     <th class="text-right">Modifiko</th>
                     <th class="text-right">Fshi</th>
                 </tr>
@@ -52,6 +53,7 @@
             </tr>
         @endforeach
     </table>
+</div>
     @endif
     </div>
 @endsection

@@ -4,6 +4,9 @@
 		font-family: 'Varela Round', sans-serif;
 		font-size: 13px;
 	}
+
+	table.table td a i.fa.fa-file.edit {
+		color: rgb(255, 7, 7);}
 	.table-wrapper {
         background: #fff;
         padding: 20px 25px;

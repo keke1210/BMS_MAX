@@ -21,7 +21,8 @@
                 </div>
             </div>
         </div>
-        <table class="table table-striped table-hover table-responsive">
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th>Nr.</th>
@@ -53,6 +54,7 @@
             </tbody>
             
         </table>
+    </div>
         <div>
             <script src="{{asset('js/sweetalert.min.js')}}"></script>
             {{-- @include('sweet::alert') --}}
