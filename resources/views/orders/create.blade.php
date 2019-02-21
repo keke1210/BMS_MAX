@@ -31,7 +31,7 @@
                 @endif
 
                 <div class="col-md-3 col-sm-3 card red">
-                    <i class=" fa fa-code-fork"></i>
+                    <i class="fa fa-glass"></i>
                     <div>
                         <h3 class="text-center">{{$product->name}}</h3>
                         <p class="text-center">{{$product->cmimi}}</p>
@@ -44,6 +44,7 @@
                             </div>
                         </div>
                     </div>
+                    <div><label>{{$product->name}}</label><input type="radio" id="product" name="products" value="{{$product->prod_id}}" required></label> </div>
                 </div>
                 @if($count%3==0)
             </div>
@@ -51,8 +52,7 @@
             @php
             $count++;
             @endphp
-            <div><label>{{$product->name}}</label><input type="radio" id="product" name="products" class="radio-button"
-                    value="{{$product->prod_id}}" required></label> </div>
+            
             @endforeach
 
 

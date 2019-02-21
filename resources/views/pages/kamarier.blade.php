@@ -70,7 +70,7 @@
                                 <div class="form-group col-md-3 text-center" id="{{$table->id}}">
 
 
-                                      @if ($table->rezervuar ==1)
+                                      @if ($table->rezervuar ==0)
                                         <a href="orders/create/{{$table->id}}">
 
                                             <p class="tavoline-img t_green"></p>

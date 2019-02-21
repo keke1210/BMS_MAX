@@ -41,11 +41,11 @@
   }(jQuery));
   
   
-  $(document).on('ready', function(){
+  // $(document).on('ready', function(){
     
-    $('.plusminus').numberPicker();
+  //   $('.plusminus').numberPicker();
     
-    //add dynamically:
-    $('<div class="plusminus horiz"><button></button><input type="number" name="qty" value="1" min="1" max="5"><button></button></div>').numberPicker().appendTo('span');
+  //   //add dynamically:
+  //   $('<div class="plusminus horiz"><button></button><input type="number" name="qty" value="1" min="1" max="5"><button></button></div>').numberPicker().appendTo('span');
     
-  });
+  // });
