@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Table;
 
 class PagesController extends Controller
 {
     public function kamarier() {
-        return view('pages.kamarier');
+        $tables = Table::all();
+        return view('pages.kamarier',compact('tables'));
     }
     
     public function ekonomist() {

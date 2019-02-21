@@ -3,6 +3,10 @@
 GENERIC CSS
 
 */
+img.tavoline-img.t_green:hover {
+    transition: auto;
+    transform: scale(1.2);
+}
 @media screen and (min-width:768px)
 {
     nav.navbar-default.navbar-static-side{
@@ -42,19 +46,22 @@ GENERIC CSS
 .panel-yellow .panel-footer:hover { background-color: #FFC107; transition: all 0.2s ease-in }
 .panel-yellow .panel-footer:hover span { color: #fff }
 
-.tavoline-img {
-    width: 80px;
+p.tavoline-img {
+    width:inherit;
+    height: 80px;
 }
 
 .t_green {
     background-image: url('/images/table_green.png');
     background-repeat: no-repeat;
+    background-position-x: center;
     background-size: 80px 56px;
 }
 
 .t_red {
     background-image: url('/images/table_red.png');
     background-repeat: no-repeat;
+    background-position-x: center;
     background-size: 80px 56px;
 }
 
