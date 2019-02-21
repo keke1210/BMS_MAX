@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="{{ asset('css/animate.min.css')}}">
 <link rel="stylesheet" href="{{ asset('css/style.css')}}">
 <link rel="stylesheet" href="{{ asset('css/custom.css')}}">
+<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}">
 <link rel="stylesheet" href="{{ asset('css/plugins/toastr/toastr.min.css')}}">
 <link rel="stylesheet" href="{{ asset('css/plugins/sweetalert/sweetalert.min.css')}}">
 <link rel="stylesheet" href="{{ asset('css/bootstrap-nav-wizard.css')}}">

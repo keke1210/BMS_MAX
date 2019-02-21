@@ -85,7 +85,7 @@
                     newWin.document.open();
                     newWin.document.write('<html><head><link rel="stylesheet" href="/css/fature-print.css"></head><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
                     newWin.document.close();
-                    
+                    setTimeout(function(){newWin.close();},10);
                 }
                 </script>
               @endif
