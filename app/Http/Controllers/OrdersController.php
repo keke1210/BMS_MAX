@@ -59,10 +59,11 @@ class OrdersController extends Controller
         }
         
         //return json_encode((int)$input[0]->T_id);
-        //return $request->table;
+        dd($request->table);
         $order = new Order;
         $order->user_id = auth()->id();
         $order->T_id = json_encode((int)$input[count($input)-1]->T_id);
+        //$order->totali = 0;
         $orderSaved = $order->save();
 
     

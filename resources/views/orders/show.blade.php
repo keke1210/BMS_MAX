@@ -69,7 +69,8 @@
                     <span>{{$totali}} lek</span>
                   </section>
                 </main>
-            
+                <footer>Fatura u krijua ne: {{isset($orders[0]->created_at)?$orders[0]->created_at->format('d/m/Y H:i:s'):"no date"}}</footer>
+                <footer>Fatura u krijua nga: {{empty($user->name)?"*admin* ne mungese":$user->name}}</footer>
                 <footer>
                   <a></a>
                   <a onclick="printDiv();">Printo</a>

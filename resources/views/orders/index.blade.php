@@ -21,30 +21,30 @@
                     <span>Shto te ri</span></a>
             </div>
         </div>
-    </div>
-    <table class="table table-striped table-hover table-responsive">
-        <thead>
+		        <table class="table table-striped table-hover table-responsive">
+				<thead>
+        <tr>
+            <th>Order_ID</th>
+            <th>Kamarier</th>
+            <th>Tavolina</th>
+            <th>Koha e krijimit</th>
+            <th>Shiko Detaje</th>
+        </tr>
+		</thead>
+		<tbody>
+        @foreach ($orders as $order)
+        @php $userfature=App\User::find($order->user_id)->name @endphp
             <tr>
-                <th>Order_ID</th>
-                <th>Kamarier_id</th>
-                <th>Tavolina_ID</th>
-                <th>Koha e krijimit</th>
-                <th>Shiko Detaje</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($orders as $order)
-            <tr>
-                <td>{{$order->id}}</td>
-                <td>{{$order->user_id}}</td>
+                <td>{{$order->id}}</td>          
+                <td>{{$userfature}}</td>         
                 <td>{{$order->T_id}}</td>
-                <td>{{$order->created_at->format('H:i:s d/m/Y')}}</td>
-                <td class="text-right">
-                        <button href="/orders/{{$order->id}}">
-                                    <i class="material-icons eye" data-toggle="tooltip" title="Shiko Faturen">&#xE254;</i>
-                        </button>
-                </td>
+                <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
                 {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td> --}}
+                <td class="text-right">
+                    <button href="/orders/{{$order->id}}">
+                                <i class="material-icons eye" data-toggle="tooltip" title="Shiko Faturen">&#xE254;</i>
+                    </button>
+            </td>
             </tr>
             @endforeach
         </tbody>
@@ -72,29 +72,35 @@
     <thead>
         <tr>
             <th>Order_ID</th>
-            <th>Kamarier_id</th>
-            <th>Tavolina_ID</th>
+            <th>Kamarier</th>
+            <th>Tavolina</th>
             <th>Koha e krijimit</th>
             <th>Shiko Detaje</th>
         </tr>
     </thead>
     <tbody>
         @php
-        $orders = App\Order::orderBy('id','desc')->paginate(2);
+           $orders = App\Order::orderBy('id','desc')->paginate(9);
+           
+           $useradmin =App\User::find(1)->name;
         @endphp
 
         @foreach ($orders as $order)
-        <tr>
-            <td>{{$order->id}}</td>
-            <td>{{$order->user_id}}</td>
-            <td>{{$order->T_id}}</td>
-            <td>{{$order->created_at->format('H:i:s d/m/Y')}}</td>
-            <td class="text-right">
+        @php 
+           App\User::find($order->user_id)?$userfature=App\User::find($order->user_id)->name:$userfature="*admin* ne mungese";
+        @endphp
+            <tr>
+                <td>{{$order->id}}</td>
+                <td>{{$userfature}}</td>
+                <td>{{$order->T_id}}</td>
+                <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
+                {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td> --}}
+                <td class="text-right">
                     <a href="/orders/{{$order->id}}">
                                 <i class="material-icons edit" data-toggle="tooltip" title="Shiko Faturen">&#xE254;</i>
                     </a>
             </td>
-        </tr>
+            </tr>
 
         @endforeach
 
