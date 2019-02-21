@@ -2,7 +2,7 @@
 @extends('layouts.dashboard')
 @section('dash-title')
 <h2>
-    <div class="m-l-lg">Kamarier</div>
+    <div>Kamarier</div>
 </h2>
 <link rel="stylesheet" href="{{asset('/css/timetable.css')}}">
 @endsection
@@ -46,8 +46,8 @@
         <div class="tab_products global-box-contour-top-left global-no-b-bottom global-box-contour-top-right global-box-border-top global-box-border-right global-box-border-left"
             style="margin-top: 23px;">
             <div class="ibox float-e-margins">
-                @if(count($tables)>0)
-                
+                @if(count($tables)>0) 
+                {{-- Numeron nese ka tavolina --}}
                 <div class="ibox-content" style="border-radius:5px;">
                     <legend class="delete-barre-titre text-center">
                         <i class="box-titre" aria-hidden="true" style="color:#929291">
@@ -61,6 +61,7 @@
                      </legend>
                     <table class="table table-striped table-hover table-responsive">
                         <tbody>
+                           {{-- Merr count nga 1 --}}
                           @php
                           $count=1;
                           $rezervim=0;
@@ -71,8 +72,8 @@
                            <div class="col-sm-12 ">
                            @endif                    
                                 <div class="form-group col-md-3 text-center" id="{{$table->id}}">
-                                      @if ($rezervim==0)
-                                        <a href="orders/create">
+                                      @if ($table->rezervuar==0)
+                                        <a href="orders/create" data-toggle="tooltip" title="Edito">
                                             <p class="tavoline-img t_green"></p>
                                             <p class="tavoline-title">Tavoline {{$table->id}}</p>
                                         </a>
