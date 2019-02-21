@@ -9,7 +9,7 @@
 
 <div class="container">
     <div class="jumbotron">
-            <a href="/orders" class="btn btn-primary" >Anulo order</a> <br><br>
+            <a href="/kamarier" class="btn btn-primary" >Anulo order</a> <br><br>
     <form method="GET" action="/orders/create/{{$table[0]->id}}">
        @csrf  
        @php 

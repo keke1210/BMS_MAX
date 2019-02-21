@@ -1,9 +1,7 @@
 @extends('layouts.app')
 @extends('layouts.dashboard')
 @section('dash-title')
-<h2>
-    <div class="m-l-lg">Kamarier</div>
-</h2>
+
 <link rel="stylesheet" href="{{asset('/css/timetable.css')}}">
 @endsection
 @section('content')
@@ -64,7 +62,7 @@
                            <div class="col-sm-12 ">
                            @endif                    
                                 <div class="form-group col-md-3 text-center" id="{{$table->id}}">
-                                      @if ($table->rezervuar ==1)
+                                      @if ($table->rezervuar ==0)
                                         <a href="orders/create/{{$table->id}}">
                                             <p class="tavoline-img t_green"></p>
                                             <p class="tavoline-title">Tavoline {{$table->id}}</p>

@@ -7,7 +7,6 @@
      </h2> 
 @endsection
 @section('content')
-    <a href="products/create" class="btn btn-primary">Krijo Produkt te ri</a> <br> <br>
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
@@ -54,13 +53,14 @@
             </tbody>
             
         </table>
-    </div>
+    </div> 
         <div>
             <script src="{{asset('js/sweetalert.min.js')}}"></script>
             {{-- @include('sweet::alert') --}}
     </div>
 				@endif
     </div>
+    {{$products->links()}}
     
 <!-- Popup Shtim HTML -->
 <div id="addProductModal" class="modal fade">
