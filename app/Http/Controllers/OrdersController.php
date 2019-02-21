@@ -8,6 +8,7 @@ use App\Order;
 use Validator;
 use App\OrderDetail;
 use App\Product;
+use App\Table;
 use Illuminate\Support\Facades\DB;
 
 class OrdersController extends Controller
@@ -31,7 +32,8 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        return view('orders.create');
+        $table = Table::all();
+        return view('orders.create',compact('table'));
     }
 
     /**

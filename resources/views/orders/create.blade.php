@@ -10,7 +10,7 @@
 <div class="container">
     <div class="jumbotron">
             <a href="/orders" class="btn btn-primary" >Anulo order</a> <br><br>
-    <form method="GET" action="/orders/create">
+    <form method="GET" action="/orders/create/{{$table[0]->id}}">
        @csrf  
        @php 
         $products = App\Product::all();

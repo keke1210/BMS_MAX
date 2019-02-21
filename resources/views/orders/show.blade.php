@@ -11,11 +11,11 @@
        <div id="DivIdToPrint">
             <div class="invoice" >
                     
-                    <h4>Fatura ka {{$nrOrderave=count($orders)}} artikuj</h4> <br>
+            <h4>Fatura ka {{$nrOrderave=count($orders)}} {{$nrOrderave==1?"artikull":"artikuj"}}</h4> <br>
                 <header>
                   <section>
                     <h1>Faturë</h1>
-                    <span>{{$orders[0]->updated_at->format('d/m/Y H:i:s')}}</span>
+                    <span>{{isset($orders[0]->created_at)?$orders[0]->created_at->format('d/m/Y H:i:s'):"no date"}}</span>
                   </section>
             
                   <section>
