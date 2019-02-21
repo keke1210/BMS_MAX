@@ -3,6 +3,12 @@
 GENERIC CSS
 
 */
+@media screen and (min-width:768px)
+{
+    nav.navbar-default.navbar-static-side{
+        display: block!important;
+    }
+}
 /*-----Dashboard panels-----*/
 .panel-heading {
     color: #fff;
