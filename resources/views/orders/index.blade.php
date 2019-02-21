@@ -39,7 +39,7 @@
                 <td>{{$userfature}}</td>         
                 <td>{{$order->T_id}}</td>
                 <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
-                {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td> --}}
+                <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td>
                 <td class="text-right">
                     <button href="/orders/{{$order->id}}">
                                 <i class="material-icons eye" data-toggle="tooltip" title="Shiko Faturen">&#xE254;</i>
@@ -80,7 +80,7 @@
     </thead>
     <tbody>
         @php
-           $orders = App\Order::orderBy('id','desc')->paginate(9);
+           $orders = App\Order::orderBy('id','desc')->paginate(5);
            
            $useradmin =App\User::find(1)->name;
         @endphp
@@ -94,7 +94,7 @@
                 <td>{{$userfature}}</td>
                 <td>{{$order->T_id}}</td>
                 <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
-                {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td> --}}
+                <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td>
                 <td class="text-right">
                     <a href="/orders/{{$order->id}}">
                                 <i class="material-icons edit" data-toggle="tooltip" title="Shiko Faturen">&#xE254;</i>

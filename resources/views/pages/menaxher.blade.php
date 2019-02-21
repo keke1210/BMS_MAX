@@ -97,7 +97,7 @@
                                           20
                                         </div>
                                         <div>
-                                          Menaxho Tabolina
+                                          Menaxho Tavolina
                                         </div>
                                       </div>
                                       <div class="col-xs-3 text-right">

@@ -19,7 +19,7 @@
                   </section>
             
                   <section>
-                    <span>89 289</span>
+                    <span>{{$orders[0]->order_id}}</span>
                   </section>
                 </header>
             
