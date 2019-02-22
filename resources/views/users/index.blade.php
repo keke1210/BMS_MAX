@@ -52,7 +52,7 @@
                 <td>{{'0'}}{{rand(67, 69)}} {{rand(10, 99)}}{{rand(10, 99)}} {{rand(100, 999)}}</td>
                 <td><a href="/users/{{$user->id}}/edit">Ndrysho {{$user->name}}</a></td>
                 <td class="text-right">
-                    <button href="#editProductModal" class="btn edit" data-target="#editUserModal" data-toggle="modal"
+                    <button href="#editUserModal" class="btn edit" data-target="#editUserModal" data-toggle="modal"
                         data-pid="{{$user->id}}" data-pem="{{$user->name}}" data-pc="{{$user->email}}">
                         <i class="material-icons edit" data-toggle="tooltip" title="Edito">&#xE254;</i>
                     </button>
@@ -73,7 +73,7 @@
     
 
 <script src="{{asset('js/sweetalert.min.js')}}"></script>
-{{-- @include('sweet::alert') --}}
+
 </div>
 <!-- Popup Shtim HTML -->
 <div id="addUserModal" class="modal fade">
@@ -96,6 +96,30 @@
             </div>
         </div>
     </div>
+    <!-- Popup  Editim User -->
+<div id="editUserModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <form id="editForm" method="POST" action="/users">
+        @method('PUT')
+                {{csrf_field()}}
+                {{-- {{method_field('PUT')}} --}}
+                {{-- <input type="hidden" name="_method" value="PUT" id="prod_id"> --}}
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+					<button type="button" class="close" data-dismiss="modal" id="" aria-hidden="true" >&times;</button>
+                </div>
+                <div class="modal-body">
+                    @include('users.form')
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-info" value="Edito">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <!-- Popup Fshirje HTML -->
     <div id="deleteUserModal" class="modal fade">
             <div class="modal-dialog">

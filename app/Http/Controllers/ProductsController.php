@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-
+use Alert;
 class ProductsController extends Controller
 {
 
@@ -36,7 +36,7 @@ class ProductsController extends Controller
         $product->name = $request->input('name');
         $product->cmimi = $request->input('cmimi');
         $product->save();
-        
+        Alert::success('Produkti u shtua me sukses');
         return redirect('/products')->with('success','Product Created');
     }
 
@@ -70,7 +70,7 @@ class ProductsController extends Controller
         $product->name = $request->input('name');
         $product->cmimi = $request->input('cmimi');
         $product->save();
-        
+        Alert::success('Produkti u modifikua me sukses');
         return redirect('/products')->with('success','Product Updated');
     }
 
@@ -79,7 +79,7 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         Product::find($id)->delete();
-        
+        Alert::success('Produkti u fshi me sukses');
         return redirect('/products')->with('success','Product Deleted');
     }
 }

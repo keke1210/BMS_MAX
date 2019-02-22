@@ -149,7 +149,7 @@ class UsersController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-
+        
         return redirect('users')->with('success','User deleted Succesfuly');
     }
 }
