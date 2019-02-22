@@ -16,7 +16,7 @@
                 <h2>Liste <b>Përdoruesish</b></h2>
             </div>
             <div class="col-sm-6">
-                <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
+                <a href="#addUserModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
                     <span>Shto te ri</span></a>
 
             </div>
@@ -52,13 +52,13 @@
                 <td>{{'0'}}{{rand(67, 69)}} {{rand(10, 99)}}{{rand(10, 99)}} {{rand(100, 999)}}</td>
                 <td><a href="/users/{{$user->id}}/edit">Ndrysho {{$user->name}}</a></td>
                 <td class="text-right">
-                    <button href="#editProductModal" class="btn edit" data-target="#editProductModal" data-toggle="modal"
+                    <button href="#editProductModal" class="btn edit" data-target="#editUserModal" data-toggle="modal"
                         data-pid="{{$user->id}}" data-pem="{{$user->name}}" data-pc="{{$user->email}}">
                         <i class="material-icons edit" data-toggle="tooltip" title="Edito">&#xE254;</i>
                     </button>
                 </td>
                 <td class="text-right">
-                    <a href="#deleteProductModal" class="btn delete" data-toggle="modal" id="{{$user->prod_id}}"
+                    <a href="#deleteUserModal" class="btn deleteUser" data-toggle="modal" id="{{$user->id}}"
                         data-pname={{$user->name}}>
                         <i class="material-icons" data-toggle="tooltip" title="Fshi">&#xE872;</i></a>
                 </td>
@@ -69,7 +69,58 @@
 </div>
 </div>
 @endif
-{{-- <script src="{{asset('js/sweetalert.min.js')}}"></script>
-@include('sweet::alert') --}}
+
+    
+
+<script src="{{asset('js/sweetalert.min.js')}}"></script>
+{{-- @include('sweet::alert') --}}
 </div>
+<!-- Popup Shtim HTML -->
+<div id="addUserModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <form method="POST" action="/users">
+                                @CSRF
+                    <div class="modal-header">
+                        <h4 class="modal-title">Shto Përdorues</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        @include('users.form')
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-success" value="Shto">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Popup Fshirje HTML -->
+    <div id="deleteUserModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" class="delete_form" action="/users">
+                        @method('DELETE')
+                        @CSRF
+                        <div class="modal-header">
+                            
+                            <h4 class="modal-title">Fshi Përdorues</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                           
+                        </div>
+                        <div class="modal-body">
+                            <p>Je i sigurt që dëshiron t'i fshish përdoruesin?</p>
+                            <h1 type="form-control text" class="User"></h1>
+                            <p class="text-warning"><small>Ky veprim nuk mund të zhbëhet.</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" id value="Fshi">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        @include('sweet::alert')
 @endsection

@@ -96,7 +96,7 @@
 	
 	}
 	
-    table.table td a.delete {
+    table.table td a.delete, table.table td a.deleteUser  {
         color: #F44336;
     }
     table.table td i {

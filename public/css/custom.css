@@ -169,7 +169,7 @@ GENERIC CSS
     right: 5px;
 }
 
-.card div h3 {
+.card div h2 {
     margin-top: 2px;
     color: #ffffff;
 }
@@ -178,6 +178,7 @@ GENERIC CSS
     margin: 0px;
     margin-left: 2px;
     color: #ffffff;
+    font-size: 14px;
 }
 
 img.tavoline-img.t_green:hover {
@@ -820,9 +821,9 @@ h3#minibaseline {
     padding-bottom: 0px;
 }
 
-#login .step3 .form-group:nth-child(3n+1) {
-    /*padding-top: 50px;*/
-}
+/* #login .step3 .form-group:nth-child(3n+1) {
+    padding-top: 50px;
+} */
 
 #login .wizard-big {
     margin-top: 30px;
@@ -931,9 +932,9 @@ h3#minibaseline {
 @media (max-width: 767px) {
 
     /*Version mobile*/
-    body {
-        /*background: white !important;*/
-    }
+    /* body {
+       background: white !important;
+    }*/
 
     #login {
         /*background: url(https://myclementine.fr/img/bg_payment_stripe.jpg) center center #F78145;
@@ -944,9 +945,9 @@ h3#minibaseline {
         position: relative;
     }
 
-    #login .loginscreen {
-        /*padding: 0 !important;*/
-    }
+   /* #login .loginscreen {
+        padding: 0 !important;
+    }*/
 
     #login.body-small .box-login {
         margin-top: 0px !important;
@@ -1015,7 +1016,7 @@ form input:-webkit-autofill {
     background-color: transparent;
 }
 
-form input {}
+
 
 @media (max-width: 400px) {
     #login .box-login {
@@ -1086,9 +1087,9 @@ NAVBAR
     padding: 0;
 }
 
-.navbar-top-links .log-out-btn a {
-    /* padding: 20px 0 !important;*/
-}
+ /* .navbar-top-links .log-out-btn a {
+   padding: 20px 0 !important;
+}*/
 
 .pic-profil {
     border-radius: 50px;
@@ -1168,9 +1169,9 @@ NAVBAR
     /*margin-right: 10px;*/
 }
 
-#bankTransactions .split {
-    /*float: right;*/
-}
+/*bankTransactions .split {
+    float: right;
+}*/
 
 #modal-add-split .bg-danger {
     padding: 20px;
