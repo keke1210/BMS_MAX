@@ -7,7 +7,7 @@ use App\User;
 use Spatie\Permission\Models\Role;
 use Validator;
 use App\Http\Controllers\DB;
-
+use Alert;
 
 class UsersController extends Controller
 {
@@ -19,7 +19,8 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
-        
+        Alert::message('Robots are working!');
+
         return view('users.index')->with('users',$users);
     }
 
@@ -71,6 +72,7 @@ class UsersController extends Controller
         } else {
             return $request->radio;
         }
+        alert()->success('User i krijuar me sukses.', 'Good bye!');
 
         return redirect('users')->with('success','User Created')->with('errors',$validator);
         } //kushti nqs passworded jan te njejte

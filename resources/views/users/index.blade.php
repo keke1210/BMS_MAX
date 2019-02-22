@@ -122,4 +122,5 @@
                 </div>
             </div>
         </div>
+        @include('sweet::alert')
 @endsection
