@@ -21,7 +21,6 @@
      <script src="{{ asset('js/view-pass.js') }}" defer></script>
      <!-- Fonts -->
      <link rel="dns-prefetch" href="//fonts.gstatic.com">
-     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
      <link href="/css/app.css" rel="stylesheet" type="text/css">
      <link href="/css/myStyle.css" rel="stylesheet" type="text/css">
      

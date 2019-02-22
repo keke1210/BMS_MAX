@@ -57,7 +57,7 @@
     </div>
         <div>
             <script src="{{asset('js/sweetalert.min.js')}}"></script>
-            {{-- @include('sweet::alert') --}}
+            @include('sweet::alert')
     </div>
 				@endif
     </div>

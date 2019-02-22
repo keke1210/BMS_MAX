@@ -44,7 +44,8 @@
                 <div class="row wrapper page-heading" style="margin-top: 55px">
                     <div class="col-lg-5 col-xs-12 col-md-5 no-padding">
                         @yield('dash-title')
-                        @include('inc.messages')
+                  
+                        @include('sweet::alert')
                     </div>
                 </div>
                 

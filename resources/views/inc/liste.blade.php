@@ -28,7 +28,7 @@
       });
 
       //Edito Produktin
-      $('#editProductModal').on('show.bs.modal', function (event) {
+       $('#editProductModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Button that triggered the modal
         var productID = button.data('pid');
         console.log(productID); // Extract info from data-* attributes
@@ -41,9 +41,23 @@
         modal.find('.modal-body #cmimi').val(button.data('pc'));
         modal.find('.modal-body #prod_id').attr('value',productID);
         });
+
+        //Zgjidh sasi produkti 
+        $('#productQuantity').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var productID = button.data('pid');
+        console.log(productID); // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this);
+        modal.find('.modal-title').text('Edito Produkt');
+        modal.find('#editForm').attr('action',"/products/"+productID);
+        modal.find('.modal-body #emri').val(button.data('pem'));
+        modal.find('.modal-body #prod_id').attr('value',productID);
+        });
         
         //Edito Perdorues
-      $('#editUserModal').on('show.bs.modal', function (event) {
+     /* $('#editUserModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Button that triggered the modal
         var userID = button.data('pid');
         console.log(userID); // Extract info from data-* attributes
@@ -55,6 +69,10 @@
         modal.find('.modal-body #emri').val(button.data('pem'));
         modal.find('.modal-body #email').val(button.data('pc'));
         // modal.find('.modal-body #password').attr('value',userID);
+        }); */
+
+        $('#editUserModal').on('show.bs.modal', function (event) {
+          
         });
 
         //Fshi Perdorues
