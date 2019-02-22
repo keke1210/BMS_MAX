@@ -50,7 +50,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    height: 400px;
+    height: auto;
     min-width: 14.2%;
     border: 1px solid #d8d8d8;
     border-left: none;
@@ -101,3 +101,5 @@
   .row .ibox-content .no-padding{
   border-radius:5px;
   }
+
+  

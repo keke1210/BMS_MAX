@@ -3,7 +3,7 @@
 @include('inc.liste')
 @section('dash-title')
 <h2>
-    <div class="m-l-lg">Porosi</div>
+    <div>Porosi</div>
 </h2>
 @endsection
 @section('content')
@@ -14,11 +14,6 @@
         <div class="row">
             <div class="col-sm-6">
                 <h2>Liste <b>Porosish</b></h2>
-            </div>
-            <div class="col-sm-6">
-                <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
-                    <span>Shto te ri</span></a>
-
             </div>
         </div>
     </div>
@@ -62,11 +57,7 @@
             <div class="col-sm-6">
                 <h2>Liste <b>Porosish</b></h2>
             </div>
-            <div class="col-sm-6">
-                <a href="#addProductModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
-                    <span>Shto te ri</span></a>
-
-            </div>
+            
         </div>
     </div>
     <div class="table-responsive">
