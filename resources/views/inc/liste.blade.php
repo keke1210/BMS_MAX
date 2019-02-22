@@ -43,13 +43,12 @@
         });
         
         //Fshi Perdorues
-        $('.delete .User').click(function(){
+        $('.deleteUser').click(function(){
       var user_id = $(this).attr('id');
       var user_name = $(this).data('pname');
-    
+      $('#deleteUserModal').find('.delete_form').attr("action","/users/"+user_id);
       var delete_button = $( ".User");
         $('#deleteUserModal').find( delete_button ).attr("id",user_id);
-        $('.delete_form').attr("action","/users/"+user_id);
         $('#deleteUserModal').find( delete_button ).html(user_name);
         $('#deleteUserModal').find( delete_button ).attr("action",user_name);
       });
@@ -57,7 +56,7 @@
        $('.Cancel').click(function(){    
       var delete_button = $( ".User");
         $('#deleteUserModal').find( delete_button ).attr("id",'');
-        $('.delete_form').attr("action","/users/");
+        $('#deleteUserModal').find('.delete_form').attr("action","/users/");
         $('#deleteUserModal').find( delete_button ).html('');
       });
 

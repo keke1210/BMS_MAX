@@ -58,7 +58,7 @@
                     </button>
                 </td>
                 <td class="text-right">
-                    <a href="#deleteUserModal" class="btn delete User" data-toggle="modal" id="{{$user->prod_id}}"
+                    <a href="#deleteUserModal" class="btn deleteUser" data-toggle="modal" id="{{$user->prod_id}}"
                         data-pname={{$user->name}}>
                         <i class="material-icons" data-toggle="tooltip" title="Fshi">&#xE872;</i></a>
                 </td>
