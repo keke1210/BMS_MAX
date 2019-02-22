@@ -41,7 +41,25 @@
         modal.find('.modal-body #cmimi').val(button.data('pc'));
         modal.find('.modal-body #prod_id').attr('value',productID);
         });
-       
+        
+        //Fshi Perdorues
+        $('.delete .User').click(function(){
+      var user_id = $(this).attr('id');
+      var user_name = $(this).data('pname');
+    
+      var delete_button = $( ".User");
+        $('#deleteUserModal').find( delete_button ).attr("id",user_id);
+        $('.delete_form').attr("action","/users/"+user_id);
+        $('#deleteUserModal').find( delete_button ).html(user_name);
+        $('#deleteUserModal').find( delete_button ).attr("action",user_name);
+      });
+
+       $('.Cancel').click(function(){    
+      var delete_button = $( ".User");
+        $('#deleteUserModal').find( delete_button ).attr("id",'');
+        $('.delete_form').attr("action","/users/");
+        $('#deleteUserModal').find( delete_button ).html('');
+      });
 
         // Activate tooltip
         $('[data-toggle="tooltip"]').tooltip();
