@@ -78,10 +78,10 @@
                                         </a>
                                       
                                       @else
-                                        <a href="orders/create/{{$table->id}}">
+                                        <span>
                                             <p class="tavoline-img t_red"></p>
                                              <p class="tavoline-title">Tavoline {{$table->id}}</p>
-                                       </a>
+                                        </span>
                                        @endif
                                       </div>
                             @if($count%4==0)

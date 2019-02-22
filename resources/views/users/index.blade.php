@@ -69,7 +69,31 @@
 </div>
 </div>
 @endif
-{{-- <script src="{{asset('js/sweetalert.min.js')}}"></script>
-@include('sweet::alert') --}}
+
+    
+
+<script src="{{asset('js/sweetalert.min.js')}}"></script>
+{{-- @include('sweet::alert') --}}
 </div>
+<!-- Popup Shtim HTML -->
+<div id="addProductModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <form method="POST" action="/products">
+                                @CSRF
+                    <div class="modal-header">
+                        <h4 class="modal-title">Shto Produkt</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        @include('products.form')
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-success" value="Shto">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection

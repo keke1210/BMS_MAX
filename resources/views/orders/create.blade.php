@@ -33,10 +33,9 @@
                 <div class="col-md-3 col-sm-3 card red">
                     <i class="fa fa-glass"></i>
                     <div>
-                        <h3 class="text-center">{{$product->name}}</h3>
-                        <p class="text-center">{{$product->cmimi}}</p>
-                        <p class="text-center">Sasia : 10</p>
-                        <div class="text-center">
+                        <h2 class="text-left">{{$product->name}}</h2>
+                        <p class="text-left">{{$product->cmimi}} lek</p>
+                        <div class="text-left">
                             <div class="plusminus horiz">
                                 <button></button>
                                 <input type="number" name="productQty" value="1" min="1" max="10">

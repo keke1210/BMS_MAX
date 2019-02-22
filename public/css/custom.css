@@ -169,7 +169,7 @@ GENERIC CSS
     right: 5px;
 }
 
-.card div h3 {
+.card div h2 {
     margin-top: 2px;
     color: #ffffff;
 }
@@ -178,6 +178,7 @@ GENERIC CSS
     margin: 0px;
     margin-left: 2px;
     color: #ffffff;
+    font-size: 14px;
 }
 
 img.tavoline-img.t_green:hover {
