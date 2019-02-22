@@ -28,23 +28,9 @@
             @foreach($products as $key=>$product)
             @if ($count%3==1)
             <div class="col-sm-12 ">
-                @endif
-
-                <div class="col-md-3 col-sm-3 card red">
-                    <i class="fa fa-glass"></i>
-                    <div>
-                        <h2 class="text-left">{{$product->name}}</h2>
-                        <p class="text-left">{{$product->cmimi}} lek</p>
-                        <div class="text-left">
-                            <div class="plusminus horiz">
-                                <button></button>
-                                <input type="number" name="productQty" value="1" min="1" max="10">
-                                <button></button>
-                            </div>
-                        </div>
-                    </div>
+                @endif                          
                     <div><label>{{$product->name}}</label><input type="radio" id="product" name="products" value="{{$product->prod_id}}" required></label> </div>
-                </div>
+               
                 @if($count%3==0)
             </div>
             @endif
