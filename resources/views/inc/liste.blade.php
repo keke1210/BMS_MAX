@@ -7,7 +7,7 @@
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-       
+   
         //Fshi Produkt
         $('.delete').click(function(){
       var product_id = $(this).attr('id');
@@ -31,10 +31,17 @@
        $('#editProductModal').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Button that triggered the modal
         var productID = button.data('pid');
-        console.log(productID); // Extract info from data-* attributes
+        console.log(productID);
+        $('#test').load('test.txt'); // Extract info from data-* attributes
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this);
+        modal.find('#test').load('test.txt', function(responseTxt, statusTxt, xhr){
+          if(statusTxt=="success")
+            swal ( "Status: " + xhr.status ,  "Gjithcka shkoi mire! "+ xhr.statusText  ,  "success"  )
+          if(statusTxt=="error")
+            swal ( "Oops" + xhr.status ,  "Something went wrong!" + xhr.statusText ,  "error" )
+        });
         modal.find('.modal-title').text('Edito Produkt');
         modal.find('#editForm').attr('action',"/products/"+productID);
         modal.find('.modal-body #emri').val(button.data('pem'));

@@ -15,7 +15,7 @@ class ProductsController extends Controller
         return view('products.index')->with('products',$products);
     }
 
-
+   
     /*  Create */
     public function create()
     {
@@ -28,16 +28,19 @@ class ProductsController extends Controller
     {
         $this->validate($request,[
             'name'=>'required',
-            'cmimi'=>'required'
+            'price'=>'required'
         ]);
 
         // Create products
         $product = new Product;
-        $product->name = $request->input('name');
-        $product->cmimi = $request->input('cmimi');
+        $product->name = $request->name;
+        $product->cmimi = $request->price;
+        // $product->name = $request->input('name');
+        // $product->cmimi = $request->input('cmimi');
         $product->save();
         Alert::success('Produkti u shtua me sukses');
-        return redirect('/products')->with('success','Product Created');
+        // return redirect('/products')->with('success','Product Created');
+        return response()->json(['success'=>'Produkti u krijua me sukses']);
     }
 
 
