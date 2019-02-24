@@ -30,7 +30,14 @@ class ProductsController extends Controller
             'name'=>'required',
             'price'=>'required'
         ]);
-
+        $product = new Product;
+        $prod=$product->find($request->name);
+        if($prod->name==$request->name)
+        {
+            // Alert::error('Produkti u shtua me sukses');
+            return response()->json(['error'=>'Produkti ekziston']);
+        }
+        else{
         // Create products
         $product = new Product;
         $product->name = $request->name;
@@ -41,6 +48,7 @@ class ProductsController extends Controller
         Alert::success('Produkti u shtua me sukses');
         // return redirect('/products')->with('success','Product Created');
         return response()->json(['success'=>'Produkti u krijua me sukses']);
+        }
     }
 
 

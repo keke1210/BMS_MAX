@@ -1,11 +1,13 @@
+@if(Auth::guest())  
 @extends('layouts.welcome')
+ 
 @section('login')
         <div class="main-title text-center">
                 <img class="site-logo" src="images/BMS-LOGO.png">
             </div>
     <div class="row align-middle" style="margin-top: 20%;">
-        @if(Auth::guest())      
-        <div class="col-md-16 col-lg-6 column">
+           
+        {{-- <div class="col-md-16 col-lg-6 column">
             <div class="card gr-1 gr-6">
                 <div class="txt">
                     <h1>LOG IN <br>
@@ -31,8 +33,34 @@
                     <i class="kamarier-logo"></i>
                 </div>
             </div>
-        </div>
-        @endif
+        </div> --}}
+        <div class="wrap">
+            <form class="login" id="forme" method="POST" action="{{ route('login') }}" accept-charset="utf-8">
+                    @csrf
+              <div class="toggle-bar">
+                <div class="toggle-login active">
+                  <span>Login</span>
+                </div>
+                <div class="toggle-register">
+                  <span>Register</span>
+                </div>
+              </div>
+              <div class="login-body">
+              </div>
+              <div class="register-body">
+              </div>
+            </form>  
+          </div>
+          
+              
+          
+          
+      
     </div>
 
 @endsection
+@else @if (Auth::user())
+@include('profile.index');
+@endif
+@endif
+

@@ -47,6 +47,9 @@
                     success: function (result) {
                         swal("Rezultati: " + result.success)
                     },
+                    error: function (result) {
+                        swal("Rezultati: " + result.success)
+                    },
                     response: function (result) {
                         console.log(result);
                     }

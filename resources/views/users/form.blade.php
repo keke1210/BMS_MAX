@@ -20,3 +20,14 @@
 <div>
     <label>Ekonomist</label><input type="radio" value="ekonomist" name="radio">
 </div>
+
+<div class="form-group">
+             <select class="form-control" id="user_rol" name="combo">
+                <option value="0" selected="selected">
+                        Kamarier
+                   </option>
+                   <option value="1">
+                        Ekonomist
+                   </option>
+             </select>
+</div>

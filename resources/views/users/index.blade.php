@@ -90,12 +90,38 @@
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Shto">
+                        <input type="submit" class="btn btn-success" id="shtoPerdorues" value="Shto">
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+    // $(document).ready(function(){
+    //     $("#shtoPerdorues").click(function(e){
+    //         e.preventDefault();
+    //         $.ajaxSetup({
+    //             headers:{
+    //                     'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+    //                 }
+    //         })
+    //         $.ajax({
+    //             url:"{{url('users/post')}}",
+    //             method: "POST",
+    //             data: {
+    //                 'name' : $('#emri').val(), 
+    //                 'email' :  $('#email').val(), 
+    //                 'password' :  $('#password').val(), 
+    //                 'c_password' :  $('#c_password').val(),
+    //                 'roli' : $('input[name=radio]:checked').val()
+    //             },
+    //             success: function (result) {
+    //                     swal("Rezultati: " + result.success)
+    //                 },
+    //         })
+    //     })
+    // })
+    </script>
     <!-- Popup  Editim User -->
 <div id="editUserModal" class="modal fade">
     <div class="modal-dialog">

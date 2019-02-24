@@ -46,6 +46,7 @@ class UsersController extends Controller
             'email' => 'required|email', 
             'password' => 'required', 
             'c_password' => 'required|same:password',
+            'roli'=> 'required'
         ]);
        
 
@@ -56,7 +57,9 @@ class UsersController extends Controller
         } else {
             
         //return $input;
-        $input['password'] = bcrypt($input['password']); 
+        // $input['password'] = bcrypt($input['password']); 
+        // $input['c_password'] = bcrypt($input['c_password']);
+         $input['password'] = bcrypt($input['password']); 
         $input['c_password'] = bcrypt($input['c_password']);
         //return $input;   
       
@@ -64,6 +67,7 @@ class UsersController extends Controller
         $user = User::create($input);
 
         if($input['radio'] === 'kamarier') {
+        // if($input['combo'] === 'kamarier') {
             $user->assignRole('kamarier');
         }
         else if($input['radio'] === 'ekonomist') {
@@ -73,6 +77,7 @@ class UsersController extends Controller
         }
         
         Alert::success('Përdoruesi u krijua me sukses');
+        // return response()->json(['success'=>'Përdoruesi u krijua me sukses']);
         return redirect('users')->with('success','User Created')->with('errors',$validator);
         } //kushti nqs passworded jan te njejte
     }

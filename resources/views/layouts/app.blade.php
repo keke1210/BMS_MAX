@@ -60,7 +60,9 @@
 
     </div>
     <script>
-            $(document).ready(function () {
+         $(document).ready(function () {
+
+    
                 $('#ajaxSubmit').click(function (e) {
                     e.preventDefault();
                     $.ajaxSetup({
@@ -82,9 +84,34 @@
                             swal("Error " ,"klikove", "error")
                             console.log(result);
                         }
-                    })
+                    });
                 });
+
+                
+        //         $("#shtoPerdorues").click(function(e){
+        //     e.preventDefault();
+        //     $.ajaxSetup({
+        //         headers:{
+        //                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+        //             }
+        //     });
+        //     $.ajax({
+        //         url:"{{url('users/post')}}",
+        //         method: "POST",
+        //         data: {
+        //             'name' : $('#emri').val(), 
+        //             'email' :  $('#email').val(), 
+        //             'password' :  $('#password').val(), 
+        //             'c_password' :  $('#c_password').val(),
+        //             'roli' : $('input[name=radio]:checked').val()
+        //         },
+        //         success: function (result) {
+        //                 swal("Rezultati: " + result.success)
+        //             },
+        //     });
+        // });
             });
+           
         </script>
 </body>
 </html>

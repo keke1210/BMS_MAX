@@ -57,7 +57,7 @@
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this);
-        modal.find('.modal-title').text('Edito Produkt');
+        modal.find('.modal-title').text('Vendos Sasi');
         modal.find('#editForm').attr('action',"/products/"+productID);
         modal.find('.modal-body #emri').val(button.data('pem'));
         modal.find('.modal-body #prod_id').attr('value',productID);
