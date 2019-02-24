@@ -105,7 +105,7 @@ class TableController extends Controller
             $table->rezervuar=0;
             $table->save();
         }
-        return redirect('tables')->with('success','Je kar o mario');
+        return redirect('tables')->with('success','U rezervua');
     }
 
     /**
