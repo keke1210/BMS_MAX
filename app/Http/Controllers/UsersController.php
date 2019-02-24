@@ -68,7 +68,6 @@ class UsersController extends Controller
 
         // if($input['radio'] === 'kamarier') 
         if($request->roli === 'kamarier') {
-        // if($input['combo'] === 'kamarier') {
             $user->assignRole('kamarier');
         }
         else if($request->roli === 'ekonomist') {
@@ -133,10 +132,12 @@ class UsersController extends Controller
         $user->password = bcrypt($input['password']);
         $user->save();
 
-        if($input['radio'] === 'kamarier') {
+        // if($input['radio'] === 'kamarier') 
+        if($request->roli === 'kamarier'){
            \DB::table('model_has_roles')->where('model_id','=',$id)->update(['role_id'=>'4']);
         }
-        else if($input['radio'] === 'ekonomist') {
+        // else if($input['radio'] === 'ekonomist')
+        if($request->roli === 'ekonomist'){
             \DB::table('model_has_roles')->where('model_id','=',$id)->update(['role_id'=>'3']);
         } else {
             echo "<h1>Couldn't Assign role</h1>";

@@ -90,10 +90,10 @@
             @endforeach
 
             <br> <br>
-            <div class="col-md-2"><label>Sasia:</label> <input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia" />
+            <div class="col-md-2"><input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia" />
             </div>
 
-            <button type="submit">Create Order</button>
+            <button class="btn btn-success" type="submit">Krijo Porosi</button>
             @php
             $existing = json_decode(Request::get('vlerat'));
             $current = [];
