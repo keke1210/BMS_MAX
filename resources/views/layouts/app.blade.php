@@ -60,57 +60,57 @@
 
     </div>
     <script>
-         $(document).ready(function () {
+        //  $(document).ready(function () {
 
     
-                // $('#ajaxSubmit').click(function (e) {
-                //     e.preventDefault();
-                //     $.ajaxSetup({
-                //         headers: {
-                //             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                //         }
-                //     });
-                //     $.ajax({
-                //         url: "{{url('produkte/post')}}",
-                //         method: 'POST',
-                //         data: {
-                //             name: $('#emri').val(),
-                //             price: $("#cmimi").val()
-                //         },
-                //         success: function (result) {
-                //             swal(result.success)
-                //         },
-                //         error: function (result) {
-                //             swal(result.error)
-                //             console.log(result);
-                //         }
-                //     });
-                // });
+        //         // $('#ajaxSubmit').click(function (e) {
+        //         //     e.preventDefault();
+        //         //     $.ajaxSetup({
+        //         //         headers: {
+        //         //             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+        //         //         }
+        //         //     });
+        //         //     $.ajax({
+        //         //         url: "{{url('produkte/post')}}",
+        //         //         method: 'POST',
+        //         //         data: {
+        //         //             name: $('#emri').val(),
+        //         //             price: $("#cmimi").val()
+        //         //         },
+        //         //         success: function (result) {
+        //         //             swal(result.success)
+        //         //         },
+        //         //         error: function (result) {
+        //         //             swal(result.error)
+        //         //             console.log(result);
+        //         //         }
+        //         //     });
+        //         // });
 
                 
-        //         $("#shtoPerdorues").click(function(e){
-        //     e.preventDefault();
-        //     $.ajaxSetup({
-        //         headers:{
-        //                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-        //             }
+        // //         $("#shtoPerdorues").click(function(e){
+        // //     e.preventDefault();
+        // //     $.ajaxSetup({
+        // //         headers:{
+        // //                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+        // //             }
+        // //     });
+        // //     $.ajax({
+        // //         url:"{{url('users/post')}}",
+        // //         method: "POST",
+        // //         data: {
+        // //             'name' : $('#emri').val(), 
+        // //             'email' :  $('#email').val(), 
+        // //             'password' :  $('#password').val(), 
+        // //             'c_password' :  $('#c_password').val(),
+        // //             'roli' : $('input[name=radio]:checked').val()
+        // //         },
+        // //         success: function (result) {
+        // //                 swal("Rezultati: " + result.success)
+        // //             },
+        // //     });
+        // // });
         //     });
-        //     $.ajax({
-        //         url:"{{url('users/post')}}",
-        //         method: "POST",
-        //         data: {
-        //             'name' : $('#emri').val(), 
-        //             'email' :  $('#email').val(), 
-        //             'password' :  $('#password').val(), 
-        //             'c_password' :  $('#c_password').val(),
-        //             'roli' : $('input[name=radio]:checked').val()
-        //         },
-        //         success: function (result) {
-        //                 swal("Rezultati: " + result.success)
-        //             },
-        //     });
-        // });
-            });
            
         </script>
 </body>

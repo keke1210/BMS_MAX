@@ -3,7 +3,7 @@
 <script src="{{ asset('js/jquery-2.1.1.js')}}" defer></script>
 {{-- <script src="{{ asset('js/custom.js') }}" defer></script> --}}
 <script src="{{ asset('js/inspinia.min.js')}}" defer></script>
-<script src="{{ asset('js/jquery.min.js') }}" defer></script>
+<script src="{{ asset('js/jquery.min.js') }}" ></script>
 <script src="{{asset ('js/jquery-3.3.1.min.js')}}" defer></script>
 <script src="{{ asset('js/responsivitycheck.js') }}" defer></script>
 <script src="{{ asset('js/bootstrap.min.js')}}" defer></script>
