@@ -56,7 +56,7 @@
     </div> 
         <div>
             <script src="{{asset('js/sweetalert.min.js')}}"></script>
-            {{-- @include('sweet::alert') --}}
+            
     </div>
 				@endif
     </div>
@@ -66,8 +66,8 @@
 <div id="addProductModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                    <form method="POST" action="/products">
-                                @CSRF
+                    <form method="POST">
+                             
                     <div class="modal-header">
                         <h4 class="modal-title">Shto Produkt</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -77,12 +77,42 @@
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Shto">
+                        <button type="button" class="btn btn-success" id="ajaxSubmit">Shto</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+
+    {{-- <script>
+        $(document).ready(function () {
+            $('#ajaxSubmit').click(function (e) {
+                e.preventDefault();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url: "{{url('produkte/post')}}",
+                    method: 'POST',
+                    data: {
+                        name: $('#emri').val(),
+                        price: $("#cmimi").val()
+                    },
+                    success: function (result) {
+                        swal("Rezultati: " + result.success)
+                    },
+                    error: function (result) {
+                        swal("Error " ,"klikove", "error")
+                        console.log(result);
+                    }
+                })
+            });
+        });
+    </script> --}}
+
 
     <!-- Popup  Editim HTML -->
 <div id="editProductModal" class="modal fade">
@@ -102,7 +132,7 @@
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Edito">
+                        <button type="submit" class="btn btn-info" value="Edito">Edito</button>
                     </div>
                 </form>
             </div>
@@ -130,7 +160,7 @@
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                    <input type="submit" class="btn btn-danger" id value="Fshi">
+                    <button type="submit" class="btn btn-danger" id value="Fshi">Fshi</button>
                 </div>
             </form>
         </div>

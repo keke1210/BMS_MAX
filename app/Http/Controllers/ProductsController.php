@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-
+use Alert;
 class ProductsController extends Controller
 {
 
@@ -15,7 +15,7 @@ class ProductsController extends Controller
         return view('products.index')->with('products',$products);
     }
 
-
+   
     /*  Create */
     public function create()
     {
@@ -28,16 +28,19 @@ class ProductsController extends Controller
     {
         $this->validate($request,[
             'name'=>'required',
-            'cmimi'=>'required'
+            'price'=>'required'
         ]);
 
         // Create products
         $product = new Product;
-        $product->name = $request->input('name');
-        $product->cmimi = $request->input('cmimi');
+        $product->name = $request->name;
+        $product->cmimi = $request->price;
+        // $product->name = $request->input('name');
+        // $product->cmimi = $request->input('cmimi');
         $product->save();
-        
-        return redirect('/products')->with('success','Product Created');
+        Alert::success('Produkti u shtua me sukses');
+        // return redirect('/products')->with('success','Product Created');
+        return response()->json(['success'=>'Produkti u krijua me sukses']);
     }
 
 
@@ -70,7 +73,7 @@ class ProductsController extends Controller
         $product->name = $request->input('name');
         $product->cmimi = $request->input('cmimi');
         $product->save();
-        
+        Alert::success('Produkti u modifikua me sukses');
         return redirect('/products')->with('success','Product Updated');
     }
 
@@ -79,7 +82,7 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         Product::find($id)->delete();
-        
+        Alert::success('Produkti u fshi me sukses');
         return redirect('/products')->with('success','Product Deleted');
     }
 }

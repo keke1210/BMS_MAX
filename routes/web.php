@@ -35,6 +35,9 @@ Route::get('orders/create/{table}','OrdersController@create')->middleware('role:
 Route::post('orders','OrdersController@store')->middleware('role:kamarier|menaxher|admin');
 Route::get('orders/{order}','OrdersController@show')->middleware('role:kamarier|menaxher|admin');
 
+Route::view('produkte','produkte')->middleware('role:kamarier|menaxher|admin');
+Route::post('produkte/post','ProdukteController@store')->middleware('role:kamarier|menaxher|admin');
+Route::get('produkte','ProdukteController@store')->middleware('role:kamarier|menaxher|admin');
 
 Route::get('/tables','TableController@index')->middleware('role:kamarier|menaxher|admin');
 Route::get('tables/create','TableController@create')->middleware('role:kamarier|menaxher|admin');

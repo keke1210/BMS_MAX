@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/myJs.js') }}" defer></script>
-
+    <meta name="_token" content="{{csrf_token()}}" />
 
   <!-- jquery print-page
     <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
@@ -44,7 +44,8 @@
                 <div class="row wrapper page-heading" style="margin-top: 55px">
                     <div class="col-lg-5 col-xs-12 col-md-5 no-padding">
                         @yield('dash-title')
-                        @include('inc.messages')
+                  
+                        @include('sweet::alert')
                     </div>
                 </div>
                 
@@ -58,5 +59,32 @@
         </div>
 
     </div>
+    <script>
+            $(document).ready(function () {
+                $('#ajaxSubmit').click(function (e) {
+                    e.preventDefault();
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{url('produkte/post')}}",
+                        method: 'POST',
+                        data: {
+                            name: $('#emri').val(),
+                            price: $("#cmimi").val()
+                        },
+                        success: function (result) {
+                            swal("Rezultati: " + result.success)
+                        },
+                        error: function (result) {
+                            swal("Error " ,"klikove", "error")
+                            console.log(result);
+                        }
+                    })
+                });
+            });
+        </script>
 </body>
 </html>

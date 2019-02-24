@@ -18,48 +18,44 @@
             $products = App\Product::all();
             $tables = App\Table::all();
             $nrProduktesh = count($products);
-            $count=1;
-            @endphp
-            @if($nrProduktesh>0)
 
+            @endphp
+            @include('inc.liste')
+            @if($nrProduktesh>0)
+            @php $count=1; @endphp
             {{-- Forma --}}
             @foreach($products as $key=>$product)
             @if ($count%3==1)
             <div class="col-sm-12 ">
                 @endif
-
-                <div class="col-md-3 col-sm-3 card red">
-                    <i class="fa fa-glass"></i>
-                    <div>
-                        <h2 class="text-left">{{$product->name}}</h2>
-                        <p class="text-left">{{$product->cmimi}} lek</p>
-                        <div class="text-left">
-                            <div class="plusminus horiz">
-                                <button></button>
-                                <input type="number" name="productQty" value="1" min="1" max="10">
-                                <button></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div><label>{{$product->name}}</label><input type="radio" id="product" name="products" value="{{$product->prod_id}}" required></label> </div>
+                <div class="form-group col-md-3 text-center">
+                    @if($product->prod_id>5)
+                    <button type="button" href="#productQuantity" class="btn btn-success btn-lg btn-block btn-huge quantity"
+                        data-target="#productQuantity" data-toggle="modal" data-pid="{{$product->prod_id}}" data-pem="{{$product->name}}">{{$product->name}}</button>
+                    {{-- <input type="radio" id="product" name="products" value="{{$product->prod_id}}"> --}}
+                    @else
+                    <button type="button" href="#productQuantity" class="btn btn-danger btn-lg btn-block btn-huge quantity"
+                    data-target="#productQuantity" data-toggle="modal" data-pid="{{$product->prod_id}}" data-pem="{{$product->name}}">{{$product->name}}</button>
+                    {{-- <input type="radio" id="product" name="products" value="{{$product->prod_id}}"> --}}
+                    @endif
                 </div>
+
                 @if($count%3==0)
             </div>
             @endif
             @php
             $count++;
             @endphp
-            
             @endforeach
 
 
             @foreach($tables as $i=>$table)
-            <div><label>{{$tables[$i]->id}}</label><input type="radio" id="tables" name="tables" value="{{$tables[$i]->id}}"
-                    required> </div>
+            <div><label>{{$tables[$i]->id}}</label><input type="radio" id="tables" name="tables" value="{{$tables[$i]->id}}">
+            </div>
             @endforeach
 
             <br> <br>
-            <div><label>Sasia:</label> <input type="number" name="sasia" id="sasia" placeholder="Sasia" required />
+            <div><label>Sasia:</label> <input type="number" name="sasia" id="sasia" placeholder="Sasia" />
             </div>
 
             <button type="submit">Create Order</button>
@@ -104,6 +100,7 @@
         @if(empty($existing))
         <h1>Need to add at least one product</h1>
         <p> {{isset($_REQUEST['table']) ? $_REQUEST['table'] : "" }}</p>
+        {{-- @php $current['T_id'] = $_REQUEST['table']; @endphp --}}
         @else
         <button type="submit" id="butonPrije">Prije Faturen</button>
 
@@ -112,3 +109,27 @@
 </div>
 <script src="{{asset ('/js/quantitypicker.js')}}" defer></script>
 @endsection
+
+<div id="productQuantity" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="editForm" method="POST" action="/users">
+                @method('PUT')
+                {{csrf_field()}}
+                {{-- {{method_field('PUT')}} --}}
+                {{-- <input type="hidden" name="_method" value="PUT" id="prod_id"> --}}
+                <div class="modal-header">
+                    <h4 class="modal-title"></h4>
+                    <button type="button" class="close" data-dismiss="modal" id="" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    @include('orders.form')
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-info" value="Edito">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
