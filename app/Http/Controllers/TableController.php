@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Table;
-
+use Alert;
 class TableController extends Controller
 {
     /**
@@ -87,7 +87,7 @@ class TableController extends Controller
         ]);
 
         if ($validator) {
-            echo "gar";
+            echo "Tavolina u shtua";
         } else {
             die('somethong went wtong');
         }
@@ -116,6 +116,8 @@ class TableController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Table::find($id)->delete();
+        Alert::success('Tavolina u fshi me sukses');
+        return redirect('/tables')->with('success','Product Deleted');
     }
 }

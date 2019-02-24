@@ -53,7 +53,7 @@
                 <td><a href="/users/{{$user->id}}/edit">Ndrysho {{$user->name}}</a></td>
                 <td class="text-right">
                     <button href="#editUserModal" class="btn edit" data-target="#editUserModal" data-toggle="modal"
-                        data-pid="{{$user->id}}" data-pem="{{$user->name}}" data-pc="{{$user->email}}">
+                        data-pid="{{$user->id}}" data-pem="{{$user->name}}" data-pc="{{$user->email}}" data-prol="{{$role}}">
                         <i class="material-icons edit" data-toggle="tooltip" title="Edito">&#xE254;</i>
                     </button>
                 </td>

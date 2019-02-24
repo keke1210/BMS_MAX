@@ -63,29 +63,29 @@
          $(document).ready(function () {
 
     
-                $('#ajaxSubmit').click(function (e) {
-                    e.preventDefault();
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                        }
-                    });
-                    $.ajax({
-                        url: "{{url('produkte/post')}}",
-                        method: 'POST',
-                        data: {
-                            name: $('#emri').val(),
-                            price: $("#cmimi").val()
-                        },
-                        success: function (result) {
-                            swal(result.success)
-                        },
-                        error: function (result) {
-                            swal(result.error)
-                            console.log(result);
-                        }
-                    });
-                });
+                // $('#ajaxSubmit').click(function (e) {
+                //     e.preventDefault();
+                //     $.ajaxSetup({
+                //         headers: {
+                //             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                //         }
+                //     });
+                //     $.ajax({
+                //         url: "{{url('produkte/post')}}",
+                //         method: 'POST',
+                //         data: {
+                //             name: $('#emri').val(),
+                //             price: $("#cmimi").val()
+                //         },
+                //         success: function (result) {
+                //             swal(result.success)
+                //         },
+                //         error: function (result) {
+                //             swal(result.error)
+                //             console.log(result);
+                //         }
+                //     });
+                // });
 
                 
         //         $("#shtoPerdorues").click(function(e){

@@ -6,10 +6,10 @@
     <label>Cmimi</label>
     <input type="number" id="cmimi" name="cmimi" class="form-control" placeholder="Cmim Produkti" required>
 </div>
-<div class="form-group">
+{{-- <div class="form-group">
     <label>Sasia</label>
     <p id="test"></p>
-</div>
+</div> --}}
 {{-- <input type="number" name="prod_id" class="form-control cmimi" id="prod_id"  style="display:none">
 <div class="form-group">
     <label>Pershkrimi</label>

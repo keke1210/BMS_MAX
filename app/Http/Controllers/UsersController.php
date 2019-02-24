@@ -46,7 +46,8 @@ class UsersController extends Controller
             'email' => 'required|email', 
             'password' => 'required', 
             'c_password' => 'required|same:password',
-            'roli'=> 'required'
+            // 'roli'=> 'required'
+            'roli'=>'required|not_in:0'
         ]);
        
 
@@ -65,11 +66,12 @@ class UsersController extends Controller
        
         $user = User::create($input);
 
-        if($input['radio'] === 'kamarier') {
+        // if($input['radio'] === 'kamarier') 
+        if($request->roli === 'kamarier') {
         // if($input['combo'] === 'kamarier') {
             $user->assignRole('kamarier');
         }
-        else if($input['radio'] === 'ekonomist') {
+        else if($request->roli === 'ekonomist') {
             $user->assignRole('ekonomist');
         } else {
             return $request->radio;

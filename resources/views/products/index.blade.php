@@ -67,7 +67,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                     <form method="POST">
-                             
+                        @CSRF
                     <div class="modal-header">
                         <h4 class="modal-title">Shto Produkt</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <button type="button" class="btn btn-success" id="ajaxSubmit">Shto</button>
+                        <button type="submit" class="btn btn-success" id="ajaxSubmit">Shto</button>
                     </div>
                 </form>
             </div>
