@@ -80,9 +80,32 @@ class TableController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $validator = $this->validate($request,[
+            't_id'=>'required',
+        ]);
+
+        if ($validator) {
+            echo "gar";
+        } else {
+            die('somethong went wtong');
+        }
+        
+        $table=Table::find($id);
+        return $table;
+        if ($table->rezervuar == 0){
+            $table->T_id=$request->T_id;
+            $table->lloji=$request->lloji;
+            $table->rezervuar=1;
+            $table->save();
+        } else {
+            $table->T_id=$request->T_id;
+            $table->lloji=$request->lloji;
+            $table->rezervuar=0;
+            $table->save();
+        }
+        return redirect('tables')->with('success','Je kar o mario');
     }
 
     /**

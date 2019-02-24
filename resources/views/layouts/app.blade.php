@@ -78,10 +78,10 @@
                             price: $("#cmimi").val()
                         },
                         success: function (result) {
-                            swal("Rezultati: " + result.success)
+                            swal(result.success)
                         },
                         error: function (result) {
-                            swal("Error " ,"klikove", "error")
+                            swal(result.error)
                             console.log(result);
                         }
                     });

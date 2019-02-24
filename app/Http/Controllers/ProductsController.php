@@ -30,9 +30,9 @@ class ProductsController extends Controller
             'name'=>'required',
             'price'=>'required'
         ]);
-        $product = Product::find($reques->name);
         
-        if($product->name==$request->name)
+        $product=Product::find($request->name);
+        if($product===null)
         {
             // Alert::error('Produkti u shtua me sukses');
             return response()->json(['error'=>'Produkti ekziston']);
@@ -48,6 +48,7 @@ class ProductsController extends Controller
         Alert::success('Produkti u shtua me sukses');
         // return redirect('/products')->with('success','Product Created');
         return response()->json(['success'=>'Produkti u krijua me sukses']);
+        
         }
     }
 
@@ -77,7 +78,7 @@ class ProductsController extends Controller
         ]);
 
         // Update products
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         $product->name = $request->input('name');
         $product->cmimi = $request->input('cmimi');
         $product->save();
