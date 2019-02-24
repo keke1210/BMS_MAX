@@ -53,13 +53,12 @@ class UsersController extends Controller
         $input = $request->all(); 
 
         if($input['password'] !== $input['c_password']) {
-            return redirect('users/create')->with('error','You should use the same password on the confirm password field');
+            Alert::error('You should use the same password on the confirm password field');
+            return redirect('users')->with('error','You should use the same password on the confirm password field');
         } else {
             
         //return $input;
-        // $input['password'] = bcrypt($input['password']); 
-        // $input['c_password'] = bcrypt($input['c_password']);
-         $input['password'] = bcrypt($input['password']); 
+        $input['password'] = bcrypt($input['password']); 
         $input['c_password'] = bcrypt($input['c_password']);
         //return $input;   
       
@@ -141,7 +140,7 @@ class UsersController extends Controller
             echo "<h1>Couldn't Assign role</h1>";
         }
 
-        Alert::success('Të dhënat e përdoruesit u ërditësuan me sukses');
+        Alert::success('Të dhënat e përdoruesit u përditësuan me sukses');
         return redirect('/users')->with('success','User Updated');
     }
 

@@ -10,7 +10,7 @@
 <div class="container">
 
     <div class="wrapper wrapper-content ng-scope" style="">
-
+        
         <a href="/orders" class="btn btn-primary">Anulo order</a> <br><br>
         <form method="GET" action="/orders/create/{{$table[0]->id}}">
             @csrf
@@ -18,8 +18,50 @@
             $products = App\Product::all();
             $tables = App\Table::all();
             $nrProduktesh = count($products);
-
+            
             @endphp
+            <style>
+            .produktet {
+     list-style-type:none;
+     margin:25px 0 0 0;
+     padding:0;
+}
+
+.produktet li {
+    float:left;
+    margin:0 5px 0 0;
+    height:40px;
+    position:relative;
+}
+
+.produktet label, .produktet input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.produktet input[type="radio"] {
+    opacity:0.00;
+    z-index:100;
+}
+
+.produktet input[type="radio"]:checked + label,
+.Checked + label {
+    background:#06b877;
+    border-color:#06b877;
+    border-radius: 3px;
+}
+
+.produktet label {
+     padding:5px;
+     cursor:pointer;
+    z-index:90;
+}
+            </style>
+        <div class="produktet">
             @include('inc.liste')
             @if($nrProduktesh>0)
             @php $count=1; @endphp
@@ -29,17 +71,9 @@
             <div class="col-sm-12 ">
                 @endif
                 <div class="form-group col-md-3 text-center">
-                    @if($product->prod_id>5)
-                    <button type="button" href="#productQuantity" class="btn btn-success btn-lg btn-block btn-huge quantity"
-                        data-target="#productQuantity" data-toggle="modal" data-pid="{{$product->prod_id}}" data-pem="{{$product->name}}">{{$product->name}}</button>
-                    {{-- <input type="radio" id="product" name="products" value="{{$product->prod_id}}"> --}}
-                    @else
-                    <button type="button" href="#productQuantity" class="btn btn-danger btn-lg btn-block btn-huge quantity"
-                    data-target="#productQuantity" data-toggle="modal" data-pid="{{$product->prod_id}}" data-pem="{{$product->name}}">{{$product->name}}</button>
-                    {{-- <input type="radio" id="product" name="products" value="{{$product->prod_id}}"> --}}
-                    @endif
+                     <li class="btn btn-lg btn-block btn-huge"><input type="radio" id="{{$product->prod_id}}" name="products" value="{{$product->prod_id}}"/><label class="btn btn-danger btn-lg btn-block btn-huge" for="{{$product->prod_id}}">{{$product->name}}</label></li>
+                    {{-- <input type="radio" id="product" name="products" value="{{$product->prod_id}}"> --}} 
                 </div>
-
                 @if($count%3==0)
             </div>
             @endif
@@ -48,6 +82,7 @@
             @endphp
             @endforeach
 
+        </div>
 
             @foreach($tables as $i=>$table)
             <div><label>{{$tables[$i]->id}}</label><input type="radio" id="tables" name="tables" value="{{$tables[$i]->id}}">
@@ -55,7 +90,7 @@
             @endforeach
 
             <br> <br>
-            <div><label>Sasia:</label> <input type="number" name="sasia" id="sasia" placeholder="Sasia" />
+            <div class="col-md-2"><label>Sasia:</label> <input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia" />
             </div>
 
             <button type="submit">Create Order</button>
@@ -110,14 +145,14 @@
 <script src="{{asset ('/js/quantitypicker.js')}}" defer></script>
 @endsection
 
-<div id="productQuantity" class="modal fade">
+{{-- <div id="productQuantity" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <form id="editForm" method="POST" action="/users">
                 @method('PUT')
                 {{csrf_field()}}
                 {{-- {{method_field('PUT')}} --}}
-                {{-- <input type="hidden" name="_method" value="PUT" id="prod_id"> --}}
+                {{-- <input type="hidden" name="_method" value="PUT" id="prod_id">
                 <div class="modal-header">
                     <h4 class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" id="" aria-hidden="true">&times;</button>
@@ -132,4 +167,4 @@
             </form>
         </div>
     </div>
-</div>
+</div> --}}
