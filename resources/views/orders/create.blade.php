@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{{asset('/css/fature-style.css')}}">
 @section('content')
 
-<div class="container">
+
 
     <div class="wrapper wrapper-content ng-scope" style="">
         
@@ -62,14 +62,14 @@
     z-index:90;
 }
             </style>
-        <div class="produktet">
+        <div>
             @include('inc.liste')
             @if($nrProduktesh>0)
             @php $count=1; @endphp
             {{-- Forma --}}
             @foreach($products as $key=>$product)
             @if ($count%3==1)
-            <div class="col-sm-12 ">
+            <div class="col-sm-12 produktet">
                 @endif
                 <div class="form-group col-md-3 text-center">
                      <li class="btn btn-lg btn-block btn-huge"><input type="radio" id="{{$product->prod_id}}" name="products" value="{{$product->prod_id}}"/><label class="btn btn-danger btn-lg btn-block btn-huge" for="{{$product->prod_id}}">{{$product->name}}</label></li>
@@ -193,12 +193,13 @@
                      @endfor --}}
                       </section>
                       @php 
-                      $totali=array_sum($existing);
+                    //   $totali=array_sum($existing);
                     //   $totali = number_format((float)$totali,2,'.','');
                   @endphp
                       <section>
                         <span>Total</span>
-                        <span>{{$totali}} lek</span>
+                        <span>lek</span>
+                        {{-- <span>{{$totali}} lek</span> --}}
                       </section>
                     </main>
                     <footer>Fatura u krijua ne: </footer>
@@ -216,6 +217,7 @@
         @endif
     </form>
 </div>
+<
 <script src="{{asset ('/js/quantitypicker.js')}}" defer></script>
 @endsection
 
