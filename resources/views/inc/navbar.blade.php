@@ -6,7 +6,7 @@
         <ul class="nav metismenu" id="side-menu" >
             <li class="nav-header" style="">
                 <div class="dropdown profile-element row">
-                    <a href="{{ url('/home') }}" class="col-xs-12">
+                    <a href="{{ url('/') }}" class="col-xs-12">
                         <img src="{{ asset('/images/official-logo.png')}}" class="hidden-xs col-xs-12 max-header" alt="">
                         <img src="{{ asset('/images/mini-logo.png')}}" class="col-xs-12 min-header" style="height:32px; margin-top:3px; margin-bottom:3px;"
                             alt="">

@@ -1,20 +1,19 @@
 .wrap, .login-body, .register-body {
   align-items: center;
-  height:calc(100% - 65px); 
-  margin-left:calc(50% - 150px);
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: url("https://asdb.az.gov/wp-content/uploads/2016/05/gradient_11.jpg");
+  background-image: url(../images/main-background-5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .wrap {
-  width: 100%;
+  margin: auto;
+  width: 25%;
   display: flex;
 }
 
@@ -44,7 +43,6 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: background 0.3s;
 }
 .toggle-login span, .toggle-register span {
   color: #fff;
@@ -52,7 +50,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 .toggle-login:hover, .toggle-register:hover {
-  background-color: #00b292;
+  background-color: #06b877;
 }
 
 .active {
@@ -185,54 +183,6 @@ button.btn.btn-primary.close
 }
 .container {
     max-width: 100%!important;
-}
-#page {
-	/* color: #fff;
-	background: linear-gradient(-45deg, #03A9F4, #00ACC1,#00838F, #01579B);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite; */
-	 background-image: url(../images/main-background-5.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    image-rendering: auto;
-} 
-
-@-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
 }
 
 .gr-1 {

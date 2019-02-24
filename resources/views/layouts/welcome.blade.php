@@ -52,7 +52,7 @@
                 });
 
             var regbody=$('<div class="input-section"> <i class="fas fa-user"></i> <input class="validate user-input{{$errors->has('name') ? ' is-invalid' : ''}}" name="name" value="{{old('name')}}" placeholder="Emri" required autofocus> @if ($errors->has('name')) <span class="invalid-feedback" role="alert"> <strong>{{$errors->first('name')}}</strong> </span> @endif </div><div class="input-section"> <i class="fas fa-envelope"></i> <input class="validate user-input{{$errors->has('email') ? ' is-invalid' : ''}}" id="email" type="email" name="email" value="{{old('email')}}" placeholder="Email@entreprise.com" required autofocus> @if ($errors->has('email')) <span class="invalid-feedback" role="alert"> <strong>{{$errors->first('email')}}</strong> </span> @endif </div><div class="input-section"> <i class="fas fa-lock"></i> <input id="password" type="password" placeholder="Password" class="validate user-input{{$errors->has('password') ? ' is-invalid' : ''}}" name="password" required> @if ($errors->has('password')) <span class="invalid-feedback" role="alert"> <strong>{{$errors->first('password')}}</strong> </span> @endif </div><div class="input-section"> <input id="password-confirm" type="password" placeholder="Konfirmo Password" class="validate user-input" name="password_confirmation" required></div><div> <button class="btn  btn-orange" id="btn-login">Regjistrohu</button>');
-            var logbody=$('<div class="input-section"> <i class="fas fa-user"></i> <input class="validate user-input{{$errors->has('email') ? ' is-invalid' : ''}}" id="email" type="email" name="email" placeholder="Email" value="{{old('email')}}" required autofocus > @if ($errors->has('email')) <span class="invalid-feedback" role="alert"> <strong>{{$errors->first('email')}}</strong> </span> @endif </div><div class="input-section"> <i class="fas fa-lock"></i> <input class="validate user-input{{$errors->has('password') ? ' is-invalid' : ''}}" id="password" type="password" name="password" placeholder="Password" required> @if ($errors->has('password')) <span class="invalid-feedback" role="alert"> <strong>{{$errors->first('password')}}</strong> </span> @endif </div><div> @if (Route::has('password.request')) <a id="forgot-password" href="{{route('password.request')}}" style="color:#c1c1c1" >Harruat password-in ?</a> @endif </div><button class="btn  btn-orange" id="btn-login">Login</button>');
+            var logbody=$('<div class="input-section"> <i class="fas fa-user"></i> <input class="validate user-input{{$errors->has('email') ? ' is-invalid' : ''}}" id="email" type="email" name="email" placeholder="Email" value="{{old('email')}}" required autofocus > @if ($errors->has('email')) <span class="invalid-feedback" role="alert"> <strong>{{$errors->first('email')}}</strong> </span> @endif </div><div class="input-section"> <i class="fas fa-lock"></i> <input class="validate user-input{{$errors->has('password') ? ' is-invalid' : ''}}" id="password" type="password" name="password" placeholder="Password" required> @if ($errors->has('password')) <span class="invalid-feedback" role="alert"> <strong>{{$errors->first('password')}}</strong> </span> @endif </div><div> @if (Route::has('password.request')) <a id="forgot-password" href="{{route('password.request')}}" style="color:#c1c1c1" >Harruat password-in ?</a> @endif </div><div class="text-center"> <input class="form-check-input" type="checkbox" name="remember" id="remember"{{old('remember') ? 'checked' : ''}}> <label class="form-check-label" for="remember">{{__('Më mbaj mend')}}</label> </div><button class="btn  btn-orange" id="btn-login">Login</button>');
             $('.toggle-register').click(function(){
                 $(this).addClass('active');
                 $('.toggle-login').removeClass('active');
@@ -73,9 +73,9 @@
                 $('#forme').attr('action','{{ route('login') }}');
               });
               
-              $('#registered').click(function(){
-                $('.toggle-login').click();
-              });
+              // $('#registered').click(function(){
+              //   $('.toggle-login').click();
+              // });
             </script>
         </body>
         </html>
