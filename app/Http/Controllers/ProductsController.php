@@ -30,9 +30,9 @@ class ProductsController extends Controller
             'name'=>'required',
             'price'=>'required'
         ]);
-        $product = new Product;
-        $prod=$product->find($request->name);
-        if($prod->name==$request->name)
+        $product = Product::find($reques->name);
+        
+        if($product->name==$request->name)
         {
             // Alert::error('Produkti u shtua me sukses');
             return response()->json(['error'=>'Produkti ekziston']);

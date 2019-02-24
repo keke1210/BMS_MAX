@@ -1,7 +1,6 @@
-@if(Auth::guest())  
 @extends('layouts.welcome')
- 
 @section('login')
+@if(Auth::guest()) 
         <div class="main-title text-center">
                 <img class="site-logo" src="images/BMS-LOGO.png">
             </div>
@@ -51,16 +50,9 @@
               </div>
             </form>  
           </div>
-          
-              
-          
-          
-      
     </div>
 
 @endsection
-@else @if (Auth::user())
-@include('profile.index');
-@endif
+
 @endif
 
