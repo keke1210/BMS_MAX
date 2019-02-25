@@ -156,12 +156,14 @@
                 </div>
             </div>
         <script>
-           
+           var count =0;
                  $('#sasia').on("input", function() {
-                     var dInput = this.value;
-                        var produkti=$('input[name=products]:checked').val();
+                     var sasia = this.value;
+                        
                         if($('input[name=products]').is(':checked')) {
-                        $('.afisho_produkte').append('<figure> <span>Test</span> <span><strong>Test</strong></span> <span>Lek</span> <span>Lek</span> <span></span> <span>%</span> <span> Lek</span> </figure>')
+                            var produkti=$('input[name=products]:checked').val();
+                            count++;
+                            $('.afisho_produkte').append('<figure> <span>'+ count +'</span> <span><strong>Test</strong></span> <span>Lek</span> <span>Lek</span> <span>'+ sasia + '</span> <span>%</span> <span> Lek</span> </figure>')
                          }
                           console.log(dInput);
                         console.log(produkti);
