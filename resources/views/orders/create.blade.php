@@ -11,7 +11,7 @@
 
 
     <div class="wrapper wrapper-content ng-scope" style="">
-        
+    <div class="col-xs-12 col-md-6">
         <a href="/orders" class="btn btn-primary">Anulo order</a> <br><br>
         <form method="GET" action="/orders/create/{{$table[0]->id}}">
             @csrf
@@ -21,63 +21,25 @@
             $nrProduktesh = count($products);
             
             @endphp
-            <style>
-            .produktet {
-     list-style-type:none;
-     margin:25px 0 0 0;
-     padding:0;
-}
-
-.produktet li {
-    float:left;
-    margin:0 5px 0 0;
-    height:40px;
-    position:relative;
-}
-
-.produktet label, .produktet input {
-    display:block;
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-}
-
-.produktet input[type="radio"] {
-    opacity:0.00;
-    z-index:100;
-}
-
-.produktet input[type="radio"]:checked + label,
-.Checked + label {
-    background:#06b877;
-    border-color:#06b877;
-    border-radius: 3px;
-}
-
-.produktet label {
-     padding:5px;
-     cursor:pointer;
-    z-index:90;
-}
-            </style>
+    
         <div>
             @include('inc.liste')
             @if($nrProduktesh>0)
             @php $count=1; @endphp
             {{-- Forma --}}
             @foreach($products as $key=>$product)
-            @if ($count%3==1)
-            <div class="col-sm-12 produktet">
+            @if ($count%2==1)
+            
+            <div class="col-sm-12 produktet my_radio_box">
                 @endif
-                <div class="form-group col-md-3 text-center">
+                <div class="form-group col-md-6 text-center">
                      <li class="btn btn-lg btn-block btn-huge"><input type="radio" id="{{$product->prod_id}}" name="products" value="{{$product->prod_id}}"/><label class="btn btn-danger btn-lg btn-block btn-huge" for="{{$product->prod_id}}">{{$product->name}}</label></li>
                     {{-- <input type="radio" id="product" name="products" value="{{$product->prod_id}}"> --}} 
                 </div>
-                @if($count%3==0)
+                @if($count%2==0)
             </div>
             @endif
+        
             @php
             $count++;
             @endphp
@@ -91,7 +53,7 @@
             @endforeach
 
             <br> <br>
-            <div class="col-md-2"><input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia" />
+            <div class="col-md-4"><input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia" />
             </div>
 
             <button class="btn btn-success" type="submit">Krijo Porosi</button>
@@ -113,7 +75,9 @@
             
             <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
         </form>
-
+    </div>
+   
+       <div class="col-xs-12 col-md-6">
         {{--Fund Forma --}}
         <div id="DivIdToPrint">
                 <div class="invoice" >
@@ -190,17 +154,22 @@
                     </footer>
                   </div>
                 </div>
+            </div>
         <script>
-        $('#sasia').on("input", function() {
-                var dInput = this.value;
-                var produkti=$('input[name=products]:checked').val();
-                $('.afisho_produkte').append('<figure> <span>Test</span> <span><strong>Test</strong></span> <span>Lek</span> <span>Lek</span> <span></span> <span>%</span> <span> Lek</span> </figure>')
-                console.log(dInput);
-                console.log(produkti);
+           
+                 $('#sasia').on("input", function() {
+                     var dInput = this.value;
+                        var produkti=$('input[name=products]:checked').val();
+                        if($('input[name=products]').is(':checked')) {
+                        $('.afisho_produkte').append('<figure> <span>Test</span> <span><strong>Test</strong></span> <span>Lek</span> <span>Lek</span> <span></span> <span>%</span> <span> Lek</span> </figure>')
+                         }
+                          console.log(dInput);
+                        console.log(produkti);
                
               });
-        $('#my_radio_box').change(function(){
-            alert('Radio Box has been changed!');
+              $('.my_radio_box').change(function(){
+                  alert($('input[name=products]:checked').val());
+            
         });
               </script>
         @else
