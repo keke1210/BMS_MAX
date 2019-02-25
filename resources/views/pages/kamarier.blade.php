@@ -61,14 +61,48 @@
                            {{-- Merr count nga 1 --}}
                           
                           @php $count=1; @endphp
+                          <script type="text/javascript">
+                            $(document).ready(function () {
+                              $("#rezervoSubmit").click(function() {
+                                 $link=$(this).prev();
+                                 console.log($link);
+                                 $tavolineNgjyre=$link.find(">:first-child");
+                                 console.log($tavolineNgjyre);
+                                 $tavolineNgjyre.removeClass( "t_green" );
+                                 $tavolineNgjyre.addClass("t_red");
+                                //  alert($(this).data('pid')); 
+                                //  alert($link.val());
+                                 // or alert($(this).attr('id'));
+                              });
+                              // $('#rezervoSubmit').click(function (e) {
+                              //     e.preventDefault();
+                              //     $.ajaxSetup({
+                              //         headers: {
+                              //             'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                              //         }
+                              //     });
+                              //     $.ajax({
+                              //         url: "{{url('tables')}}",
+                              //         method: 'POST',
+                              //         data: {
+                              //             id: $('#rezervoSubmit').attr('date-pid')
+                              //         },
+                              //         success: function (result) {
+                              //             swal("Rezultati: " + result.success)
 
-
+                              //         },
+                                      
+                              //     })
+                              // });
+                          });
+                          </script>
+                 
                           @foreach ($tables as $table)
                           @if ($count%4==1)
                            <div class="col-sm-12 ">
                            @endif                    
                                 <div class="form-group col-md-3 text-center" id="{{$table->id}}">
-
+                                    
 
                                       @if ($table->rezervuar == 0)
                                         <a href="orders/create/{{$table->id}}">
@@ -76,7 +110,12 @@
                                             <p class="tavoline-img t_green"></p>
                                             <p class="tavoline-title">Tavoline {{$table->id}}</p>
                                         </a>
-                                      
+                                      <form method="POST" action="tables/{{$table->id}}">
+                                      @csrf
+                                      @method('PUT')
+                                      <input type="text" id="{{$table->id}}" name="{{$table->id}}" value="{{$table->id}}" required>
+                                        <button type="submit" class="btn btn-success" id="rezervoSubmit" data-pid="{{$table->id}}" >Rezervo</button>
+                                      </form> 
                                       @else
                                         <a href="#">
                                             <p class="tavoline-img t_red"></p>
@@ -90,7 +129,8 @@
                             @php
                             $count++;
                             @endphp 
-                        @endforeach                  
+                        @endforeach  
+                                 
                     </tbody>
                 </table>
               </div>

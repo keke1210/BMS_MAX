@@ -36,7 +36,6 @@
                      </span>
                  @endif
                 </div>
-                <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
              </div>
              <div class="text-center">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>

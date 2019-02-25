@@ -39,7 +39,9 @@ Route::view('produkte','produkte')->middleware('role:kamarier|menaxher|admin');
 Route::post('produkte/post','ProdukteController@store')->middleware('role:kamarier|menaxher|admin');
 Route::get('produkte','ProdukteController@store')->middleware('role:kamarier|menaxher|admin');
 
-Route::get('/tables','TableController@index')->middleware('role:kamarier|menaxher|admin');
-Route::get('tables/create','TableController@create')->middleware('role:kamarier|menaxher|admin');
-Route::post('tables','TableController@store')->middleware('role:kamarier|menaxher|admin');
-Route::get('tables/{table}','TableController@show')->middleware('role:kamarier|menaxher|admin');
+// Route::get('/tables','TableController@index')->middleware('role:kamarier|menaxher|admin');
+// Route::get('tables/create','TableController@create')->middleware('role:kamarier|menaxher|admin');
+// Route::post('tables','TableController@store')->middleware('role:kamarier|menaxher|admin');
+// Route::get('tables/{table}','TableController@show')->middleware('role:kamarier|menaxher|admin');
+
+Route::resource('tables','TableController')->middleware('role:kamarier|menaxher|admin');

@@ -52,7 +52,8 @@ class UsersController extends Controller
         $input = $request->all(); 
 
         if($input['password'] !== $input['c_password']) {
-            return redirect('users/create')->with('error','You should use the same password on the confirm password field');
+            Alert::error('You should use the same password on the confirm password field');
+            return redirect('users')->with('error','You should use the same password on the confirm password field');
         } else {
             
         //return $input;
@@ -63,17 +64,19 @@ class UsersController extends Controller
        
         $user = User::create($input);
 
-        if($input['radio'] === 'kamarier') {
+        // if($input['radio'] === 'kamarier') 
+        if($request->radio === 'kamarier') {
             $user->assignRole('kamarier');
         }
-        else if($input['radio'] === 'ekonomist') {
+        else if($request->radio === 'ekonomist') {
             $user->assignRole('ekonomist');
         } else {
             return $request->radio;
         }
         
         Alert::success('Përdoruesi u krijua me sukses');
-        return redirect('users')->with('success','User Created')->with('errors',$validator);
+        // return response()->json(['success'=>'Përdoruesi u krijua me sukses']);
+        return redirect('/users')->with('success','User Created')->with('errors',$validator);
         } //kushti nqs passworded jan te njejte
     }
 
@@ -128,9 +131,11 @@ class UsersController extends Controller
         $user->save();
 
         if($input['radio'] === 'kamarier') {
+        // if($request->radio === 'kamarier'){
            \DB::table('model_has_roles')->where('model_id','=',$id)->update(['role_id'=>'4']);
         }
-        else if($input['radio'] === 'ekonomist') {
+        else if($input['radio'] === 'ekonomist'){
+        // if($request->radio === 'ekonomist'){
             \DB::table('model_has_roles')->where('model_id','=',$id)->update(['role_id'=>'3']);
         } else {
             echo "<h1>Couldn't Assign role</h1>";
