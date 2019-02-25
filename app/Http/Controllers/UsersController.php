@@ -67,10 +67,10 @@ class UsersController extends Controller
         $user = User::create($input);
 
         // if($input['radio'] === 'kamarier') 
-        if($request->roli === 'kamarier') {
+        if($request->radio === 'kamarier') {
             $user->assignRole('kamarier');
         }
-        else if($request->roli === 'ekonomist') {
+        else if($request->radio === 'ekonomist') {
             $user->assignRole('ekonomist');
         } else {
             return $request->radio;
@@ -78,7 +78,7 @@ class UsersController extends Controller
         
         Alert::success('Përdoruesi u krijua me sukses');
         // return response()->json(['success'=>'Përdoruesi u krijua me sukses']);
-        return redirect('users.index')->with('success','User Created')->with('errors',$validator);
+        return redirect('/users')->with('success','User Created')->with('errors',$validator);
         } //kushti nqs passworded jan te njejte
     }
 
@@ -132,12 +132,12 @@ class UsersController extends Controller
         $user->password = bcrypt($input['password']);
         $user->save();
 
-        if($input['radio'] === 'kamarier') {
-        // if($request->roli === 'kamarier'){
+        // if($input['radio'] === 'kamarier') {
+        if($request->radio === 'kamarier'){
            \DB::table('model_has_roles')->where('model_id','=',$id)->update(['role_id'=>'4']);
         }
-        else if($input['radio'] === 'ekonomist'){
-        // if($request->roli === 'ekonomist'){
+        // else if($input['radio'] === 'ekonomist'){
+        if($request->radio === 'ekonomist'){
             \DB::table('model_has_roles')->where('model_id','=',$id)->update(['role_id'=>'3']);
         } else {
             echo "<h1>Couldn't Assign role</h1>";

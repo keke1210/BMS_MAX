@@ -155,17 +155,37 @@
                   </div>
                 </div>
             </div>
+            <script type="text/javascript">
+
+                function printDiv() 
+                {
+                    var divToPrint=document.getElementById('DivIdToPrint');
+                    var newWin=window.open('','Print-Window');
+                    newWin.document.open();
+                    newWin.document.write('<html><head><link rel="stylesheet" href="/css/fature-print.css"></head><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+                    newWin.document.close();
+                   
+                }
+                </script>
         <script>
            var count =0;
                  $('#sasia').on("input", function() {
                      var sasia = this.value;
                         
                         if($('input[name=products]').is(':checked')) {
+                           
+                            if($('figure .emri').text().indexOf("Text")!=-1)
+                             {
+                                 alert ($('figure .emri').text().indexOf("Text"));
+                            }
+                            else
+                            {
                             var produkti=$('input[name=products]:checked').val();
                             count++;
-                            $('.afisho_produkte').append('<figure> <span>'+ count +'</span> <span><strong>Test</strong></span> <span>Lek</span> <span>Lek</span> <span>'+ sasia + '</span> <span>%</span> <span> Lek</span> </figure>')
+                            $('.afisho_produkte').append('<figure> <span>'+ count +'</span> <span><strong class="emri">Test</strong></span> <span>Lek</span> <span>Lek</span> <span>'+ sasia + '</span> <span>%</span> <span> Lek</span> </figure>')
                          }
-                          console.log(dInput);
+                      }
+                          console.log(sasia);
                         console.log(produkti);
                
               });
