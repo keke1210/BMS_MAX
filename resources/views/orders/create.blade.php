@@ -115,28 +115,6 @@
         </form>
 
         {{--Fund Forma --}}
-
-        @else
-        <h1>No Products to make a order</h1>
-
-        @endif
-        </form>
-    </div>
-
-
-
-    {{-- Pjesa kryesore qe kalon ne store ben redirect diku tjeter --}}
-    <form method="POST" action="/orders">
-        @csrf
-        @php
-        $array= json_encode($_GET);
-        @endphp
-
-        <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
-        @if(empty($existing))
-        <h1>Need to add at least one product</h1>
-        <p> {{isset($_REQUEST['table']) ? $_REQUEST['table'] : "" }}</p>
-        @else
         <div id="DivIdToPrint">
                 <div class="invoice" >
                         
@@ -166,8 +144,8 @@
                         <span>Nentotal</span>
                       </section>
                      
-                      <section>
-                        {{-- @if($nrOrderave>0) 
+                      <section class="afisho_produkte">
+                         {{-- @if($nrOrderave>0) 
                         @for ($i = 0; $i < $nrOrderave; $i++)
                             @php 
                             $tvsh=17;
@@ -190,7 +168,7 @@
                         @php
                         $array[$i]= $shuma;
                          @endphp
-                     @endfor --}}
+                     @endfor  --}}
                       </section>
                       @php 
                     //   $totali=array_sum($existing);
@@ -212,6 +190,41 @@
                     </footer>
                   </div>
                 </div>
+        <script>
+        $('#sasia').on("input", function() {
+                var dInput = this.value;
+                var produkti=$('input[name=products]:checked').val();
+                $('.afisho_produkte').append('<figure> <span>Test</span> <span><strong>Test</strong></span> <span>Lek</span> <span>Lek</span> <span></span> <span>%</span> <span> Lek</span> </figure>')
+                console.log(dInput);
+                console.log(produkti);
+               
+              });
+        $('#my_radio_box').change(function(){
+            alert('Radio Box has been changed!');
+        });
+              </script>
+        @else
+        <h1>No Products to make a order</h1>
+
+        @endif
+        </form>
+    </div>
+
+
+
+    {{-- Pjesa kryesore qe kalon ne store ben redirect diku tjeter --}}
+    <form method="POST" action="/orders">
+        @csrf
+        @php
+        $array= json_encode($_GET);
+        @endphp
+
+        <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
+        @if(empty($existing))
+        <h1>Need to add at least one product</h1>
+        <p> {{isset($_REQUEST['table']) ? $_REQUEST['table'] : "" }}</p>
+        @else
+       
         <button type="submit" id="butonPrije">Prije Faturen</button>
 
         @endif
