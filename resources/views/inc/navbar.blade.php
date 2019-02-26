@@ -3,7 +3,7 @@
 @role('admin|kamarier|menaxher|ekonomist')
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
-        <ul class="nav metismenu" id="side-menu" >
+        <ul class="nav metismenu" id="side-menu">
             <li class="nav-header" style="">
                 <div class="dropdown profile-element row">
                     <a href="{{ url('/') }}" class="col-xs-12">
@@ -51,22 +51,21 @@
 </nav>
 <!-- END SIDE-MENU -->
 
-<div class="navbar-fixed-top row border-bottom " id="topbar" >
+<div class="navbar-fixed-top row border-bottom " id="topbar">
     <div class="navbar-header col-sm-9 col-xs-2 no-padding">
-        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#" ><i
-                class="ti-menu" style="font-size: 22px; padding: 3px 6px!important"></i> </a>
+        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="ti-menu" style="font-size: 22px; padding: 3px 6px!important"></i>
+        </a>
     </div>
     <ul class="nav navbar-top-links navbar-right col-sm-3 text-right no-padding">
         <li class="profile-btn">
-            <a href="/profile" title="Profile">
-                <i class="ti-user ti-middle" style="font-size:25px;"></i>
+            <a href="/" title="Orari">
+                <i class="ti-timer ti-middle" style="font-size:25px;"></i>
             </a>
         </li>
         <li class="log-out-btn">
 
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();"><i
-                    class="ti-power-off ti-middle" style="font-size:25px;"></i>
+                   document.getElementById('logout-form').submit();"><i class="ti-power-off ti-middle" style="font-size:25px;"></i>
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
