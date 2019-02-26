@@ -1,10 +1,13 @@
-@if(Auth::guest())
+
 @extends('layouts.welcome')
 @section('login')
+
 <div class="main-title text-center">
     <img class="site-logo" src="images/BMS-LOGO.png">
 </div>
 
+    @if(Auth::guest())
+    
 <div class="wrap" style="margin-top:10%;">
     <form class="login" id="forme" method="POST" action="{{ route('login') }}" accept-charset="utf-8">
         @csrf
@@ -23,14 +26,13 @@
     </form>
 </div>
 
-@endsection
+
 
 @else
-{{-- @extends('layouts.app')
-@extends('layouts.dashboard') --}}
-<link rel="stylesheet" href="{{asset('/css/timetable.css')}}">
-@section('dash-title')
-@section('content')
+
+
+
+
 <div class="row ibox-content no-padding">
     <div class="col-12">
         <div class="row day-columns">

@@ -42,7 +42,7 @@ class ProductsController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [ 
-            'name' => 'required', 
+            'name' => 'required|unique', 
             'cmimi' => 'required'
         ]);
 

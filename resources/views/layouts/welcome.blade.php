@@ -28,6 +28,7 @@
      <link href="/css/myStyle.css" rel="stylesheet" type="text/css">
     
      <!-- Styles -->
+     <link rel="stylesheet" href="{{asset('/css/timetable.css')}}">
     <link href="/css/welcome-style.css" rel="stylesheet" type="text/css">
 
    
@@ -36,7 +37,7 @@
     </head>
     <body>
         <div id="page">
-            @include('inc.navbar')
+            {{-- @include('inc.navbar') --}}
     
             <div class="container h-100">
                    

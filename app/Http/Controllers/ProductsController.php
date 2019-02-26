@@ -28,7 +28,7 @@ class ProductsController extends Controller
     {
         $this->validate($request,[
             'name'=>'required',
-            'price'=>'required'
+            'cmimi'=>'required'
         ]);
         
         // $product=Product::find($request->name);
