@@ -48,6 +48,8 @@
     </table>
 </div>
 </div>
+{{$orders->links()}}
+
 @endrole
 
 @role('menaxher|admin|ekonomist')

@@ -58,6 +58,8 @@
     </div>
     @endif
 </div>
+
+{{$tables->links()}}
 @endsection
 
 <!-- Popup Shtim HTML -->

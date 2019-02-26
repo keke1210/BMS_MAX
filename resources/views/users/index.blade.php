@@ -25,7 +25,7 @@
     <table class="table table-striped table-hover table-responsive">
         <thead>
             <tr>
-                <th>#ID</th>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Roli</th>
                 <th>Email</th>
@@ -68,6 +68,8 @@
     </table>
 </div>
 </div>
+
+{{$users->links()}}
 @endif
 
     

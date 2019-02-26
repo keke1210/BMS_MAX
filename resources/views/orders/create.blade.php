@@ -7,27 +7,21 @@
 @endsection
 <link rel="stylesheet" href="{{asset('/css/fature-style.css')}}">
 @section('content')
-
-
-
     <div class="wrapper wrapper-content ng-scope" style="">
     <div class="col-xs-12">
         <a href="/orders" class="btn btn-primary">Anulo order</a> <br><br>
         <form method="GET" action="/orders/create/{{$tavolina->id}}">
-
+            @csrf
             @php
-            $products = App\Product::all();
-            $nrProduktesh = count($products);
-            
+                $products = App\Product::all();
+                $nrProduktesh = count($products);
             @endphp
-    
         <div>
             @include('inc.liste')
             @if($nrProduktesh>0)
             @php $count=1; @endphp
-            {{-- Forma --}}
             @foreach($products as $key=>$product)
-            @if ($count%2==1)
+                @if ($count%2==1)
             
             <div class="col-sm-12 produktet my_radio_box">
                 @endif
@@ -40,7 +34,7 @@
             @endif
         
             @php
-            $count++;
+                $count++;
             @endphp
             @endforeach
 
@@ -71,10 +65,8 @@
         </form>
     </div>
    
-       
         @else
-        <h1>No Products to make a order</h1>
-
+            <h1>No Products to make a order</h1>
         @endif
         </form>
     </div>
@@ -84,10 +76,6 @@
     {{-- Pjesa kryesore qe kalon ne store ben redirect diku tjeter --}}
     <form method="POST" action="/orders">
         @csrf
-        @php
-        $array= json_encode($_GET);
-        @endphp
-
         <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
         @if(empty($existing))
         <h1>Need to add at least one product</h1>

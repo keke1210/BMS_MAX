@@ -17,9 +17,7 @@ Route::get('/chart', function () {
     return view('chart-test');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/kamarier', 'PagesController@kamarier');
 Route::get('/menaxher', 'PagesController@menaxher');
@@ -48,3 +46,5 @@ Route::get('produkte','ProdukteController@store')->middleware('role:kamarier|men
 // Route::get('tables/{table}','TableController@show')->middleware('role:kamarier|menaxher|admin');
 
 Route::resource('tables','TableController')->middleware('role:kamarier|menaxher|admin');
+
+Route::get('/', 'OrariController@index');

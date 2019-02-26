@@ -14,7 +14,7 @@ class TableController extends Controller
      */
     public function index()
     {
-        $tables = Table::all();
+        $tables = Table::paginate(5);
 
         return view('tables.index',compact('tables'));
     }

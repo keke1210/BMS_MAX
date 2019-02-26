@@ -21,7 +21,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->with('orderItems.product')->get();
+        $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->with('orderItems.product')->paginate(5);
 
         return view('orders.index')->with('orders',$orders);
     }
@@ -60,24 +60,18 @@ class OrdersController extends Controller
         if(empty($input)) {
             return redirect('/orders')->with('error','Order Not Created');
         }
-
         
         //return $input[0]->T_id;
-       // dd($request->table);
         $order = new Order;
         $order->user_id = auth()->id();
         $order->T_id =$input[0]->T_id;;
         $orderSaved = $order->save();
-
-    
             foreach($input as $orderItem) {
-                //dd($orderItem);
                 $input = array_merge((array)$orderItem,['order_id' => $order->id]);
-                
                 $orderDetails = OrderDetail::create($input);
             }
         
-    
+       // return redirect()->route('orders');
         return redirect('/orders')->with('success','Order Created');
     }
 
