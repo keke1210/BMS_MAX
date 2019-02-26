@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrariTable extends Migration
+class CreateOrarisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateOrariTable extends Migration
      */
     public function up()
     {
-        Schema::create('orari', function (Blueprint $table) {
+        Schema::create('oraris', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('koha_fillimit');
@@ -28,6 +28,6 @@ class CreateOrariTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orari');
+        Schema::dropIfExists('oraris');
     }
 }

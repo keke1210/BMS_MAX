@@ -40,15 +40,15 @@
                 <div class="day-header">Monday</div>
                 <div class="day-content">
                     <div class="event gray">
-                        <span class="title">filan</span>
+                        <span class="title">{{$oraret->user->name}}</span>
                         <footer>
                             <span>Orari</span>
-                            <span>20:00</span>
+                            <span>{{$oraret->koha_fillimit}} - {{$oraret->koha_mbarimit}}</span>
                         </footer>
                     </div>
 
                     <div class="event blue">
-                        <span class="title">filan</span>
+                        <span class="title">{{$userat->name}}</span>
                         <footer>
                             <span>Orari</span>
                             <span>20:30</span>

@@ -5,9 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 
+
 class Orari extends Model
 {
     public function user() {
-       return $this->belongsTo(User::class);
-    }
+        return $this->belongsTo(User::class,'id');
+     }
 }

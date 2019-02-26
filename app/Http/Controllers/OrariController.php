@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Orari;
+use App\User;
 
 class OrariController extends Controller
 {
     public function index() {
-        return view('welcome');
+        $userat = User::all()->first();
+        $oraret = Orari::all()->first();
+        return view('welcome',compact('oraret','userat'));
     }
 
     public function create() {
@@ -20,3 +24,4 @@ class OrariController extends Controller
         return redirect('/')->with('success','Orari u perditesua');
     }
 }
+
