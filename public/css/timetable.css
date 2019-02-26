@@ -52,17 +52,17 @@
     flex-direction: column;
     height: auto;
     min-width: 14.2%;
-    border: 1px solid #d8d8d8;
+    border: 1px solid #fff;
     border-left: none;
   }
   .day-columns .day-column:first-child {
-    border-left: 1px solid #d8d8d8;
+    border-left: 1px solid #fff;
   }
   .day-columns .day-column .day-header {
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid #fff;
     text-align: center;
     padding: 5px;
-    color: #898b96;
+    color: #fff;
   }
   .day-columns .day-column .day-content {
     flex-grow: 1;
@@ -92,11 +92,11 @@
     font-size: 11px;
   }
   .day-columns .day-column .day-footer {
-    border-top: 1px solid #d8d8d8;
+    border-top: 1px solid #fff;
     padding: 5px;
     text-align: center;
     font-size: 13px;
-    color: #575962;
+    color: #fff;
   }
   .row .ibox-content .no-padding{
   border-radius:5px;
