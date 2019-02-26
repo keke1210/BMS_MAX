@@ -10,20 +10,20 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/myJs.js') }}" defer></script>
     {{-- <script src="{{ asset('js/myJs.js') }}" defer></script> --}}
     <meta name="_token" content="{{csrf_token()}}" />
 
-  <!-- jquery print-page
-    <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
+  <!-- jquery print-page Scripts -->
+    {{-- <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}">
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="js/jquery.printPage.js"></script> --}}
-  Scripts -->
- <script src="{{ asset('js/app.js') }}" defer></script>
- <script src="{{ asset('js/myJs.js') }}" defer></script>
+  
+
  @yield('dashscripts')
  <!-- Fonts -->
-
  <link href="/css/app.css" rel="stylesheet" type="text/css">
  <link href="/css/myStyle.css" rel="stylesheet" type="text/css">
 

@@ -1,9 +1,9 @@
-
 @extends('layouts.welcome')
 @section('login')
 
 <div class="main-title text-center">
-    <img class="site-logo" src="images/BMS-LOGO.png">
+        @if(Auth::guest()) <img class="site-logo" src="images/BMS-LOGO.png">
+        @else <a href="{{ URL::previous() }}"><img class="site-logo" src="images/BMS-LOGO.png"></a> @endif
 </div>
 
     @if(Auth::guest())
@@ -33,9 +33,17 @@
 <div class="row ibox-content no-padding">
     <div class="col-12">
         <div class="row day-columns">
-            <div class="day-column">
-                <div class="day-header">Monday</div>
+            
+                @php
+                $dite_jave=array('E Hënë', 'E Martë', 'E Mërkurë','E Enjte','E Premte','E Shtunë','E Diel');    
+                $i=0;
+                
+                @endphp
+                @for($i=0;$i<7;$i++)
+                <div class="day-column">
+            <div class="day-header"><?php echo $dite_jave[$i]?></div>
                 <div class="day-content">
+                    
                     <div class="event gray">
                         <span class="title">{{$oraret->user->name}}</span>
                         <footer>
@@ -51,182 +59,13 @@
                             <span>20:30</span>
                         </footer>
                     </div>
+
                 </div>
-                <div class="day-footer">4 Kamarier</div>
+                <div class="day-footer">Nr Punonjësish</div>
+                
             </div>
-            <div class="day-column">
-                <div class="day-header">Tuesday</div>
-                <div class="day-content">
-                    <div class="event purple">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-
-                </div>
-                <div class="day-content">
-                    <div class="event purple">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-
-                </div>
-                <div class="day-content">
-                    <div class="event purple">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-
-                </div>
-                <div class="day-content">
-                    <div class="event purple">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-
-                </div>
-                <div class="day-content">
-                    <div class="event purple">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-
-                </div>
-                <div class="day-content">
-                    <div class="event purple">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-
-                </div>
-                <div class="day-content">
-                    <div class="event purple">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-
-                </div>
-                <div class="day-footer">2 Kamarier</div>
-            </div>
-            <div class="day-column">
-                <div class="day-header">Wednesday</div>
-                <div class="day-content">
-
-                    <div class="event blue">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-                </div>
-                <div class="day-footer">4 Kamarier</div>
-            </div>
-            <div class="day-column">
-                <div class="day-header">Thursday</div>
-                <div class="day-content">
-                    <div class="event navy">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-
-                </div>
-                <div class="day-footer">5 Kamarier</div>
-            </div>
-            <div class="day-column">
-                <div class="day-header">Friday</div>
-                <div class="day-content">
-                    <div class="event purple">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-                    <div class="event red">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-                </div>
-                <div class="day-footer">2 Kamarier</div>
-            </div>
-            <div class="day-column">
-                <div class="day-header">Saturday</div>
-                <div class="day-content">
-
-                    <div class="event blue">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-                </div>
-                <div class="day-footer">1 Kamarier</div>
-            </div>
-            <div class="day-column">
-                <div class="day-header">Sunday</div>
-                <div class="day-content">
-                    <div class="event gray">
-                        <span class="title">Filan Fisteku</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-
-                        </footer>
-                    </div>
-
-                </div>
-                <div class="day-footer">2 Kamarier</div>
-            </div>
+            @endfor
+            
         </div>
     </div>
 </div>

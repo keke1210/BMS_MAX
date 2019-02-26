@@ -23,13 +23,13 @@
      <script src="{{ asset('js/myJs.js') }}" defer></script>
      @yield('dashscripts')
      <!-- Fonts -->
-     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
      <link href="/css/app.css" rel="stylesheet" type="text/css">
      <link href="/css/myStyle.css" rel="stylesheet" type="text/css">
     
      <!-- Styles -->
      <link rel="stylesheet" href="{{asset('/css/timetable.css')}}">
-    <link href="/css/welcome-style.css" rel="stylesheet" type="text/css">
+     <link href="/css/welcome-style.css" rel="stylesheet" type="text/css">
 
    
      @yield('dashstyles')

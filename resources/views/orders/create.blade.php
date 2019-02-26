@@ -7,7 +7,7 @@
 @endsection
 <link rel="stylesheet" href="{{asset('/css/fature-style.css')}}">
 @section('content')
-    <div class="wrapper wrapper-content ng-scope" style="">
+    <div class="wrapper wrapper-content ng-scope" id="DivIdToPrint" style="">
     <div class="col-xs-12">
         <a href="/orders" class="btn btn-primary">Anulo order</a> <br><br>
         <form method="GET" action="/orders/create/{{$tavolina->id}}">
@@ -81,12 +81,22 @@
         <h1>Need to add at least one product</h1>
         @else
        
-        <button type="submit" id="butonPrije">Prije Faturen</button>
+        <button type="submit" id="butonPrije" onclick="printoFature();">Prije Faturen</button>
 
         @endif
     </form>
 </div>
 
+<script type="text/javascript">
 
+    function printoFature() 
+    {
+        var divToPrint=document.getElementById('DivIdToPrint');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><head><link rel="stylesheet" href="/css/fature-print.css"></head><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+    }
+    </script>
 @endsection
 
