@@ -79,10 +79,8 @@
                                         $tavolineNgjyre = $link.find(">:first-child");
                                         console.log($tavolineNgjyre);
                                         var tableid = $(this).data('tid');
-                                        alert(tableid)
                                         if($tavolineNgjyre.hasClass('t_green')){
                                           $link.removeAttr('href');
-                                          alert('kuqe')
                                           $tavolineNgjyre.removeClass("t_green");
                                           $tavolineNgjyre.addClass("t_red");
                                         } 
@@ -131,7 +129,7 @@
                                     {{-- <form method="POST" action="tables/{{$table->id}}">
                                         @csrf
                                         @method('PUT') --}}
-                                        <button type="button" class="btn btn-success rezervoSubmit" data-tid="{{$table->id}}">Rezervo
+                                        <button type="button" class="btn btn-success rezervoSubmit" data-tid="{{$table->id}}">Rezervo/Çrezervo
                                             {{$table->id}}</button>
                                         {{-- </form> --}}
                                     @else
@@ -139,7 +137,7 @@
                                         <p class="tavoline-img t_red"></p>
                                         <p class="tavoline-title">Tavoline {{$table->id}}</p>
                                     </a>
-                                    <button type="button" class="btn btn-success rezervoSubmit" data-tid="{{$table->id}}">CRezervo
+                                    <button type="button" class="btn btn-success rezervoSubmit" data-tid="{{$table->id}}">Rezervo/Çrezervo
                                         {{$table->id}}</button>
                                     @endif
                                 </div>

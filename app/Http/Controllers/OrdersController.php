@@ -10,6 +10,7 @@ use App\OrderDetail;
 use App\Product;
 use App\Table;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
 
 class OrdersController extends Controller
 {
@@ -30,10 +31,10 @@ class OrdersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($table)
     {
-        $table = Table::all();
-        return view('orders.create',compact('table'));
+        $tavolina = Table::find($table);
+        return view('orders.create',compact('tavolina'));
     }
 
     /**
@@ -47,7 +48,7 @@ class OrdersController extends Controller
         $validator = Validator::make(json_decode($request->vlerat), [ 
             'input.*.prod_id'=>'required|unique',
             'input.*.sasia'=>'required',
-            'input.*.T_id' => 'required'
+            'input.*.T_id'=>'required',
         ]);
 
         if ($validator->fails()) { 
@@ -59,13 +60,13 @@ class OrdersController extends Controller
         if(empty($input)) {
             return redirect('/orders')->with('error','Order Not Created');
         }
+
         
-        //return json_encode((int)$input[0]->T_id);
+        //return $input[0]->T_id;
        // dd($request->table);
         $order = new Order;
         $order->user_id = auth()->id();
-        $order->T_id = json_encode((int)$input[count($input)-1]->T_id);
-        //$order->totali = 0;
+        $order->T_id =$input[0]->T_id;;
         $orderSaved = $order->save();
 
     
