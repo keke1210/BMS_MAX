@@ -83,7 +83,7 @@ class TableController extends Controller
     public function update(Request $request,$id)
     {
         $validator = $this->validate($request,[
-            't_id'=>'required',
+            'id'=>'required',
         ]);
 
         if ($validator) {
@@ -93,19 +93,17 @@ class TableController extends Controller
         }
         
         $table=Table::find($id);
-        return $table;
         if ($table->rezervuar == 0){
-            $table->T_id=$request->T_id;
-            $table->lloji=$request->lloji;
             $table->rezervuar=1;
             $table->save();
         } else {
-            $table->T_id=$request->T_id;
-            $table->lloji=$request->lloji;
             $table->rezervuar=0;
             $table->save();
         }
-        return redirect('tables')->with('success','U rezervua');
+        
+        return response()->json(['success'=>'Produkti u krijua me sukses']);
+        
+        // return redirect('/tables')->with('success','U rezervua');
     }
 
     /**

@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/myJs.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/myJs.js') }}" defer></script> --}}
     <meta name="_token" content="{{csrf_token()}}" />
 
   <!-- jquery print-page
