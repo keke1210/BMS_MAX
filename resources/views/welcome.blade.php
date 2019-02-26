@@ -25,14 +25,11 @@
         </div>
     </form>
 </div>
-
+@endsection
 
 
 @else
-
-
-
-
+@section('login')
 <div class="row ibox-content no-padding">
     <div class="col-12">
         <div class="row day-columns">
