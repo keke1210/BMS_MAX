@@ -87,6 +87,6 @@
     </form>
 </div>
 
-<script src="{{asset ('/js/quantitypicker.js')}}" defer></script>
+
 @endsection
 
