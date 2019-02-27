@@ -3,7 +3,7 @@
 @include('inc.liste')
 @section('dash-title')
 <h2>
-    <div class="m-l-lg">Ekonomist</div>
+    <div class="m-l-lg">{{$orders->order_id}}</div>
 </h2>
 @php
     $collection = $nen_total->groupBy('order_id');
