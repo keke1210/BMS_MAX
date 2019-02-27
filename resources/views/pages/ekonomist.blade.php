@@ -3,7 +3,7 @@
 @include('inc.liste')
 @section('dash-title')
 <h2>
-    <div class="m-l-lg">{{$orders->order_id}}</div>
+    <div class="m-l-lg">Ekonomist</div>
 </h2>
 @php
     $collection = $nen_total->groupBy('order_id');
@@ -46,7 +46,7 @@
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <h2>TOP 10 <b>PRODUKTET</b></h2>
+                                    <h2>PRODUKTET <b>ME TE SHITURA</b></h2>
                                 </div>
 
                             </div>
@@ -63,13 +63,38 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Nr.</th>
-                                        <th>Emer </th>
-                                        <th>Shitje</th>
+                                        <th>Fatura</th>
+                                        <th>Kamarier</th>
+                                        <th>Tavolina</th>
+                                        <th>Koha e krijimit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <td>Nr. Renditje</td><td>Emer Produkti</td><td>Nr Shitjesh</td>
+                                    {{-- @php
+                                    $orders = App\Order::orderBy('id','asc')->get();
+
+                                    $useradmin =App\User::find(1)->name;
+                                    @endphp --}}
+
+                                    {{-- @foreach ($orders as $key=>$order)
+                                    @php
+                                    App\User::find($order->user_id)?$userfature=App\User::find($order->user_id)->name:$userfature="*admin*
+                                    ne mungese";
+                                    @endphp --}}
+                                    {{-- @foreach ($collection as $key=>$item)
+                                        @php $shuma =$collection[$key]->sum('nen_total') @endphp
+                                        <tr>
+                                        <td>{{$collection[$key]->first()->order_id}}</td>
+                                        <td>{{$shuma}}</td>
+                                        <td>DATA</td>
+                                        <td>DATA</td>
+                                    @endforeach --}}
+                                    
+                                        {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td>
+                                        --}}
+
+                                    </tr>
+                                    {{-- @endforeach --}}
                                 </tbody>
                             </table>
                         </div>
@@ -84,23 +109,9 @@
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <h2>TAVOLINA<b> E PREFERUAR</b></h2>
+                                    <h2>TAVOLINA <b>ME E PREFERUAR</b></h2>
                                 </div>
                             </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Nr.</th>
-                                        <th>ID</th>
-                                        <th>Xhiro</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                   <tr><td>Nr. Renditje</td><td>ID TAVOLINE</td><td>Xhiro</td></tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
