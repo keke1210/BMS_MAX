@@ -53,12 +53,12 @@
                         <span class="title">{{$oraret}}</span>
                         <footer>
                             <span>Orari</span>
-                            {{-- <span>{{$oraret->koha_fillimit}} - {{$orar->koha_mbarimit}}</span> --}}
+                            {{-- <span>{{$oraret->koha_fillimit}} - {{$oraret->koha_mbarimit}}</span> --}}
                         </footer>
                     </div>
 
                     {{-- <div class="event blue">
-                        <span class="title">{{$orari->user->id}}</span>
+                        <span class="title">{{$oraret->user->id}}</span>
                         <footer>
                             <span>Orari</span>
                             <span>20:30</span>
