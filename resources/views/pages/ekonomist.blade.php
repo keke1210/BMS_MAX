@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="col-xs-12">
-        {{-- <div class="col-md-6">
+        <div class="col-md-6">
             <div class="ibox float-e-margins">
                 <div class="ibox-content" style="border-radius:5px;">
                     <div class="table-wrapper">
@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
     </div>
 </div>
