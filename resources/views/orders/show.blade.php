@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @extends('layouts.dashboard')
 @section('dash-title')
-     <h2>
-        <div class="m-l-lg">Porosi</div>
-     </h2> 
      <link rel="stylesheet" href="{{asset('/css/fature-style.css')}}">
 @endsection
 
