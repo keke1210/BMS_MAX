@@ -73,9 +73,7 @@
                 $('#forme').attr('action','{{ route('login') }}');
               });
               
-              // $('#registered').click(function(){
-              //   $('.toggle-login').click();
-              // });
+             
             </script>
         </body>
         </html>

@@ -46,7 +46,7 @@
             <div class="day-header"><?php echo $dite_jave[$i]?></div>
                 <div class="day-content">
                       
-                    @foreach ($users as $user)
+                    {{-- @foreach ($users as $user)
                         @php
                             $oraret=App\Orari::where('user_id',$user->id)->get();
                         @endphp
@@ -54,7 +54,7 @@
                         <span class="title">{{$user->name}}</span>
                         
                     </div>
-
+                    @endforeach --}}
                     {{-- <div class="event blue">
                         <span class="title">{{$oraret->user->id}}</span>
                         <footer>
@@ -62,26 +62,40 @@
                             <span>20:30</span>
                         </footer>
                     </div> --}}
-                    @endforeach
-
+                   
+                    @php $count=0 @endphp
 
                     @foreach ($orar1 as $orari)
-                        
-                    <div class="event blue">
+                        @if($count%3==1)
+                     <div class="event blue">
                         <span class="title">{{$orari->user->name}}</span>
                         <footer>
                             <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
                         </footer>
                     </div>
+                    @php $count++ @endphp
+                    @elseif($count%3==0)
+                    @php $count++ @endphp
+                    <div class="event red">
+                        <span class="title">{{$orari->user->name}}</span>
+                        <footer>
+                            <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
+                        </footer>
+                    </div>
+                    @else
+                    @php $count++ @endphp
+                    <div class="event green">
+                        <span class="title">{{$orari->user->name}}</span>
+                        <footer>
+                            <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
+                        </footer>
+                    </div>
+                    @endif
                     @endforeach
 
-                    <footer>
-                            <span>Orari</span>
-                            <span></span> </span>
-                                {{-- {{$oraret[0]->id}}</span> --}}
-                        </footer>
+                   
                 </div>
-                <div class="day-footer">Nr Punonjësish</div>
+                <div class="day-footer">{{count($orar1)}} Punonjës</div>
                 
             </div>
             @endfor
