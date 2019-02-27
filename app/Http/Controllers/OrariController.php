@@ -9,9 +9,9 @@ use App\User;
 class OrariController extends Controller
 {
     public function index() {
-        $userat = User::all()->first();
-        $oraret = Orari::all()->first();
-        return view('welcome',compact('oraret','userat'));
+        // $userat = User::all()->first();
+        // $oraret = Orari::all()->first();
+        return view('welcome');
     }
 
     public function create() {

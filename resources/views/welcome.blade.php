@@ -33,33 +33,38 @@
 <div class="row ibox-content no-padding">
     <div class="col-12">
         <div class="row day-columns">
-            
+          
                 @php
                 $dite_jave=array('E Hënë', 'E Martë', 'E Mërkurë','E Enjte','E Premte','E Shtunë','E Diel');    
                 $i=0;
+                $users=App\User::all();
                 
                 @endphp
                 @for($i=0;$i<7;$i++)
                 <div class="day-column">
+
             <div class="day-header"><?php echo $dite_jave[$i]?></div>
                 <div class="day-content">
-                    
+                    @foreach ($users as $user)
+                    @php
+                    $oraret=App\Orari::where('user_id',$user->id)->get();
+                    @endphp
                     <div class="event gray">
-                        <span class="title">{{$oraret->user->name}}</span>
+                        <span class="title">{{$oraret}}</span>
                         <footer>
                             <span>Orari</span>
-                            <span>{{$oraret->koha_fillimit}} - {{$oraret->koha_mbarimit}}</span>
+                            {{-- <span>{{$oraret->koha_fillimit}} - {{$orar->koha_mbarimit}}</span> --}}
                         </footer>
                     </div>
 
-                    <div class="event blue">
-                        <span class="title">{{$userat->name}}</span>
+                    {{-- <div class="event blue">
+                        <span class="title">{{$orari->user->id}}</span>
                         <footer>
                             <span>Orari</span>
                             <span>20:30</span>
                         </footer>
-                    </div>
-
+                    </div> --}}
+                    @endforeach
                 </div>
                 <div class="day-footer">Nr Punonjësish</div>
                 
