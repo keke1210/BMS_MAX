@@ -82,8 +82,11 @@
                     var newWin=window.open('','Print-Window');
                     newWin.document.open();
                     newWin.document.write('<html><head><link rel="stylesheet" href="/css/fature-print.css"></head><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+                    newWin.print();
                     newWin.document.close();
+                    setTimeout(window.close, 0);
                     setTimeout(function(){newWin.close();},10);
+                    location.href = "/kamarier";
                 }
                 </script>
               @endif

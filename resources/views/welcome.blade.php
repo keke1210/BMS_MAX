@@ -43,7 +43,6 @@
             <div class="day-header"><?php echo $dite_jave[$i]?></div>
                 <div class="day-content">
                       
-<<<<<<< HEAD
                     {{-- @foreach ($users as $user)
                         @php
                             $oraret=App\Orari::where('user_id',$user->id)->get();
@@ -83,31 +82,13 @@
                     @else
                     @php $count++ @endphp
                     <div class="event green">
-=======
-                    @foreach ($orar1 as $orari)
-                        <div class="event gray">
-                            <span class="title">{{$orari->user->name}}</span>
-                            <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
-                            
-                        </div>
-                    @endforeach
-
-
-                    {{-- @foreach ($orar1 as $orari)
-                        
-                    <div class="event blue">
->>>>>>> b22536da20cdabe6db4aa45fd9d54aafb469a129
                         <span class="title">{{$orari->user->name}}</span>
                         <footer>
                             <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
                         </footer>
                     </div>
-<<<<<<< HEAD
                     @endif
                     @endforeach
-=======
-                    @endforeach --}}
->>>>>>> b22536da20cdabe6db4aa45fd9d54aafb469a129
 
                    
                 </div>
