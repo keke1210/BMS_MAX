@@ -46,7 +46,7 @@
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <h2>PRODUKTET <b>ME TE SHITURA</b></h2>
+                                    <h2>TOP 10 <b>PRODUKTET</b></h2>
                                 </div>
 
                             </div>
@@ -63,38 +63,13 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Fatura</th>
-                                        <th>Kamarier</th>
-                                        <th>Tavolina</th>
-                                        <th>Koha e krijimit</th>
+                                        <th>Nr.</th>
+                                        <th>Emer </th>
+                                        <th>Shitje</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @php
-                                    $orders = App\Order::orderBy('id','asc')->get();
-
-                                    $useradmin =App\User::find(1)->name;
-                                    @endphp --}}
-
-                                    {{-- @foreach ($orders as $key=>$order)
-                                    @php
-                                    App\User::find($order->user_id)?$userfature=App\User::find($order->user_id)->name:$userfature="*admin*
-                                    ne mungese";
-                                    @endphp --}}
-                                    {{-- @foreach ($collection as $key=>$item)
-                                        @php $shuma =$collection[$key]->sum('nen_total') @endphp
-                                        <tr>
-                                        <td>{{$collection[$key]->first()->order_id}}</td>
-                                        <td>{{$shuma}}</td>
-                                        <td>DATA</td>
-                                        <td>DATA</td>
-                                    @endforeach --}}
-                                    
-                                        {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td>
-                                        --}}
-
-                                    </tr>
-                                    {{-- @endforeach --}}
+                                    <td>Nr. Renditje</td><td>Emer Produkti</td><td>Nr Shitjesh</td>
                                 </tbody>
                             </table>
                         </div>
@@ -109,9 +84,23 @@
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <h2>TAVOLINA <b>ME E PREFERUAR</b></h2>
+                                    <h2>TAVOLINA<b> E PREFERUAR</b></h2>
                                 </div>
                             </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nr.</th>
+                                        <th>ID</th>
+                                        <th>Xhiro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   <tr><td>Nr. Renditje</td><td>ID TAVOLINE</td><td>Xhiro</td></tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
