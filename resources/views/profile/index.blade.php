@@ -156,11 +156,11 @@
                 <div class="modal-body">
                      <div class="form-group">
                            <label>Password</label>
-                           <input type="password" name="password" class="form-control" required="required" id="password">
+                           <input type="password" name="e_password" class="form-control" required="required" id="e_password">
                        </div>
                        <div class="form-group">
                            <label>Konfirmo Password</label>
-                           <input type="password" name="password" class="form-control" required="required" id="password">
+                           <input type="password" name="c_password" class="form-control" required="required" id="c_password">
                        </div>
                 </div>
                 <div class="modal-footer">

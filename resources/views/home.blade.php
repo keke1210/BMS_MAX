@@ -1,10 +1,15 @@
 @extends('layouts.app')
-
+@extends('layouts.dashboard')
+@section('dash-title')
+<h2>
+    <div class="m-l-lg">API</div>
+</h2>
+@endsection
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+
         <div class="col-md-8">
-            <div class="card">
+            <div class="card text-black bg-white">
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
@@ -41,6 +46,6 @@
                 </div>
             </div>
         </div>
-    </div>
+
 </div>
 @endsection

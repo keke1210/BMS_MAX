@@ -21,15 +21,15 @@
             @if($nrProduktesh>0)
             @php $count=1; @endphp
             @foreach($products as $key=>$product)
-                @if ($count%2==1)
+                @if ($count%3==1)
             
             <div class="col-sm-12 produktet my_radio_box">
                 @endif
-                <div class="form-group col-md-6 text-center">
+                <div class="form-group col-md-4 text-center">
                      <li class="btn btn-lg btn-block btn-huge"><input type="radio" id="{{$product->prod_id}}" name="products" value="{{$product->prod_id}}" data-pem='{{$product->name}}'/><label class="btn btn-danger btn-lg btn-block btn-huge" for="{{$product->prod_id}}">{{$product->name}}</label></li>
                     {{-- <input type="radio" id="product" name="products" value="{{$product->prod_id}}"> --}} 
                 </div>
-                @if($count%2==0)
+                @if($count%3==0)
             </div>
             @endif
         
