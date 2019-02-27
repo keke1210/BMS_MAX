@@ -37,7 +37,7 @@
                 @php
                 $dite_jave=array('E Hënë', 'E Martë', 'E Mërkurë','E Enjte','E Premte','E Shtunë','E Diel');    
                 $i=0;
-                $users=App\User::all();
+                $users=App\User::with('orari')->get();
                 
                 @endphp
                 @for($i=0;$i<7;$i++)
@@ -45,16 +45,14 @@
 
             <div class="day-header"><?php echo $dite_jave[$i]?></div>
                 <div class="day-content">
+                      
                     @foreach ($users as $user)
-                    @php
-                    $oraret=App\Orari::where('user_id',$user->id)->get();
-                    @endphp
+                        @php
+                            $oraret=App\Orari::where('user_id',$user->id)->get();
+                        @endphp
                     <div class="event gray">
-                        <span class="title">{{$oraret}}</span>
-                        <footer>
-                            <span>Orari</span>
-                            {{-- <span>{{$oraret->koha_fillimit}} - {{$oraret->koha_mbarimit}}</span> --}}
-                        </footer>
+                        <span class="title">{{$user->name}}</span>
+                        
                     </div>
 
                     {{-- <div class="event blue">
@@ -65,6 +63,23 @@
                         </footer>
                     </div> --}}
                     @endforeach
+
+
+                    @foreach ($orar1 as $orari)
+                        
+                    <div class="event blue">
+                        <span class="title">{{$orari->user->name}}</span>
+                        <footer>
+                            <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
+                        </footer>
+                    </div>
+                    @endforeach
+
+                    <footer>
+                            <span>Orari</span>
+                            <span></span> </span>
+                                {{-- {{$oraret[0]->id}}</span> --}}
+                        </footer>
                 </div>
                 <div class="day-footer">Nr Punonjësish</div>
                 

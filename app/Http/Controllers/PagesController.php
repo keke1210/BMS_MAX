@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Table;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
@@ -13,7 +14,24 @@ class PagesController extends Controller
     }
     
     public function ekonomist() {
-        return view('pages.ekonomist');
+        $nen_total = DB::table('orders')
+            ->join('order_details', 'orders.id', '=', 'order_details.order_id')
+            ->join('products', 'products.prod_id', '=', 'order_details.prod_id')
+            ->select('order_details.id', 'order_details.order_id', 'order_details.prod_id','products.cmimi', 'order_details.created_at',
+            'order_details.sasia', DB::raw('products.cmimi*order_details.sasia as nen_total'))
+            //,DB::raw('SUM(products.cmimi*order_details.sasia) as totali'))
+            //->groupBy('order_details.order_id')
+            ->get();
+       // $nen_total = $nen_total->grou 
+                    
+        // $totali = DB::table('order_details')
+        //     ->select('department', DB::raw('SUM(price) as total_sales'))
+        //     ->groupBy('department')
+        //     ->havingRaw('SUM(price) > ?', [2500])
+        //     ->get();
+
+        
+        return view('pages.ekonomist',compact('nen_total'));
     }
     
     public function menaxher() {

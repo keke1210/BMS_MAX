@@ -10,8 +10,8 @@ class OrariController extends Controller
 {
     public function index() {
         // $userat = User::all()->first();
-        // $oraret = Orari::all()->first();
-        return view('welcome');
+         $orar1 = Orari::with('user')->get();
+        return view('welcome',compact('orar1'));
     }
 
     public function create() {

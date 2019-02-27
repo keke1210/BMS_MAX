@@ -64,11 +64,14 @@ class OrdersController extends Controller
         //return $input[0]->T_id;
         $order = new Order;
         $order->user_id = auth()->id();
-        $order->T_id =$input[0]->T_id;;
+        $order->T_id =$input[0]->T_id;
         $orderSaved = $order->save();
+
+       // $order_details =OrderDetail::orderBy('id','desc')->get();
             foreach($input as $orderItem) {
                 $input = array_merge((array)$orderItem,['order_id' => $order->id]);
                 $orderDetails = OrderDetail::create($input);
+               // \DB::table('order_details')->where('order_id','=',$order->id)->update(['nen_total'=>$order_details->sasia * $order_details->pro]);
             }
         
        // return redirect()->route('orders');
