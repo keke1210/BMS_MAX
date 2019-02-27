@@ -86,7 +86,7 @@
         @endif
     </form>
 </div>
-
+{{-- 
 <script type="text/javascript">
 
     function printoFature() 
@@ -97,6 +97,6 @@
         newWin.document.write('<html><head><link rel="stylesheet" href="/css/fature-print.css"></head><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
         newWin.document.close();
     }
-    </script>
+    </script> --}}
 @endsection
 

@@ -37,35 +37,22 @@
                 @php
                 $dite_jave=array('E Hënë', 'E Martë', 'E Mërkurë','E Enjte','E Premte','E Shtunë','E Diel');    
                 $i=0;
-                $users=App\User::with('orari')->get();
-                
                 @endphp
                 @for($i=0;$i<7;$i++)
                 <div class="day-column">
-
             <div class="day-header"><?php echo $dite_jave[$i]?></div>
                 <div class="day-content">
                       
-                    @foreach ($users as $user)
-                        @php
-                            $oraret=App\Orari::where('user_id',$user->id)->get();
-                        @endphp
-                    <div class="event gray">
-                        <span class="title">{{$user->name}}</span>
-                        
-                    </div>
-
-                    {{-- <div class="event blue">
-                        <span class="title">{{$oraret->user->id}}</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-                        </footer>
-                    </div> --}}
+                    @foreach ($orar1 as $orari)
+                        <div class="event gray">
+                            <span class="title">{{$orari->user->name}}</span>
+                            <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
+                            
+                        </div>
                     @endforeach
 
 
-                    @foreach ($orar1 as $orari)
+                    {{-- @foreach ($orar1 as $orari)
                         
                     <div class="event blue">
                         <span class="title">{{$orari->user->name}}</span>
@@ -73,7 +60,7 @@
                             <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
                         </footer>
                     </div>
-                    @endforeach
+                    @endforeach --}}
 
                     <footer>
                             <span>Orari</span>

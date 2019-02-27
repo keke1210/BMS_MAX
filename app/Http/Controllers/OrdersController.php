@@ -61,6 +61,12 @@ class OrdersController extends Controller
             return redirect('/orders')->with('error','Order Not Created');
         }
         
+
+        //kthen nga e fundit pasi esht order by desc
+        $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->get(); 
+        // return $orders[0]->id+1;
+
+
         //return $input[0]->T_id;
         $order = new Order;
         $order->user_id = auth()->id();
@@ -71,11 +77,12 @@ class OrdersController extends Controller
             foreach($input as $orderItem) {
                 $input = array_merge((array)$orderItem,['order_id' => $order->id]);
                 $orderDetails = OrderDetail::create($input);
-               // \DB::table('order_details')->where('order_id','=',$order->id)->update(['nen_total'=>$order_details->sasia * $order_details->pro]);
+            //    \DB::table('order_details')->where('order_id','=',$order->id)->update(['nen_total'=>$order_details->sasia * $order_details->pro]);
             }
         
+
        // return redirect()->route('orders');
-        return redirect('/orders')->with('success','Order Created');
+        return redirect('/orders/'.($orders[0]->id+1).'')->with('success','Order Created');
     }
 
     /**
