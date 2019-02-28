@@ -12,7 +12,7 @@
        @csrf  
        <div class="form-group">
         <select name="description"> 
-            <option>Zgjidh llojin</option>
+            <option disabled>Zgjidh llojin</option>
             <option name="dysh" value="dysh">Dysh</option>
             <option name="tek" value="tek">Tek</option>
         </select>

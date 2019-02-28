@@ -40,7 +40,7 @@
 
         </div>
             <br> <br>
-            <div class="col-md-4"><input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia" />
+            <div class="col-md-4"><input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia"  min="0" max="20"/>
             </div>
 
             <button class="btn btn-success" type="submit">Krijo Porosi</button>
@@ -81,7 +81,7 @@
         <h1>Need to add at least one product</h1>
         @else
        
-        <button type="submit" id="butonPrije" onclick="printoFature();">Prije Faturen</button>
+        <button type="submit" id="butonPrije" >Prije Faturen</button>
 
         @endif
     </form>

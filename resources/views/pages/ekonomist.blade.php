@@ -7,21 +7,24 @@
 </h2>
 @php
     $collection = $nen_total->groupBy('order_id');
-    foreach ($collection as $i => $nt) {
+    // foreach ($collection as $i => $nt) {
 
-        $sum= $collection[$i]->sum('nen_total');
+    //     $sum= $collection[$i]->sum('nen_total');
        
-    }
+    // }
     //dd($collection[$i]->first());
+    $vektor = array();
     foreach ($collection as $i => $nt) {
         // $collection = $nen_total->groupBy('order_id');
         // $crat= $collection[$i]->groupBy('created_at');
         // echo $crat->first();
-        echo $collection[$i]->first()->order_id. ' ';
+       // echo $collection[$i]->first()->order_id. ' ';
+        //echo $collection[$i]->sum('nen_total'). ' ';
+        $vektor = $collection[$i]->sum('nen_total');
     }
 
 @endphp
-<p>{{$nen_total}}</p>
+<p>{{$collection[1]}}</p>
 @endsection
 @section('content')
 <script src="{{asset('js/plugins/chartsjs/chart.js')}}"></script>
