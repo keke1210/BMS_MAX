@@ -56,7 +56,7 @@
         <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="ti-menu" style="font-size: 22px; padding: 3px 6px!important"></i>
         </a>
     </div>
-    <ul class="nav navbar-top-links navbar-right col-sm-3 text-right no-padding">
+    <ul class="nav navbar-top-links navbar-right text-right no-padding">
         <li class="profile-btn">
             <a href="/" title="Orari">
                 <i class="ti-timer ti-middle" style="font-size:25px;"></i>

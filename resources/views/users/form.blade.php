@@ -13,22 +13,22 @@
 <div class="form-group">
     <label>Confirm Password</label>
     <input type="text" id="c_password" name="c_password" placeholder="Confirm Password" class="form-control" required>
- </div>
+</div>
 <div>
     <label>Kamarier</label><input type="radio" value="kamarier" name="radio" required>
 </div>
 <div>
     <label>Ekonomist</label><input type="radio" value="ekonomist" name="radio">
-</div> 
+</div>
 
 {{-- <div class="form-group">
-             <select class="form-control" id="user_rol" name="roli" required>
-                <option>Zgjidh Rolin</option>
-                <option value="kamarier" name="kamarier">
-                        Kamarier
-                   </option>
-                   <option value="ekonomist" name="ekonomist">
-                        Ekonomist
-                   </option>
-             </select>
+    <label>Orar Fillimi</label>
+    <input type="text" id="orarStart" name="orarStart" placeholder="Fillim" name="orarStart" class="form-control" required>
+</div>
+
+<div class="form-group">
+    <label>Orar Mbarimi</label>
+    <input type="text" id="orarEnd" name="orarEnd" placeholder="Perfundim" name="orarEnd" class="form-control" required>
 </div> --}}
+
+
