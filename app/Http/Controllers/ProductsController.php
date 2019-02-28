@@ -45,6 +45,7 @@ class ProductsController extends Controller
         $product->name = $request->input('name');
         $product->cmimi = $request->input('cmimi');
         $product->save();
+        // Alert::success('succes');
         Alert::success('Produkti u shtua me sukses');
         return redirect('/products')->with('success','Product Created');
         // return response()->json(['success'=>'Produkti u krijua me sukses']);

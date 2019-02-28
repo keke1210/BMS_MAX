@@ -2,17 +2,17 @@
 @extends('layouts.dashboard')
 @include('inc.liste')
 @section('dash-title')
-<h2>
+{{-- <h2>
     <div class="m-l-lg">Tavolina</div>
-</h2>
+</h2> --}}
 @endsection
 @section('content')
-<a href="tables/create" class="btn btn-primary">Krijo Table te ri</a> <br> <br>
+
 <div class="table-wrapper">
     <div class="table-title">
         <div class="row">
             <div class="col-sm-6">
-                <h2>Liste <b>Tavolinash</b></h2>
+                <h2>Listë <b>Tavolinash</b></h2>
             </div>
             <div class="col-sm-6">
                 <a href="#addTableModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
@@ -28,7 +28,7 @@
                     <th>ID</th>
                     <th>Description</th>
                     <th>Rezervuar</th>
-                    <th>Ndrysho</th>
+                    {{-- <th>Ndrysho</th> --}}
                     <th class="text-right">Modifiko</th>
                     <th class="text-right">Fshi</th>
                 </tr>
@@ -39,8 +39,8 @@
                 <tr>
                     <td>{{$table->id}}</td>
                     <td>{{$table->description}}</td>
-                    <td>{{$table->rezervuar ? "true" : "false"}}</td>
-                    <td><a href="/tables/{{$table->id}}">Ndrysho {{$table->id}}</a></td>
+                    <td>{{$table->rezervuar ? "Po" : "Jo"}}</td>
+                    {{-- <td><a href="/tables/{{$table->id}}">Ndrysho {{$table->id}}</a></td> --}}
                     <td class="text-right">
                         <button href="#editTableModal" class="btn edit" data-target="#editTableModal" data-toggle="modal"
                             data-pid="{{$table->id}}" data-tlloj="{{$table->description}}">
@@ -61,7 +61,8 @@
 
 {{$tables->links()}}
 @endsection
-
+<script src="{{asset('js/sweetalert.min.js')}}"></script>
+@include('sweet::alert')
 <!-- Popup Shtim HTML -->
 <div id="addTableModal" class="modal fade">
     <div class="modal-dialog">

@@ -5,7 +5,9 @@
     <div class="m-l-lg">Profile</div>
 </h2>
 @endsection
+
 @section('content')
+@role('ekonomist|admin|kamarier|menaxher')
 <div class="row ">
     <div class="" id="">
         <div class="row">
@@ -172,3 +174,4 @@
     </div>
 </div>
 @endsection
+@endrole

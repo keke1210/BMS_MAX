@@ -2,9 +2,9 @@
 @extends('layouts.dashboard')
 @role('menaxher|admin')
 @section('dash-title')
-     <h2>
+     {{-- <h2>
         <div class="m-l-lg">Menaxher</div>
-     </h2> 
+     </h2>  --}}
 @endsection
 @section('content')
     {{--     <h1>Menaxher</h1>

@@ -4,7 +4,7 @@
 </div>
 <div class="form-group">
     <label>Cmimi</label>
-    <input type="number" id="cmimi" name="cmimi" class="form-control" placeholder="Cmim Produkti" required>
+    <input type="number" id="cmimi" name="cmimi" class="form-control" placeholder="Cmim Produkti" min="1" required>
 </div>
 {{-- <div class="form-group">
     <label>Sasia</label>

@@ -2,9 +2,9 @@
 @extends('layouts.dashboard')
 @include('inc.liste')
 @section('dash-title')
-<h2>
-    <div class="m-l-lg">Ekonomist</div>
-</h2>
+{{-- <h2>
+    <div >Ekonomist</div>
+</h2> --}}
 @php
     $collection = $nen_total->groupBy('order_id');
     // foreach ($collection as $i => $nt) {

@@ -76,7 +76,7 @@ class UsersController extends Controller
         
         Alert::success('Përdoruesi u krijua me sukses');
         // return response()->json(['success'=>'Përdoruesi u krijua me sukses']);
-        return redirect('/users')->with('success','User Created')->with('errors',$validator);
+        return redirect('/users')->with('success','User Created');
         } //kushti nqs passworded jan te njejte
     }
 

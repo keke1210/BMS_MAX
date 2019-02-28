@@ -1,5 +1,5 @@
 <!-- Navbar 2 -->
-
+@include('sweet::alert')
 @role('admin|kamarier|menaxher|ekonomist')
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
@@ -56,7 +56,7 @@
         <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="ti-menu" style="font-size: 22px; padding: 3px 6px!important"></i>
         </a>
     </div>
-    <ul class="nav navbar-top-links navbar-right col-sm-3 text-right no-padding">
+    <ul class="nav navbar-top-links navbar-right text-right no-padding">
         <li class="profile-btn">
             <a href="/" title="Orari">
                 <i class="ti-timer ti-middle" style="font-size:25px;"></i>
@@ -77,4 +77,5 @@
     <!-- /.navbar -->
 </div>
 @endrole
+
 <script type="text/javascript" src="{{asset('js/make-active.js')}}"></script>

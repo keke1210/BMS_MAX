@@ -3,7 +3,7 @@
 @role('admin')
 @section('dash-title')
      <h2>
-        <div class="m-l-lg">Administrator</div>
+        <div >Administrator</div>
      </h2> 
 @endsection
 @section('content')
