@@ -29,7 +29,6 @@
 @section('content')
 <script src="{{asset('js/plugins/chartsjs/chart.js')}}"></script>
 @role('ekonomist|admin')
-<br><br><br>
 <div class="wrapper wrapper-content ng-scope" style="">
     <h2>Info and stats</h2>
     <div class="col-xs-12">

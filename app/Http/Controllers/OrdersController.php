@@ -67,8 +67,8 @@ class OrdersController extends Controller
         $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->get(); 
         // return $orders[0]->id+1;
 
-
-        //return $input[0]->T_id;
+        
+        //return $input;
         $order = new Order;
         $order->user_id = auth()->id();
         $order->T_id =$input[0]->T_id;

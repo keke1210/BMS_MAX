@@ -69,7 +69,7 @@
             }
             @endphp
             
-            {{-- <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" /> --}}
+            <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
         </form>
     </div>
     
