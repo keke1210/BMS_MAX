@@ -2,9 +2,6 @@
 @extends('layouts.dashboard')
 @include('inc.liste')
 @section('dash-title')
-<h2>
-    <div>Porosi</div>
-</h2>
 @endsection
 @section('content')
 
@@ -13,7 +10,7 @@
     <div class="table-title">
         <div class="row">
             <div class="col-sm-6">
-                <h2>Liste <b>Porosish</b></h2>
+                <h2>Listë <b>faturash</b></h2>
             </div>
         </div>
     </div>

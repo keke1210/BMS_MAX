@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Table;
 use Illuminate\Support\Facades\DB;
+use App\Order;
 
 class PagesController extends Controller
 {
@@ -30,8 +31,11 @@ class PagesController extends Controller
         //     ->havingRaw('SUM(price) > ?', [2500])
         //     ->get();
 
-        
-        return view('pages.ekonomist',compact('nen_total'));
+        // $orders = App\Order::orderBy('id','desc')->with('orderItems.product')->first();
+        // $orders = Order::with('orderItems.product')->get();
+        // $orders = $orders->orderItems[0]->product->name;
+
+        return view('pages.ekonomist',compact('nen_total','orders'));
     }
     
     public function menaxher() {

@@ -11,6 +11,7 @@ use App\Product;
 use App\Table;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Alert;
 
 class OrdersController extends Controller
 {
@@ -66,8 +67,8 @@ class OrdersController extends Controller
         $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->get(); 
         // return $orders[0]->id+1;
 
-
-        //return $input[0]->T_id;
+        
+        //return $input;
         $order = new Order;
         $order->user_id = auth()->id();
         $order->T_id =$input[0]->T_id;
@@ -80,7 +81,7 @@ class OrdersController extends Controller
             //    \DB::table('order_details')->where('order_id','=',$order->id)->update(['nen_total'=>$order_details->sasia * $order_details->pro]);
             }
         
-
+            Alert::success('Porosia u krijua');
        // return redirect()->route('orders');
         return redirect('/orders/'.($orders[0]->id+1).'')->with('success','Order Created');
     }

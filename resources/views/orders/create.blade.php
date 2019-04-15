@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="{{asset('/css/fature-style.css')}}">
 @section('content')
     <div class="wrapper wrapper-content ng-scope" id="DivIdToPrint" style="">
-    <div class="col-xs-12">
-        <a href="/orders" class="btn btn-primary">Anulo order</a> <br><br>
+   
+        
         <form method="GET" action="/orders/create/{{$tavolina->id}}">
             @csrf
             @php
@@ -17,21 +17,22 @@
                 $nrProduktesh = count($products);
             @endphp
         <div>
+            <div class="col-sm-6">
             @include('inc.liste')
             @if($nrProduktesh>0)
             @php $count=1; @endphp
             @foreach($products as $key=>$product)
-                @if ($count%4==1)
+                @if ($count%3==1)
             
-            <div class="col-sm-12 produktet my_radio_box">
+            <div class="col-sm-12 produktet my_radio_box ">
                 @endif
-                <div class="form-group col-md-3 text-center">
+                <div class="col-md-4 text-center">
                      <li class="btn btn-lg btn-block btn-huge"><input type="radio" id="{{$product->prod_id}}" name="products" value="{{$product->prod_id}}" data-pem='{{$product->name}}'/>
                         <label class="btn btn-danger btn-lg btn-block btn-huge" for="{{$product->prod_id}}">{{$product->name}}</label>
                     </li>
                     {{-- <input type="radio" id="product" name="products" value="{{$product->prod_id}}"> --}} 
                 </div>
-                @if($count%4==0)
+                @if($count%3==0)
             </div>
             @endif
         
@@ -42,10 +43,15 @@
 
         </div>
             <br> <br>
-         <div class="col-sm-12" style="margin-left:10px">   <div class="col-md-4"><input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia" min="1"/>
-            </div>
-
-            <button class="btn btn-success" id="createOrder" type="submit">Krijo Porosi</button>
+          
+                <div class="col-sm-6">
+                        <div class="col-md-4 ">
+                            <input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia" min="1"/>
+                        </div>
+                        <button class="btn btn-success" id="createOrder" type="submit">Krijo Porosi</button>
+                        <a href="/orders" class="btn btn-primary">Anulo order</a> <br><br>
+                </div>
+            
             @php
             $existing = json_decode(Request::get('vlerat'));
             $current = [];
@@ -63,15 +69,16 @@
             }
             @endphp
             
-            {{-- <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" /> --}}
+            <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
         </form>
     </div>
-   
+    
         @else
             <h1>No Products to make a order</h1>
         @endif
         </form>
     </div>
+   
 
 
     {{-- Pjesa kryesore qe kalon ne store ben redirect diku tjeter --}}
@@ -82,7 +89,7 @@
         <h1>Need to add at least one product</h1>
         @else
        
-        <button type="submit" id="butonPrije" onclick="printoFature();">Prije Faturen</button>
+        <button type="submit" id="butonPrije" >Prije Faturen</button>
 
         @endif
     </form>
