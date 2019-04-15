@@ -7,7 +7,7 @@
 </h2>
 @endsection
 @section('content')
-<a href="/users/create" class="btn btn-primary">Create New Users</a> <br><br>
+{{-- <a href="/users/create" class="btn btn-primary">Create New Users</a> <br><br> --}}
 
 <div class="table-wrapper">
     <div class="table-title">
@@ -75,7 +75,7 @@
     
 
 <script src="{{asset('js/sweetalert.min.js')}}"></script>
-
+@include('sweet::alert')
 </div>
 <!-- Popup Shtim HTML -->
 <div id="addUserModal" class="modal fade">
@@ -174,5 +174,4 @@
                 </div>
             </div>
         </div>
-        @include('sweet::alert')
 @endsection

@@ -2,31 +2,39 @@
 @extends('layouts.dashboard')
 @include('inc.liste')
 @section('dash-title')
+<<<<<<< HEAD
 <h2>
     <div>Ekonomist</div>
 </h2>
+=======
+{{-- <h2>
+    <div >Ekonomist</div>
+</h2> --}}
+>>>>>>> 09f5bf8c502833283f26ee17b1d22089907fa71f
 @php
     $collection = $nen_total->groupBy('order_id');
-    foreach ($collection as $i => $nt) {
+    // foreach ($collection as $i => $nt) {
 
-        $sum= $collection[$i]->sum('nen_total');
+    //     $sum= $collection[$i]->sum('nen_total');
        
-    }
+    // }
     //dd($collection[$i]->first());
+    $vektor = array();
     foreach ($collection as $i => $nt) {
         // $collection = $nen_total->groupBy('order_id');
         // $crat= $collection[$i]->groupBy('created_at');
         // echo $crat->first();
-        echo $collection[$i]->first()->order_id. ' ';
+       // echo $collection[$i]->first()->order_id. ' ';
+        //echo $collection[$i]->sum('nen_total'). ' ';
+        $vektor = $collection[$i]->sum('nen_total');
     }
 
 @endphp
-<p>{{$nen_total}}</p>
+<p>{{$collection[1]}}</p>
 @endsection
 @section('content')
 <script src="{{asset('js/plugins/chartsjs/chart.js')}}"></script>
 @role('ekonomist|admin')
-<br><br><br>
 <div class="wrapper wrapper-content ng-scope" style="">
     <h2>Info and stats</h2>
     <div class="col-xs-12">
@@ -46,7 +54,7 @@
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <h2>TOP 10 <b>PRODUKTET</b></h2>
+                                    <h2>PRODUKTET <b>ME TE SHITURA</b></h2>
                                 </div>
 
                             </div>
@@ -63,13 +71,38 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Nr.</th>
-                                        <th>Emer </th>
-                                        <th>Shitje</th>
+                                        <th>Fatura</th>
+                                        <th>Kamarier</th>
+                                        <th>Tavolina</th>
+                                        <th>Koha e krijimit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <td>Nr. Renditje</td><td>Emer Produkti</td><td>Nr Shitjesh</td>
+                                    {{-- @php
+                                    $orders = App\Order::orderBy('id','asc')->get();
+
+                                    $useradmin =App\User::find(1)->name;
+                                    @endphp --}}
+
+                                    {{-- @foreach ($orders as $key=>$order)
+                                    @php
+                                    App\User::find($order->user_id)?$userfature=App\User::find($order->user_id)->name:$userfature="*admin*
+                                    ne mungese";
+                                    @endphp --}}
+                                    {{-- @foreach ($collection as $key=>$item)
+                                        @php $shuma =$collection[$key]->sum('nen_total') @endphp
+                                        <tr>
+                                        <td>{{$collection[$key]->first()->order_id}}</td>
+                                        <td>{{$shuma}}</td>
+                                        <td>DATA</td>
+                                        <td>DATA</td>
+                                    @endforeach --}}
+                                    
+                                        {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td>
+                                        --}}
+
+                                    </tr>
+                                    {{-- @endforeach --}}
                                 </tbody>
                             </table>
                         </div>
@@ -84,23 +117,9 @@
                         <div class="table-title">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <h2>TAVOLINA<b> E PREFERUAR</b></h2>
+                                    <h2>TAVOLINA <b>ME E PREFERUAR</b></h2>
                                 </div>
                             </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Nr.</th>
-                                        <th>ID</th>
-                                        <th>Xhiro</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                   <tr><td>Nr. Renditje</td><td>ID TAVOLINE</td><td>Xhiro</td></tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>

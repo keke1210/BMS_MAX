@@ -1,5 +1,5 @@
 <!-- Navbar 2 -->
-
+@include('sweet::alert')
 @role('admin|kamarier|menaxher|ekonomist')
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
@@ -77,4 +77,5 @@
     <!-- /.navbar -->
 </div>
 @endrole
+
 <script type="text/javascript" src="{{asset('js/make-active.js')}}"></script>

@@ -2,9 +2,9 @@
 @extends('layouts.dashboard')
 @include('inc.liste')
 @section('dash-title')
-     <h2>
+     {{-- <h2>
         <div class="m-l-lg">Produkte</div>
-     </h2> 
+     </h2>  --}}
 @endsection
 @section('content')
     <div class="table-wrapper">
@@ -56,7 +56,7 @@
     </div> 
         <div>
             <script src="{{asset('js/sweetalert.min.js')}}"></script>
-            
+            @include('sweet::alert')
     </div>
 				@endif
     </div>
