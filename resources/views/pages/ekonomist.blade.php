@@ -7,25 +7,13 @@
     <div>Ekonomist</div>
 </h2>
 =======
-{{-- <h2>
-    <div >Ekonomist</div>
-</h2> --}}
+
 >>>>>>> 09f5bf8c502833283f26ee17b1d22089907fa71f
 @php
     $collection = $nen_total->groupBy('order_id');
-    // foreach ($collection as $i => $nt) {
 
-    //     $sum= $collection[$i]->sum('nen_total');
-       
-    // }
-    //dd($collection[$i]->first());
     $vektor = array();
     foreach ($collection as $i => $nt) {
-        // $collection = $nen_total->groupBy('order_id');
-        // $crat= $collection[$i]->groupBy('created_at');
-        // echo $crat->first();
-       // echo $collection[$i]->first()->order_id. ' ';
-        //echo $collection[$i]->sum('nen_total'). ' ';
         $vektor = $collection[$i]->sum('nen_total');
     }
 
@@ -59,14 +47,7 @@
 
                             </div>
                         </div>
-                        @php
-                        //  $totali = $orders = DB::table('orders')
-                        //                 ->select('department', DB::raw('SUM(cmimi) as total_sales'))
-                        //                 ->groupBy('department')
-                        //                 ->havingRaw('SUM(price) > ?', [2500])
-                        //                 ->get();   
-                        
-                        @endphp  
+
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead>
@@ -78,31 +59,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{-- @php
-                                    $orders = App\Order::orderBy('id','asc')->get();
-
-                                    $useradmin =App\User::find(1)->name;
-                                    @endphp --}}
-
-                                    {{-- @foreach ($orders as $key=>$order)
-                                    @php
-                                    App\User::find($order->user_id)?$userfature=App\User::find($order->user_id)->name:$userfature="*admin*
-                                    ne mungese";
-                                    @endphp --}}
-                                    {{-- @foreach ($collection as $key=>$item)
-                                        @php $shuma =$collection[$key]->sum('nen_total') @endphp
-                                        <tr>
-                                        <td>{{$collection[$key]->first()->order_id}}</td>
-                                        <td>{{$shuma}}</td>
-                                        <td>DATA</td>
-                                        <td>DATA</td>
-                                    @endforeach --}}
-                                    
-                                        {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td>
-                                        --}}
-
                                     </tr>
-                                    {{-- @endforeach --}}
                                 </tbody>
                             </table>
                         </div>
@@ -128,14 +85,6 @@
 
     </div>
 </div>
-{{-- @foreach ($collection as $key=>$item)
-                                        @php $shuma =$collection[$key]->sum('nen_total') @endphp
-                                        <td>{{$collection[$key]->first()->order_id}}</td>
-                                        <td>{{$shuma}}</td>
-                                        <td>DATA</td>
-                                        <td>DATA</td> --}}
- {{-- @endforeach --}}
-
 <script>
     var data = {
         labels: ['E Hënë', 'E Martë', 'E Mërkurë', 'E Enjte', 'E Premte', 'E Shtunë', 'E Diel'],
