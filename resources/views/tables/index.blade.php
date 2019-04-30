@@ -28,7 +28,6 @@
                     <th>ID</th>
                     <th>Description</th>
                     <th>Rezervuar</th>
-                    {{-- <th>Ndrysho</th> --}}
                     <th class="text-right">Modifiko</th>
                     <th class="text-right">Fshi</th>
                 </tr>
@@ -40,7 +39,6 @@
                     <td>{{$table->id}}</td>
                     <td>{{$table->description}}</td>
                     <td>{{$table->rezervuar ? "Po" : "Jo"}}</td>
-                    {{-- <td><a href="/tables/{{$table->id}}">Ndrysho {{$table->id}}</a></td> --}}
                     <td class="text-right">
                         <button href="#editTableModal" class="btn edit" data-target="#editTableModal" data-toggle="modal"
                             data-pid="{{$table->id}}" data-tlloj="{{$table->description}}">
@@ -91,8 +89,6 @@
             <form id="editForm" method="POST" action="tables">
                 @method('PUT')
                 {{csrf_field()}}
-                {{-- {{method_field('PUT')}} --}}
-                {{-- <input type="hidden" name="_method" value="PUT" id="prod_id"> --}}
                 <div class="modal-header">
                     <h4 class="modal-title"></h4>
                     <button type="button" class="close" data-dismiss="modal" id="" aria-hidden="true">&times;</button>

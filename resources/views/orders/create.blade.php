@@ -8,8 +8,6 @@
 <link rel="stylesheet" href="{{asset('/css/fature-style.css')}}">
 @section('content')
     <div class="wrapper wrapper-content ng-scope" id="DivIdToPrint" style="">
-   
-        
         <form method="GET" action="/orders/create/{{$tavolina->id}}">
             @csrf
             @php
@@ -23,7 +21,6 @@
             @php $count=1; @endphp
             @foreach($products as $key=>$product)
                 @if ($count%3==1)
-            
             <div class="col-sm-12 produktet my_radio_box ">
                 @endif
                 <div class="col-md-4 text-center">
@@ -34,7 +31,6 @@
                 @if($count%3==0)
             </div>
             @endif
-        
             @php
                 $count++;
             @endphp
@@ -42,7 +38,6 @@
 
         </div>
             <br> <br>
-          
                 <div class="col-sm-6">
                         <div class="col-md-4 ">
                             <input type="number" name="sasia" id="sasia" class="form-control" placeholder="Sasia" min="1"/>
@@ -50,7 +45,6 @@
                         <button class="btn btn-success" id="createOrder" type="submit">Krijo Porosi</button>
                         <a href="/orders" class="btn btn-primary">Anulo order</a> <br><br>
                 </div>
-            
             @php
             $existing = json_decode(Request::get('vlerat'));
             $current = [];
@@ -71,7 +65,6 @@
             <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
         </form>
     </div>
-    
         @else
             <h1>No Products to make a order</h1>
         @endif
@@ -86,9 +79,7 @@
         @if(empty($existing))
         <h1>Need to add at least one product</h1>
         @else
-       
         <button type="submit" id="butonPrije" >Prije Faturen</button>
-
         @endif
     </form>
 </div>
@@ -103,8 +94,7 @@ if($('input[type=radio][name=products]').not(':checked')){
     if($('input[type=radio][name=products]').is(':checked'))
     {
         $("#createOrder").prop("disabled", false);
-    
-   }
+    }
 
 $(document).on('input', '#sasia', function(){
     if($('input[type=radio][name=products]').is(':checked'))
@@ -125,8 +115,6 @@ $('input[type=radio][name=products]').change(function() {
         alert("false");
         $("#createOrder").prop("disabled", true);
     }
-   
-   
 });
     </script>
 @endsection

@@ -1,13 +1,10 @@
 @extends('layouts.welcome')
 @section('login')
-
 <div class="main-title text-center">
         @if(Auth::guest()) <img class="site-logo" src="images/BMS-LOGO.png">
         @else <a href="{{ URL::previous() }}"><img class="site-logo" src="images/BMS-LOGO.png"></a> @endif
 </div>
-
     @if(Auth::guest())
-    
 <div class="wrap" style="margin-top:10%;">
     <form class="login" id="forme" method="POST" action="{{ route('login') }}" accept-charset="utf-8">
         @csrf
@@ -27,7 +24,6 @@
 </div>
 @endsection
 
-
 @else
 @section('login')
 <div class="row ibox-content no-padding">
@@ -42,26 +38,7 @@
                 <div class="day-column">
             <div class="day-header"><?php echo $dite_jave[$i]?></div>
                 <div class="day-content">
-                      
-                    {{-- @foreach ($users as $user)
-                        @php
-                            $oraret=App\Orari::where('user_id',$user->id)->get();
-                        @endphp
-                    <div class="event gray">
-                        <span class="title">{{$user->name}}</span>
-                        
-                    </div>
-                    @endforeach --}}
-                    {{-- <div class="event blue">
-                        <span class="title">{{$oraret->user->id}}</span>
-                        <footer>
-                            <span>Orari</span>
-                            <span>20:30</span>
-                        </footer>
-                    </div> --}}
-                   
                     @php $count=0 @endphp
-
                     @foreach ($orar1 as $orari)
                         @if($count%3==1)
                      <div class="event blue">
@@ -89,14 +66,10 @@
                     </div>
                     @endif
                     @endforeach
-
-                   
                 </div>
                 <div class="day-footer">{{count($orar1)}} Punonjës</div>
-                
             </div>
             @endfor
-            
         </div>
     </div>
 </div>

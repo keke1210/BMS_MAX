@@ -33,7 +33,6 @@
                 <td>{{$userfature}}</td>         
                 <td>{{$order->T_id}}</td>
                 <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
-                {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td> --}}
                 <td class="text-center">
                     <a href="/orders/{{$order->id}}">
                         <i class="fa fa-file edit" data-toggle="tooltip" title="Shiko Faturen"></i>
@@ -86,7 +85,6 @@
                     <td>{{$userfature}}</td>
                     <td>{{$order->T_id}}</td>
                     <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
-                    {{-- <td><a href="/orders/{{$order->id}}">Shiko Faturen {{$order->id}}</a></td> --}}
                     <td class="text-center">
                         <a href="/orders/{{$order->id}}">
                             <i class="fa fa-file edit" data-toggle="tooltip" title="Shiko Faturen"></i>

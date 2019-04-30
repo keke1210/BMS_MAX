@@ -20,15 +20,3 @@
 <div>
     <label>Ekonomist</label><input type="radio" value="ekonomist" name="radio">
 </div>
-
-{{-- <div class="form-group">
-    <label>Orar Fillimi</label>
-    <input type="text" id="orarStart" name="orarStart" placeholder="Fillim" name="orarStart" class="form-control" required>
-</div>
-
-<div class="form-group">
-    <label>Orar Mbarimi</label>
-    <input type="text" id="orarEnd" name="orarEnd" placeholder="Perfundim" name="orarEnd" class="form-control" required>
-</div> --}}
-
-

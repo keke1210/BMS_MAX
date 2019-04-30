@@ -6,11 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="_token" content="{{csrf_token()}}" />
-
     <title>Grocery Store</title>
     <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css" />
     <script src="{{asset('js/jquery.min.js')}}"></script>
-    {{-- <script src="{{asset('js/produkte.js')}}"></script> --}}
     <script src="{{asset('js/sweetalert.min.js')}}"></script>
 </head>
 

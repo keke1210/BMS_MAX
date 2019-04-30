@@ -7,8 +7,6 @@
 </h2>
 @endsection
 @section('content')
-{{-- <a href="/users/create" class="btn btn-primary">Create New Users</a> <br><br> --}}
-
 <div class="table-wrapper">
     <div class="table-title">
         <div class="row">
@@ -16,9 +14,10 @@
                 <h2>Liste <b>Përdoruesish</b></h2>
             </div>
             <div class="col-sm-6">
-                <a href="#addUserModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
-                    <span>Shto te ri</span></a>
-
+                <a href="#addUserModal" class="btn btn-success" data-toggle="modal">
+                    <i class="material-icons">&#xE147;</i>
+                    <span>Shto te ri</span>
+                </a>
             </div>
         </div>
     </div>
@@ -72,12 +71,9 @@
 {{$users->links()}}
 @endif
 
-    
-
 <script src="{{asset('js/sweetalert.min.js')}}"></script>
 @include('sweet::alert')
 </div>
-<!-- Popup Shtim HTML -->
 <div id="addUserModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -94,36 +90,11 @@
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                         <input type="submit" class="btn btn-success" id="shtoPerdorues" value="Shto">
                     </div>
-                </form>
-            </div>
+            </form>
         </div>
     </div>
-    <script>
-    // $(document).ready(function(){
-    //     $("#shtoPerdorues").click(function(e){
-    //         e.preventDefault();
-    //         $.ajaxSetup({
-    //             headers:{
-    //                     'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-    //                 }
-    //         })
-    //         $.ajax({
-    //             url:"{{url('users/post')}}",
-    //             method: "POST",
-    //             data: {
-    //                 'name' : $('#emri').val(), 
-    //                 'email' :  $('#email').val(), 
-    //                 'password' :  $('#password').val(), 
-    //                 'c_password' :  $('#c_password').val(),
-    //                 'roli' : $('input[name=radio]:checked').val()
-    //             },
-    //             success: function (result) {
-    //                     swal("Rezultati: " + result.success)
-    //                 },
-    //         })
-    //     })
-    // })
-    </script>
+</div>
+
     <!-- Popup  Editim User -->
 <div id="editUserModal" class="modal fade">
     <div class="modal-dialog">
@@ -131,8 +102,6 @@
         <form id="editForm" method="POST" action="/users">
         @method('PUT')
                 {{csrf_field()}}
-                {{-- {{method_field('PUT')}} --}}
-                {{-- <input type="hidden" name="_method" value="PUT" id="prod_id"> --}}
                 <div class="modal-header">
                     <h4 class="modal-title"></h4>
 					<button type="button" class="close" data-dismiss="modal" id="" aria-hidden="true" >&times;</button>
@@ -156,10 +125,8 @@
                         @method('DELETE')
                         @CSRF
                         <div class="modal-header">
-                            
                             <h4 class="modal-title">Fshi Përdorues</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                           
                         </div>
                         <div class="modal-body">
                             <p>Je i sigurt që dëshiron t'i fshish përdoruesin?</p>

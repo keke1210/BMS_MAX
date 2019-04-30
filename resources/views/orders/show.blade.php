@@ -7,19 +7,16 @@
 @section('content')
        <div id="DivIdToPrint">
             <div class="invoice" >
-                    
             <h4>Fatura ka {{$nrOrderave=count($orders)}} {{$nrOrderave==1?"artikull":"artikuj"}}</h4> <br>
                 <header>
                   <section>
                     <h1>Faturë</h1>
                     <span>{{isset($orders[0]->created_at)?$orders[0]->created_at->format('d/m/Y H:i:s'):"no date"}}</span>
                   </section>
-            
                   <section>
                     <span>{{$orders[0]->order_id}}</span>
                   </section>
                 </header>
-            
                 <main>
                   <section>
                     <span>Nr</span>
@@ -30,7 +27,6 @@
                     <span>TVSH</span>
                     <span>Nentotal</span>
                   </section>
-                 
                   <section>
                     @if($nrOrderave>0) 
                     @for ($i = 0; $i < $nrOrderave; $i++)
@@ -51,7 +47,6 @@
                       <span>{{$tvsh}}%</span>
                       <span>{{$shuma}} Lek</span>
                     </figure>
-            
                     @php
                     $array[$i]= $shuma;
                      @endphp
@@ -90,5 +85,4 @@
                 }
                 </script>
               @endif
-
 @endsection

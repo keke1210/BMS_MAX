@@ -15,10 +15,14 @@
             <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="password" placeholder="Password" required>
             <input type="text" name="c_password" placeholder="Confirm password" required>
-            
-            <div><label>Kamarier</label><input type="radio" value="kamarier" name="radio" required> </div> 
-            <div><label>Ekonomist</label><input type="radio" value="ekonomist" name="radio"></div> 
-
+            <div>
+               <label>Kamarier</label>
+               <input type="radio" value="kamarier" name="radio" required> 
+            </div> 
+            <div>
+               <label>Ekonomist</label
+                  input type="radio" value="ekonomist" name="radio">
+            </div> 
             <button type="submit">Create User</button>
        </div>
     </form>

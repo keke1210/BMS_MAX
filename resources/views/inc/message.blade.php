@@ -5,7 +5,6 @@
          
             confirmButtonColor: "#AEDEF4",
             showCancelButton: true
-            // more options
         });
     </script>
     @endforeach

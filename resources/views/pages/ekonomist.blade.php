@@ -11,7 +11,6 @@
 >>>>>>> 09f5bf8c502833283f26ee17b1d22089907fa71f
 @php
     $collection = $nen_total->groupBy('order_id');
-
     $vektor = array();
     foreach ($collection as $i => $nt) {
         $vektor = $collection[$i]->sum('nen_total');
@@ -44,10 +43,8 @@
                                 <div class="col-sm-6">
                                     <h2>PRODUKTET <b>ME TE SHITURA</b></h2>
                                 </div>
-
                             </div>
                         </div>
-
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead>
@@ -59,7 +56,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    </tr>
+                                  
                                 </tbody>
                             </table>
                         </div>
