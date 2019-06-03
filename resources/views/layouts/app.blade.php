@@ -20,7 +20,7 @@
  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('dashstyles')
 </head>
-<body>
+<body class="mini-navbar">
     <div id="page">
         @include('inc.navbar')
         <div class="container h-100">
