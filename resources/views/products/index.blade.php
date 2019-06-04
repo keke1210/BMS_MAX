@@ -23,8 +23,8 @@
                     <th>Nr.</th>
                     <th>Emri</th>
                     <th>Cmimi</th>
-                    <th>Kategori</th>
                     <th>Gjendja</th>
+                    <th>Kategori</th>
                     <th class="text-right">Modifiko</th>
                     <th class="text-right">Fshi</th>
                 </tr>
@@ -36,8 +36,8 @@
                 <td>{{$product->prod_id}}</td>
                 <td>{{$product->name}}</td>
                 <td>{{$product->cmimi}} Lek</td>
-                <td>{{$product->category_id?App\Category::where('category_id',$product->category_id)->first()->name:"S'ka kategori"}}</td>
                 <td>{{$product->gjendja}} cope</td>
+                <td>{{$product->category_id?App\Category::where('category_id',$product->category_id)->first()->name:"S'ka kategori"}}</td>
                 <td class="text-right">
                     <button href="#editProductModal" class="btn edit" data-target="#editProductModal" data-toggle="modal" data-pid="{{$product->prod_id}}"  data-pem="{{$product->name}}"  data-pc="{{$product->cmimi}}">
                     <i class="material-icons edit" data-toggle="tooltip" title="Edito">&#xE254;</i>

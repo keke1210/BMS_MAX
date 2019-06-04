@@ -63,7 +63,7 @@ class UsersController extends Controller
 
 
         $input['orari'] = $request->input('orari');
-        dd($input);
+        // dd($input);
         //return $input;   
       
        
