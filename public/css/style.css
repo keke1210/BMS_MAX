@@ -51,6 +51,13 @@
     margin: 30px auto;
 }
 
+#page-wrapper {
+    position: inherit;
+    margin: 0 0 0 138px;
+    min-height: 1200px;
+    width: 100%!important;
+}
+
 }
 
 div#modal-list-invoice-facturation {
@@ -8559,7 +8566,7 @@ body.md-skin {
     position: inherit;
     margin: 0 0 0 138px;
     min-height: 1200px;
-    width:91%;
+    width:100%;
   }
   
   .navbar-top-links .dropdown-messages,
