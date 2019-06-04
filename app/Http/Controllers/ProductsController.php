@@ -28,12 +28,17 @@ class ProductsController extends Controller
     {
         $this->validate($request,[
             'name'=>'required',
-            'cmimi'=>'required'
+            'cmimi'=>'required',
+            'category_id' => 'required',
+            'gjendja'=>'required'
         ]);
         
         $product = new Product;
         $product->name = $request->input('name');
         $product->cmimi = $request->input('cmimi');
+        $product->category_id = $request->input('category_id');
+        $product->category_id = $request->input('gjendja');
+        // dd($product);
         $product->save();
 
         Alert::success('Produkti u shtua me sukses');
@@ -62,7 +67,8 @@ class ProductsController extends Controller
     {
         $this->validate($request,[
             'name'=>'required',
-            'cmimi'=>'required'
+            'cmimi'=>'required',
+            'category_id' => 'required'
         ]);
 
         // Update products

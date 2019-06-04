@@ -59,6 +59,11 @@ class UsersController extends Controller
         //return $input;
         $input['password'] = bcrypt($input['password']); 
         $input['c_password'] = bcrypt($input['c_password']);
+
+
+
+        $input['orari'] = $request->input('orari');
+        dd($input);
         //return $input;   
       
        
@@ -73,6 +78,8 @@ class UsersController extends Controller
         } else {
             return $request->radio;
         }
+
+
         
         Alert::success('Përdoruesi u krijua me sukses');
         // return response()->json(['success'=>'Përdoruesi u krijua me sukses']);

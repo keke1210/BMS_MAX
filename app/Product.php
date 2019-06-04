@@ -15,4 +15,8 @@ class Product extends Model
     ];
 
     protected $primaryKey = 'prod_id';
+
+    public function category() {
+        return $this->belongsTo(Category::class,'category_id');
+    }
 }

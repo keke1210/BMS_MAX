@@ -37,8 +37,4 @@ class User extends Authenticatable
         return $this->hasMany(Order::class, 'user_id'); 
     }
 
-    public function orari() {
-        
-        return $this->hasOne(Orari::class, 'user_id'); 
-    }
 }
