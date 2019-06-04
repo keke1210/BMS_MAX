@@ -47,4 +47,4 @@ Route::get('produkte','ProdukteController@store')->middleware('role:menaxher|adm
 
 Route::resource('tables','TableController')->middleware('role:kamarier|menaxher|admin');
 
-Route::get('/', 'OrariController@index');
+// Route::get('/', );
