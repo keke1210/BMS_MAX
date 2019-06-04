@@ -31,26 +31,13 @@ class ProductsController extends Controller
             'cmimi'=>'required'
         ]);
         
-        // $product=Product::find($request->name);
-        // if($product===null)
-        // {
-        //     // Alert::error('Produkti u shtua me sukses');
-        //     return response()->json(['error'=>'Produkti ekziston']);
-        // }
-        // else{
-        // Create products
         $product = new Product;
-        // $product->name = $request->name;
-        // $product->cmimi = $request->price;
         $product->name = $request->input('name');
         $product->cmimi = $request->input('cmimi');
         $product->save();
-        // Alert::success('succes');
+
         Alert::success('Produkti u shtua me sukses');
         return redirect('/products')->with('success','Product Created');
-        // return response()->json(['success'=>'Produkti u krijua me sukses']);
-        
-        // }
     }
 
 

@@ -2,22 +2,26 @@
 @extends('layouts.dashboard')
 @include('inc.liste')
 @section('dash-title')
-<<<<<<< HEAD
 <h2>
     <div>Ekonomist</div>
 </h2>
-=======
-
->>>>>>> 09f5bf8c502833283f26ee17b1d22089907fa71f
 @php
-    $collection = $nen_total->groupBy('order_id');
-    $vektor = array();
-    foreach ($collection as $i => $nt) {
-        $vektor = $collection[$i]->sum('nen_total');
-    }
+    // $collection = $nen_total1->groupBy('order_id');
+    // $totali = array();
+    // foreach ($collection as $i => $nt) {
+    //     $totali = $collection[$i]->sum('nen_total');
+    //     echo('Totali: '.$totali.'<br>');
+       
+    // }
+
+    dump($nen_total3)
+
+    // foreach($nen_total2 as $nt){
+    //     dump($nt->nen_total);
+    // }
 
 @endphp
-<p>{{$collection[1]}}</p>
+{{-- <p>{{$collection[1]}}</p> --}}
 @endsection
 @section('content')
 <script src="{{asset('js/plugins/chartsjs/chart.js')}}"></script>

@@ -15,7 +15,7 @@ class PagesController extends Controller
     }
     
     public function ekonomist() {
-        $nen_total = DB::table('orders')
+        $nen_total1 = DB::table('orders')
             ->join('order_details', 'orders.id', '=', 'order_details.order_id')
             ->join('products', 'products.prod_id', '=', 'order_details.prod_id')
             ->select('order_details.id', 'order_details.order_id', 'order_details.prod_id','products.cmimi', 'order_details.created_at',
@@ -23,8 +23,9 @@ class PagesController extends Controller
             //,DB::raw('SUM(products.cmimi*order_details.sasia) as totali'))
             //->groupBy('order_details.order_id')
             ->get();
-       // $nen_total = $nen_total->grou 
-                    
+
+
+
         // $totali = DB::table('order_details')
         //     ->select('department', DB::raw('SUM(price) as total_sales'))
         //     ->groupBy('department')
@@ -35,7 +36,16 @@ class PagesController extends Controller
         // $orders = Order::with('orderItems.product')->get();
         // $orders = $orders->orderItems[0]->product->name;
 
-        return view('pages.ekonomist',compact('nen_total','orders'));
+        // $nen_total2 = DB::select("SELECT order_details.id, order_details.order_id, order_details.prod_id, products.cmimi,
+        // order_details.created_at, order_details.sasia, products.cmimi*order_details.sasia as nen_total
+        //  FROM orders 
+        //     INNER JOIN order_details ON orders.id=order_details.order_id
+        //     INNER JOIN products ON products.prod_id=order_details.prod_id
+        // ");
+
+        $nen_total3 = DB::select("SELECT * FROM `order_totali`");
+
+        return view('pages.ekonomist',compact('nen_total1','nen_total3'));
     }
     
     public function menaxher() {
