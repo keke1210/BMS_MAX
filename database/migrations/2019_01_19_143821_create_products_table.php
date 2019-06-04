@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->increments('prod_id');
             $table->string('name');
             $table->unsignedDecimal('cmimi',6,2);
-            $table->unsignedInteger('gjendja');
+            $table->unsignedInteger('gjendja')->default(1);
             $table->unsignedInteger('category_id');
             $table->timestamps();
         });
