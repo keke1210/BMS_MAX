@@ -74,13 +74,17 @@ class OrdersController extends Controller
         $order->T_id =$input[0]->T_id;
         $orderSaved = $order->save();
 
-       // $order_details =OrderDetail::orderBy('id','desc')->get();
+            // Shtohen order_details ne Order
             foreach($input as $orderItem) {
                 $input = array_merge((array)$orderItem,['order_id' => $order->id]);
                 $orderDetails = OrderDetail::create($input);
-            //    \DB::table('order_details')->where('order_id','=',$order->id)->update(['nen_total'=>$order_details->sasia * $order_details->pro]);
             }
-        
+
+
+            // $products = Product::where('prod_id',$orderItem->prod_id)->get();
+                
+            //  \DB::table('order_details')->where('order_details.order_id','=',$order->id)->update(['order_details.nen_total'=>'order_details.sasia*products.cmimi']);
+
             Alert::success('Porosia u krijua');
        // return redirect()->route('orders');
         return redirect('/orders/'.($orders[0]->id+1).'')->with('success','Order Created');

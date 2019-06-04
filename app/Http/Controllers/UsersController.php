@@ -45,6 +45,7 @@ class UsersController extends Controller
             'name' => 'required', 
             'email' => 'required|email', 
             'password' => 'required', 
+            'orari'=> 'required',
             'c_password' => 'required|same:password',
         ]);
        
@@ -60,10 +61,8 @@ class UsersController extends Controller
         $input['password'] = bcrypt($input['password']); 
         $input['c_password'] = bcrypt($input['c_password']);
 
-
-
         $input['orari'] = $request->input('orari');
-        // dd($input);
+        // dd($input['orari']);
         //return $input;   
       
        
