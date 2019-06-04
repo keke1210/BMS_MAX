@@ -17,7 +17,7 @@ Route::get('/chart', function () {
     return view('chart-test');
 });
 
-
+Route::get('inventari', 'InventarController@index')->middleware('role:menaxher|admin');
 
 Route::get('/kamarier', 'PagesController@kamarier')->middleware('role:kamarier|admin');
 Route::get('/menaxher', 'PagesController@menaxher')->middleware('role:menaxher|admin');
