@@ -16,7 +16,7 @@
         {{-- <input type="number" name="category_id" placeholder="Category" required> --}}
         @php
 
-         $categoryID = App\Category::all()->map(function ($category, $key){
+         $categoryId = App\Category::all()->map(function ($category, $key){
             return $category->category_id;
         });
 
@@ -26,8 +26,8 @@
         @endphp
 
         <select name="category_id">
-           @for($i=0;$i<count($categoryID); $i++)
-               <option value={{$categoryID[$i]}}>{{$categoryName[$i]}}</option>
+           @for($i=0;$i<count($categoryId); $i++)
+               <option value={{$categoryId[$i]}}>{{$categoryName[$i]}}</option>
            @endfor
         </select>
         <input type="number" name="gjendja" placeholder="Gjendja" required> cope

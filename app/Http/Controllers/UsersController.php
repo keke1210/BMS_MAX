@@ -18,7 +18,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(5);
+        $users = User::where('shfaq',1)->paginate(5);
 
         return view('users.index')->with('users',$users);
     }
@@ -45,8 +45,8 @@ class UsersController extends Controller
             'name' => 'required', 
             'email' => 'required|email', 
             'password' => 'required', 
-            'orari'=> 'required',
             'c_password' => 'required|same:password',
+            'orari'=> 'required',
         ]);
        
 
@@ -54,7 +54,7 @@ class UsersController extends Controller
 
         if($input['password'] !== $input['c_password']) {
             Alert::error('You should use the same password on the confirm password field');
-            return redirect('users')->with('error','You should use the same password on the confirm password field');
+            return redirect('/users')->with('error','You should use the same password on the confirm password field');
         } else {
             
         //return $input;
@@ -62,7 +62,7 @@ class UsersController extends Controller
         $input['c_password'] = bcrypt($input['c_password']);
 
         $input['orari'] = $request->input('orari');
-        // dd($input['orari']);
+        // dd($input);
         //return $input;   
       
        

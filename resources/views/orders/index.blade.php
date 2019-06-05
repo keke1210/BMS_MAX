@@ -22,17 +22,27 @@
                     <th>Kamarier</th>
                     <th>Tavolina</th>
                     <th>Koha e krijimit</th>
+                    <th>Totali</th>
                     <th class="text-center">Detaje</th>
                 </tr>
             </thead>
 		<tbody>
         @foreach ($orders as $order)
-        @php $userfature=App\User::find($order->user_id)->name @endphp
+        @php
+         $userfature=App\User::find($order->user_id)->name;
+         $totali_query = DB::table('order_totali')
+                ->select('totali')
+                ->where('order_id','=', $order->id)
+                ->get();
+
+        $totali = json_decode($totali_query)[0]->totali;
+        @endphp
             <tr>
                 <td>{{$order->id}}</td>          
                 <td>{{$userfature}}</td>         
                 <td>{{$order->T_id}}</td>
                 <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
+                <td>{{$totali}} Lek</td>
                 <td class="text-center">
                     <a href="/orders/{{$order->id}}">
                         <i class="fa fa-file edit" data-toggle="tooltip" title="Shiko Faturen"></i>
@@ -66,6 +76,7 @@
                     <th>Kamarier</th>
                     <th>Tavolina</th>
                     <th>Koha e krijimit</th>
+                    <th>Totali</th>
                     <th class="text-center">Detaje</th>
                 </tr>
             </thead>
@@ -79,12 +90,20 @@
                 @foreach ($orders as $order)
                 @php
                 App\User::find($order->user_id)?$userfature=App\User::find($order->user_id)->name:$userfature="*admin* ne mungese";
+                
+                $totali_query = DB::table('order_totali')
+                ->select('totali')
+                ->where('order_id','=', $order->id)
+                ->get();
+                
+                $totali = json_decode($totali_query)[0]->totali;
                 @endphp
                 <tr>
                     <td>{{$order->id}}</td>
                     <td>{{$userfature}}</td>
                     <td>{{$order->T_id}}</td>
                     <td>{{isset($order->created_at)?$order->created_at->format('H:i:s d/m/Y'):"no date"}}</td>
+                    <td>{{$totali}} Lek</td>
                     <td class="text-center">
                         <a href="/orders/{{$order->id}}">
                             <i class="fa fa-file edit" data-toggle="tooltip" title="Shiko Faturen"></i>

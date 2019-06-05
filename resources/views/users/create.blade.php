@@ -27,9 +27,9 @@
             {{-- <input type="text" name="orari" placeholder="Orari" required> --}}
             <select name="orari">
                <option selected disabled>orari</option>
-               <option value="08:00-15:00">08:00-15:00</option>
-               <option value="15:00-21:00">15:00-21:00</option>
-               <option value="13:00-19:00">13:00-19:00</option>
+               <option name="08:00-15:00" value="08:00-15:00">08:00-15:00</option>
+               <option name="15:00-21:00" value="15:00-21:00">15:00-21:00</option>
+               <option name="13:00-19:00" value="13:00-19:00">13:00-19:00</option>
             </select>
 
             <button type="submit">Create User</button>

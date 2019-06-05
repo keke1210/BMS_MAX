@@ -15,37 +15,19 @@ class PagesController extends Controller
     }
     
     public function ekonomist() {
-        $nen_total1 = DB::table('orders')
-            ->join('order_details', 'orders.id', '=', 'order_details.order_id')
-            ->join('products', 'products.prod_id', '=', 'order_details.prod_id')
-            ->select('order_details.id', 'order_details.order_id', 'order_details.prod_id','products.cmimi', 'order_details.created_at',
-            'order_details.sasia', DB::raw('products.cmimi*order_details.sasia as nen_total'))
-            //,DB::raw('SUM(products.cmimi*order_details.sasia) as totali'))
-            //->groupBy('order_details.order_id')
-            ->get();
+        // Totali i orderave
+        // $totali_query = DB::table('order_totali')
+        // ->select('totali','order_id')
+        // ->get();
+        // $total = json_decode($totali_query);
 
-
-
-        // $totali = DB::table('order_details')
-        //     ->select('department', DB::raw('SUM(price) as total_sales'))
-        //     ->groupBy('department')
-        //     ->havingRaw('SUM(price) > ?', [2500])
-        //     ->get();
-
-        // $orders = App\Order::orderBy('id','desc')->with('orderItems.product')->first();
-        // $orders = Order::with('orderItems.product')->get();
-        // $orders = $orders->orderItems[0]->product->name;
-
-        // $nen_total2 = DB::select("SELECT order_details.id, order_details.order_id, order_details.prod_id, products.cmimi,
-        // order_details.created_at, order_details.sasia, products.cmimi*order_details.sasia as nen_total
-        //  FROM orders 
-        //     INNER JOIN order_details ON orders.id=order_details.order_id
-        //     INNER JOIN products ON products.prod_id=order_details.prod_id
-        // ");
-
-        $nen_total3 = DB::select("SELECT * FROM `order_totali`");
-
-        return view('pages.ekonomist',compact('nen_total1','nen_total3'));
+        //Produkti me i shitur
+        $produkti_me_i_shitur = DB::table('test_view1')
+        ->select('name','sasia_max')
+        ->get();
+        $product_name = json_decode($produkti_me_i_shitur)[0]->name;
+        $product_sasia_max = json_decode($produkti_me_i_shitur)[0]->sasia_max;
+        return view('pages.ekonomist',compact('product_name','product_sasia_max'));
     }
     
     public function menaxher() {
