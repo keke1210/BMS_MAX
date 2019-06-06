@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('orari')->default('08:00-15:00');
+            $table->boolean('shfaq')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });

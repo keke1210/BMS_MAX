@@ -5,23 +5,13 @@
 <h2>
     <div>Ekonomist</div>
 </h2>
-@php
-    // $collection = $nen_total1->groupBy('order_id');
-    // $totali = array();
-    // foreach ($collection as $i => $nt) {
-    //     $totali = $collection[$i]->sum('nen_total');
-    //     echo('Totali: '.$totali.'<br>');
-       
-    // }
+{{-- @php
 
-    dump($nen_total3)
+    foreach($total as $key=>$t){
+        dump($t->totali.' '.$t->order_id);
+    }
 
-    // foreach($nen_total2 as $nt){
-    //     dump($nt->nen_total);
-    // }
-
-@endphp
-{{-- <p>{{$collection[1]}}</p> --}}
+@endphp --}}
 @endsection
 @section('content')
 <script src="{{asset('js/plugins/chartsjs/chart.js')}}"></script>
@@ -46,6 +36,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <h2>PRODUKTET <b>ME TE SHITURA</b></h2>
+                                    <h2>{{"Produkti: ".$product_name." Sasia: ".$product_sasia_max}}</h2>
                                 </div>
                             </div>
                         </div>
@@ -59,9 +50,9 @@
                                         <th>Koha e krijimit</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tr>
                                   
-                                </tbody>
+                                </tr>
                             </table>
                         </div>
                     </div>

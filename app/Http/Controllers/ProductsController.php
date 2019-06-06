@@ -11,7 +11,7 @@ class ProductsController extends Controller
     /*  Index */
     public function index()
     {
-        $products =Product::orderBy('created_at','asc')->paginate(4);
+        $products =Product::orderBy('created_at','asc')->where('shfaq',1)->paginate(5);
         return view('products.index')->with('products',$products);
     }
 
@@ -85,6 +85,8 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         Product::find($id)->delete();
+        // Product::find($id)->shfaq = 0;
+
         Alert::success('Produkti u fshi me sukses');
         return redirect('/products')->with('success','Product Deleted');
     }

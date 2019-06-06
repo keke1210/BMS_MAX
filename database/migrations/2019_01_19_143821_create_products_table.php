@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->unsignedDecimal('cmimi',6,2);
             $table->unsignedInteger('gjendja')->default(1);
             $table->unsignedInteger('category_id');
+            $table->boolean('shfaq')->default(1);
             $table->timestamps();
         });
     }

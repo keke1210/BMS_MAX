@@ -17,7 +17,8 @@ Route::get('/chart', function () {
     return view('chart-test');
 });
 
-Route::get('inventari', 'InventarController@index')->middleware('role:menaxher|admin');
+
+Route::get('/inventari', 'InventarController@index')->middleware('role:menaxher|admin');
 
 Route::get('/kamarier', 'PagesController@kamarier')->middleware('role:kamarier|admin');
 Route::get('/menaxher', 'PagesController@menaxher')->middleware('role:menaxher|admin');
@@ -36,9 +37,9 @@ Route::get('orders/create/{table}','OrdersController@create')->middleware('role:
 Route::post('orders','OrdersController@store')->middleware('role:kamarier|menaxher|admin');
 Route::get('orders/{order}','OrdersController@show')->middleware('role:kamarier|ekonomist|menaxher|admin');
 
-Route::view('produkte','produkte')->middleware('role:|menaxher|admin');
-Route::post('produkte/post','ProdukteController@store')->middleware('role:menaxher|admin');
-Route::get('produkte','ProdukteController@store')->middleware('role:menaxher|admin');
+// Route::view('produkte','produkte')->middleware('role:|menaxher|admin');
+// Route::post('produkte/post','ProdukteController@store')->middleware('role:menaxher|admin');
+// Route::get('produkte','ProdukteController@store')->middleware('role:menaxher|admin');
 
 // Route::get('/tables','TableController@index')->middleware('role:kamarier|menaxher|admin');
 // Route::get('tables/create','TableController@create')->middleware('role:kamarier|menaxher|admin');
