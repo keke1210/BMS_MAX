@@ -46,7 +46,7 @@ jQuery(document).ready(function ($) {
     }
     
     $(".order-detail").on("click", function(){
-        $(this).parent().last().remove();
+        $(this).parent().remove();
         calculateSum();
     });
     
