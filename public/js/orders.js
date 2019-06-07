@@ -5,6 +5,8 @@ jQuery(document).ready(function ($) {
         $name=$(this).data('emer');
         $cmimi=$(this).data('cmimi');
         $sasia=$(this).data('sasia');
+        if($(".product-bar").length>0)
+        {
         $(".product-bar").each(function(){
                 
             if($(this).data("p-id")==$id){
@@ -16,6 +18,10 @@ jQuery(document).ready(function ($) {
                 return false;
             }
         });
+       }
+       else{
+       $( ".products" ).append('<div class="product-bar" id="'+$id+'" data-p-id="'+$id+'"><span>'+$name+'</span><span class="pr-cmim">'+$cmimi+'</span><span><input type="number" class="pr-quantity" value='+$sasia+' min="1"></span><button class="btn delete delete-order-detail order-detail"><i class="material-icons" title="Fshi">&#xE872;</i></button></div>');
+       return false;}
         calculateSum();
     });
 

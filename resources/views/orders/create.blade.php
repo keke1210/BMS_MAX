@@ -121,21 +121,6 @@
 
                 <div class="register">
                     <div class="products">
-                        <div class="product-bar" id="1" data-p-id="1">
-                            <span>Coca-Cola</span>
-                            <span class="pr-cmim">150</span>
-                            <span><input type="number" class="pr-quantity" value="2" min="1"></span>
-                            <button class="btn delete detele-order-detail order-detail">
-                            <i class="material-icons" title="Fshi">&#xE872;</i></button>
-                        </div>
-
-                        <div class="product-bar" id="2" data-p-id="2">
-                            <span>Fanta</span>
-                            <span class="pr-cmim">150</span>
-                            <span><input type="number" class="pr-quantity" value="2" min="1"></span>
-                            <a class="btn delete detele-order-detail order-detail">
-                            <i class="material-icons" title="Fshi">&#xE872;</i></a>
-                        </div>
                     </div>
                     <div class="pay-button">
                         
