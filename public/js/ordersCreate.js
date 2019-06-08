@@ -11,6 +11,6 @@ jQuery(document).ready(function ($) {
                 "sasia": sasia
             });
         });
-        
+        console.log(array);
     });
 });
