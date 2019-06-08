@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{{asset('/css/fature-style.css')}}">
 @section('content')
 <div class="wrapper wrapper-content ng-scope" id="DivIdToPrint" style="">
+    
     <form method="GET" action="/orders/create/{{$tavolina->id}}">
         @csrf
         @php
@@ -67,6 +68,9 @@
             <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
     </form>
 </div>
+
+
+
 @else
 <h1>No Products to make a order</h1>
 @endif
@@ -170,6 +174,7 @@
         <link rel="stylesheet" href="{{ asset('css/pos-style.css')}}">
         <link rel="stylesheet" href="{{ asset('css/liste-style.css')}}">
         <script type="text/javascript" src="{{asset('js/orders.js')}}"></script>
+        <script type="text/javascript" src="{{asset('js/ordersCreate.js')}}"></script>
         {{-- @extends('inc.pos') --}}
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
