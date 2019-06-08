@@ -29,7 +29,11 @@ class OrdersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function store(Request $request,$table)
+=======
+    public function store(Request $request, $table)
+>>>>>>> a4b54cbb433f80edd12f3c8bd8541337c903b498
     {
 
         $validator = Validator::make($request->all(), [ 
@@ -48,7 +52,10 @@ class OrdersController extends Controller
         $order = new Order;
         $order->user_id = auth()->id();
         $order->T_id = $table;
+<<<<<<< HEAD
         // dd($order);
+=======
+>>>>>>> a4b54cbb433f80edd12f3c8bd8541337c903b498
         $orderSaved = $order->save();
     
             foreach($input as $orderItem) {
