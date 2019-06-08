@@ -29,12 +29,12 @@ class OrdersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$table)
     {
 
         $validator = Validator::make($request->all(), [ 
             'input.*.prod_id'=>'required|distinct',
-            'input.*.sasia'=>'required'
+            'input.*.sasia'=>'required',
         ]);
 
         if ($validator->fails()) { 
@@ -47,6 +47,8 @@ class OrdersController extends Controller
         
         $order = new Order;
         $order->user_id = auth()->id();
+        $order->T_id = $table;
+        // dd($order);
         $orderSaved = $order->save();
     
             foreach($input as $orderItem) {

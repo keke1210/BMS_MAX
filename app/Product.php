@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'name','cmimi'
+        'name','cmimi','gjendja'
     ];
 
     protected $hidden = [
-        'created_at','updated_at'
+        'created_at','updated_at','shfaq'
     ];
 
     protected $primaryKey = 'prod_id';
