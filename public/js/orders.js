@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 
     function gjejProdukt($prod_id, $x){
         $i=0;
-        //kontrollon ne te djathte dhe kne te majte
+        //kontrollon
         for($i=0;$i<$x;$i++)
         {
             if($prod_id==$($('.product-bar')[$i]).data('p-id')){
@@ -10,6 +10,19 @@ jQuery(document).ready(function ($) {
             }
         }
         return 0;
+    }
+
+    function perditesoSasi($pozicioni){
+        if($pozicioni==0)
+        {
+            $( ".products" ).append('<div class="product-bar" id="'+$id+'" data-p-id="'+$id+'"><span>'+$name+'</span><span class="pr-cmim">'+$cmimi+'</span><span><input type="number" class="pr-quantity" value='+$sasia+' min="1"></span><button class="btn delete delete-order-detail order-detail"><i class="material-icons" title="Fshi">&#xE872;</i></button></div>');
+        }
+        else{
+            $sasia=$($('.product-bar')[$i]).children().find(".pr-quantity").val();
+            console.log($sasia);
+            $sasia=$($(".pr-quantity")[$pozicioni]).val();
+            $($(".pr-quantity")[$pozicioni]).val()=$sasia+1;
+        }
     }
 
     $(".item").on("click",function(){
@@ -24,23 +37,15 @@ jQuery(document).ready(function ($) {
 
          //id e produktit dhe numri i details dergohen si parametra tek funksioni
          $pozicioni=gjejProdukt($id,$nr_details);
-
-         if($pozicioni==0)
-            {
-                $( ".products" ).append('<div class="product-bar" id="'+$id+'" data-p-id="'+$id+'"><span>'+$name+'</span><span class="pr-cmim">'+$cmimi+'</span><span><input type="number" class="pr-quantity" value='+$sasia+' min="1"></span><button class="btn delete delete-order-detail order-detail"><i class="material-icons" title="Fshi">&#xE872;</i></button></div>');
-            }
-            else{
-                $sasia=$($(".pr-quantity")[$pozicioni]).val();
-                $($(".pr-quantity")[$pozicioni]).val()=$sasia+1;
-            }
-        
-        
+         perditesoSasi($pozicioni);
+         
+           console.log($('.pr-quantity').val());
         calculateSum();
     });
 
 
 
-    
+
 
     $('.pr-quantity').on('change', function() {
         calculateSum();
@@ -51,10 +56,9 @@ jQuery(document).ready(function ($) {
         $sum = 0;
         //iterate through each textboxes and add the values
         $(".pr-cmim").each(function() {
-            //add only if the value is number
-                //check cooresponding quantity
-                var qty = $(this).parent().find('.pr-quantity').val();
-                $sum += (parseFloat($(this).html()) * parseInt(qty, 10));
+        //add only if the value is number
+         var qty = $(this).parent().find('.pr-quantity').val();
+         $sum += (parseFloat($(this).html()) * parseInt(qty, 10));
         });
         //.toFixed() method will roundoff the final sum to 2 decimal places
         $('#subTotal').val($sum.toFixed(2));
