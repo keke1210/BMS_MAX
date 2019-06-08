@@ -15,13 +15,12 @@ jQuery(document).ready(function ($) {
     function perditesoSasi($pozicioni){
         if($pozicioni==0)
         {
-            $( ".products" ).append('<div class="product-bar" id="'+$id+'" data-p-id="'+$id+'"><span>'+$name+'</span><span class="pr-cmim">'+$cmimi+'</span><span><input type="number" class="pr-quantity" value='+$sasia+' min="1"></span><button class="btn delete delete-order-detail order-detail"><i class="material-icons" title="Fshi">&#xE872;</i></button></div>');
+            $( ".products" ).append('<div class="product-bar" id="'+$id+'" data-p-id="'+$id+'"><span>'+$name+'</span><span class="pr-cmim">'+$cmimi+'</span><span><input type="number" class="pr-quantity" name="prod_sasia" value='+$sasia+' min="1"></span><button class="btn delete delete-order-detail order-detail"><i class="material-icons" title="Fshi">&#xE872;</i></button></div>');
         }
         else{
             $sasia=$($('.product-bar')[$i]).children().find(".pr-quantity").val();
-            console.log($sasia);
-            $sasia=$($(".pr-quantity")[$pozicioni]).val();
-            $($(".pr-quantity")[$pozicioni]).val()=$sasia+1;
+            $sasia=parseInt($sasia, 10)+1;
+            $($('.product-bar')[$i]).children().find(".pr-quantity").val($sasia);
         }
     }
 
@@ -38,14 +37,10 @@ jQuery(document).ready(function ($) {
          //id e produktit dhe numri i details dergohen si parametra tek funksioni
          $pozicioni=gjejProdukt($id,$nr_details);
          perditesoSasi($pozicioni);
-         
-           console.log($('.pr-quantity').val());
-        calculateSum();
+
+         //kalkulo shumen
+         calculateSum();
     });
-
-
-
-
 
     $('.pr-quantity').on('change', function() {
         calculateSum();

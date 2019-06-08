@@ -170,7 +170,7 @@
         <link rel="stylesheet" href="{{ asset('css/pos-style.css')}}">
         <link rel="stylesheet" href="{{ asset('css/liste-style.css')}}">
         <script type="text/javascript" src="{{asset('js/orders.js')}}"></script>
-        @extends('inc.pos')
+        {{-- @extends('inc.pos') --}}
         <script type="text/javascript">
             jQuery(document).ready(function ($) {
 
