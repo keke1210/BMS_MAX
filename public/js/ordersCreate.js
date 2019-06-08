@@ -7,14 +7,15 @@ jQuery(document).ready(function ($) {
         alert(tbId);
         $('.product-bar').each(function () {
             var id = $(this).data('p-id');
-            var sasia = $(this).children().find(".pr-quantity").val();
+            var sasia = parseInt($(this).children().find(".pr-quantity").val());
 
             array.push({
                 "prod_id": id,
                 "sasia": sasia
             });
         });
-        console.log(array);
+        var myJsonString = JSON.stringify(array);
+        console.log(JSON.stringify(array));
         
         $.ajaxSetup({
             headers: {
@@ -26,7 +27,7 @@ jQuery(document).ready(function ($) {
         $.ajax({
             url: 'http://127.0.0.1:8000/api/orders/'+tbId,
             type: 'POST',
-            data: array,
+            data: myJsonString,
             dataType: 'application/json',
             success: function (data) { 
                 console.log(response); 
