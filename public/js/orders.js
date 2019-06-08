@@ -2,25 +2,32 @@ jQuery(document).ready(function ($) {
 
     function gjejProdukt($prod_id, $x){
         $i=0;
+        //kontrollon ne te djathte dhe kt
         for($i=0;$i<$x;$i++)
         {
-            if($prod_id==$($('.product-bar')[0]).data('p-id')){
+            console.log("Perpara ifit:" +$i);
+            if($prod_id==$($('.product-bar')[$i]).data('p-id')){
                 console.log("true");
                 return $i+1;
             }
+            console.log("Pas ifit:" +$i);
         }
         return 0;
     }
 
     $(".item").on("click",function(){
+        //Produkti qe klikohet
         $id=$(this).data('id');
         $name=$(this).data('emer');
         $cmimi=$(this).data('cmimi');
         $sasia=$(this).data('sasia');
-        if($(".product-bar").length>0)
-        {
+        console.log("Produkti: "+$id+" \n"+$name+" \n"+$cmimi+" \n"+$sasia);
+        //Numri i details qe jane ne te djathte
          $nr_details=$(".product-bar").length;
-         $pozicioni=gjejProdukt($id,$nr_details)
+         console.log("Numri i details "+$nr_details);
+         //id e produktit dhe numri i details dergohen si parametra tek funksioni
+         $pozicioni=gjejProdukt($id,$nr_details);
+         console.log('Vendi '+$pozicioni);
             if($pozicioni==0)
             {
                 $( ".products" ).append('<div class="product-bar" id="'+$id+'" data-p-id="'+$id+'"><span>'+$name+'</span><span class="pr-cmim">'+$cmimi+'</span><span><input type="number" class="pr-quantity" value='+$sasia+' min="1"></span><button class="btn delete delete-order-detail order-detail"><i class="material-icons" title="Fshi">&#xE872;</i></button></div>');
@@ -32,11 +39,7 @@ jQuery(document).ready(function ($) {
                 $($(".pr-quantity")[$pozicioni]).val()=$sasia+1;
             }
         
-        }
-        else
-        {
-            $( ".products" ).append('<div class="product-bar" id="'+$id+'" data-p-id="'+$id+'"><span>'+$name+'</span><span class="pr-cmim">'+$cmimi+'</span><span><input type="number" class="pr-quantity" value='+$sasia+' min="1"></span><button class="btn delete delete-order-detail order-detail"><i class="material-icons" title="Fshi">&#xE872;</i></button></div>');
-        }
+        
         calculateSum();
     });
 
