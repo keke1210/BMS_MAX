@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 
     $('#payment').on('click', function () {
         var array = [];
-        var tbId= parseInt($($('.product-bar')).data('p-id'));
+        var tbId= parseInt($($('#idtavoline')).data('tbl'));
 
         alert(tbId);
         $('.product-bar').each(function () {
