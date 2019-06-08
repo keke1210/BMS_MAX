@@ -121,6 +121,7 @@
 
                 <div class="register">
                     <div class="products">
+                        
                     </div>
                     <div class="pay-button">
                         
@@ -174,7 +175,8 @@
             jQuery(document).ready(function ($) {
 
             //Ben aktive kategorine e perzgjedhur
-            $(".category").click(function(){
+            $(".category").on('click',function(e){
+                e.preventDefault();
                 $(".category").each(function(){
                 $(this).removeClass('active');
             });
@@ -189,7 +191,7 @@
                     $(this).addClass('dont-show');
                 }
             });
-            $(this).addClass('active');
+                    $(this).addClass('active');
             });
 
             $(".clickable-row").click(function () {
