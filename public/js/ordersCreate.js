@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 
     $('#payment').on('click', function () {
         var array = [];
-        var tbId= parseInt($($('.product-bar')).data('p-id'));
+        var tbId= parseInt($($('#idtavoline')).data('tbl'));
 
         alert(tbId);
         $('.product-bar').each(function () {
@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
         });
 
         $.ajax({
-            url: '/api/orders/'+tbId,
+            url: 'http://127.0.0.1:8000/api/orders/'+tbId,
             type: 'POST',
             data: array,
             dataType: 'application/json',
