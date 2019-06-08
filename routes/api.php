@@ -24,15 +24,15 @@ Route::post('register', 'API\UserController@register');
 Route::apiResource('products','API\ProductsController');
 Route::post('details', 'API\UserController@details');
 
-Route::group(['middleware' => 'auth:api'], function(){
+// Route::group(['middleware' => 'auth:api'], function(){
     
     //Route::post('details', 'API\UserController@details');
    // Route::apiResource('products','API\ProductsController');
 
     Route::get('orders', 'API\OrdersController@index');
-    Route::post('orders', 'API\OrdersController@store');
+    Route::post('orders/{table}', 'API\OrdersController@store');
     Route::get('orders/{id}', 'API\OrdersController@show');
     Route::delete('orders/{id}', 'API\OrdersController@destroy');
     Route::put('orders/{id}', 'API\OrdersController@update');
    
-});
+// });

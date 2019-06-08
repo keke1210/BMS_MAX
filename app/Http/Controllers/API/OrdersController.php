@@ -29,7 +29,7 @@ class OrdersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $table)
     {
 
         $validator = Validator::make($request->all(), [ 
@@ -47,6 +47,7 @@ class OrdersController extends Controller
         
         $order = new Order;
         $order->user_id = auth()->id();
+        $order->T_id = $table;
         $orderSaved = $order->save();
     
             foreach($input as $orderItem) {

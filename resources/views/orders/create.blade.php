@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="{{asset('/css/fature-style.css')}}">
 @section('content')
 <div class="wrapper wrapper-content ng-scope" id="DivIdToPrint" style="">
-    
+<input type="number" id="idtavoline" data-tbl="{{$tavolina->id}}">
     <form method="GET" action="/orders/create/{{$tavolina->id}}">
         @csrf
         @php
