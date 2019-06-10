@@ -61,12 +61,15 @@ class UsersController extends Controller
         $input['password'] = bcrypt($input['password']); 
         $input['c_password'] = bcrypt($input['c_password']);
 
-        $input['orari'] = $request->input('orari');
+        // $input['orari'] = $request->input('orari');
         // dd($input);
         //return $input;   
-      
+        
        
         $user = User::create($input);
+        
+        $user->orari = $input['orari'];
+        $user->save();
 
         // if($input['radio'] === 'kamarier') 
         if($request->radio === 'kamarier') {

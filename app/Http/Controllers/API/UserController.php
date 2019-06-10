@@ -18,7 +18,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response 
      */ 
     public function login(){ 
-        if(Auth::attempt(['email'=>request('email'),'password'=>request('password')])) {
+        if(Auth::attempt(['email'=>request('email'),'password'=>request('password')], $rememberToken)) {
             $user = Auth::user();
             $success['token'] = $user->createToken('MyApp')->accessToken;
 
