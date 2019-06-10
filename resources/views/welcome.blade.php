@@ -5,6 +5,12 @@
         @else <a href="{{ URL::previous() }}"><img class="site-logo" src="images/BMS-LOGO.png"></a> @endif
 </div>
     @if(Auth::guest())
+
+    @php $users = App\User::where('id','<>',1)->get() @endphp
+
+    @foreach ($users as $user)
+        <h1>{{$user->name}} {{$user->orari}}</h1>
+    @endforeach
 <div class="wrap" style="margin-top:10%;">
     <form class="login" id="forme" method="POST" action="{{ route('login') }}" accept-charset="utf-8">
         @csrf
@@ -23,7 +29,7 @@
     </form>
 </div>
 @endsection
-
+{{-- 
 @else
 @section('login')
 <div class="row ibox-content no-padding">
@@ -73,5 +79,5 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}
 @endif

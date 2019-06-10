@@ -32,8 +32,8 @@ class HomeController extends Controller
         // User::find(2)->assignRole('menaxher');
         // $role = Role::create(['name' => 'ekonomist']);
         // User::find(3)->assignRole('ekonomist');
-        //$role = Role::create(['name' => 'kamarier']);
-        //User::find(4)->assignRole('kamarier');
+        // $role = Role::create(['name' => 'kamarier']);
+        // User::find(4)->assignRole('kamarier');
         return view('home');
     }
 }

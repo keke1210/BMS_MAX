@@ -4,7 +4,12 @@ jQuery(document).ready(function ($) {
         var array = [];
         var tbId= parseInt($($('#idtavoline')).data('tbl'));
 
-        alert(tbId);
+        // alert(tbId);
+        if($('.product-bar').length==0)
+        {
+            swal("Ju nuk keni perzgjedhur asnje produkt", "", "warning")
+        }
+        else{
         $('.product-bar').each(function () {
             var id = $(this).data('p-id');
             var sasia = parseInt($(this).children().find(".pr-quantity").val());
@@ -15,7 +20,6 @@ jQuery(document).ready(function ($) {
             });
         });
         var myJsonString = JSON.stringify(array);
-        console.log(JSON.stringify(array));
         
         $.ajaxSetup({
             headers: {
@@ -25,14 +29,18 @@ jQuery(document).ready(function ($) {
         });
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/orders/'+tbId,
+            url: '/orders/'+tbId,
             type: 'POST',
             data: myJsonString,
-            dataType: 'application/json',
-            success: function (data) { 
-                console.log(response); 
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data, status) { 
+                console.log(data, status); 
+            },
+            error: function( xhr, status, error ) {
+                console.log(error, status);//...
             }
         }); 
-        
+    }
     });
 });

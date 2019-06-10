@@ -46,7 +46,8 @@ class OrdersController extends Controller
         //return response()->json($input, 200);
         
         $order = new Order;
-        $order->user_id = auth()->id();
+        // $order->user_id = auth()->id();
+        $order->user_id = 1;
         $order->T_id = $table;
         $orderSaved = $order->save();
     

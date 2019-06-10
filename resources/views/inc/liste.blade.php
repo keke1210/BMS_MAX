@@ -36,6 +36,8 @@
             modal.find('.modal-body #emri').val(button.data('pem'));
             modal.find('.modal-body #cmimi').val(button.data('pc'));
             modal.find('.modal-body #prod_id').attr('value', productID);
+            modal.find('.modal-body #gjendja').val(button.data('pq'));
+            modal.find('.modal-body #categoryid').val(button.data('pcat'));
         });
 
  

@@ -39,7 +39,7 @@
                 <td>{{$product->gjendja}} cope</td>
                 <td>{{$product->category_id?App\Category::where('category_id',$product->category_id)->first()->name:"S'ka kategori"}}</td>
                 <td class="text-right">
-                    <button href="#editProductModal" class="btn edit" data-target="#editProductModal" data-toggle="modal" data-pid="{{$product->prod_id}}"  data-pem="{{$product->name}}"  data-pc="{{$product->cmimi}}">
+                <button href="#editProductModal" class="btn edit" data-target="#editProductModal" data-toggle="modal" data-pid="{{$product->prod_id}}"  data-pem="{{$product->name}}"  data-pc="{{$product->cmimi}}" data-pq="{{$product->gjendja}}" data-pcat="{{$product->category_id?App\Category::where('category_id',$product->category_id)->first()->name:"S'ka kategori"}}">
                     <i class="material-icons edit" data-toggle="tooltip" title="Edito">&#xE254;</i>
                     </button>
                 </td>

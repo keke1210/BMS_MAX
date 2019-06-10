@@ -28,13 +28,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Route::get('/', 'OrariController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
 Route::resource('products','ProductsController')->middleware('role:menaxher|admin');
 Route::resource('users','UsersController')->middleware('role:menaxher|admin');
 Route::resource('profile', 'ProfileController')->middleware('role:menaxher|admin|kamarier|ekonomist');
 
 Route::get('orders','OrdersController@index')->middleware('role:kamarier|menaxher|admin');
 Route::get('orders/create/{table}','OrdersController@create')->middleware('role:kamarier|menaxher|admin');
-Route::post('orders','OrdersController@store')->middleware('role:kamarier|menaxher|admin');
+Route::post('orders/{table}','OrdersController@store')->middleware('role:kamarier|menaxher|admin');
 Route::get('orders/{order}','OrdersController@show')->middleware('role:kamarier|ekonomist|menaxher|admin');
 
 // Route::view('produkte','produkte')->middleware('role:|menaxher|admin');
