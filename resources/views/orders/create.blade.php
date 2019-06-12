@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @extends('layouts.dashboard')
 @section('dash-title')
-<h2>
+{{-- <h2>
     <div>Krijo Porosi</div>
-</h2>
+</h2> --}}
 @endsection
 <link rel="stylesheet" href="{{asset('/css/fature-style.css')}}">
-@section('content')
-<div class="wrapper wrapper-content ng-scope" id="DivIdToPrint" style="">
-<input type="number" id="idtavoline" data-tbl="{{$tavolina->id}}">
+ @section('content')
+{{--<div class="wrapper wrapper-content ng-scope" id="DivIdToPrint" style="">
+
     <form method="GET" action="/orders/create/{{$tavolina->id}}">
         @csrf
         @php
@@ -67,19 +67,19 @@
 
             <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
     </form>
-</div>
+</div> --}}
 
-
+{{-- 
 
 @else
 <h1>No Products to make a order</h1>
 @endif
 </form>
-</div>
+</div> --}}
 
 
 
-<form method="POST" action="/orders">
+{{-- <form method="POST" action="/orders">
     @csrf
     <input type="hidden" name="vlerat" value="{{json_encode($existing)}}" />
     @if(empty($existing))
@@ -88,10 +88,14 @@
     <button type="submit" id="butonPrije">Prije Faturen</button>
     @endif
 </form>
-</div>
+</div> --}}
 
+{{-- <link rel="stylesheet" href="{{ asset('css/inventory.css')}}"> --}}
+<input hidden type="number" id="idtavoline" data-tbl="{{$tavolina->id}}">
+@php
+$products = App\Product::all();
+@endphp
 <div>
-    <h1>Test</h1>
     <div class="table-wrapper">
         <div class="table-title">
             <div class="row">
@@ -104,18 +108,33 @@
         <div class="sellables-container">
             <div class="sellables">
                     <div class="categories">
+                        
                         @php
                             $category = App\Category::all();
                         @endphp
-                        @foreach($category as $key=>$category)
+                        {{-- @foreach($category as $key=>$category)
                             <a class="category" href="#" data-cat-id={{$category->category_id}}>{{$category->name}}</a>
+                        @endforeach --}}
+
+                        @foreach($category as $key=>$category)
+                        <div class="form-group col-sm-3 text-center">
+                            
+                                <div class="category"  data-cat-id={{$category->category_id}}>
+                                <a class="category" href="#" data-cat-id={{$category->category_id}}>
+                                    <img class="category-img" src="{{$category->imgurl}}" c-id="1"></p>
+                                    <div class="category-title">{{$category->name}}</div>
+                                </a>
+                               </div>
+                        </div>
+                           
                         @endforeach
+                        
                     </div>
 
                 <div class="item-group-wrapper">
                     <div class="item-group">
                         @foreach($products as $key=>$product)
-                        <button data-id="{{$product->prod_id}}" data-emer="{{$product->name}}"  data-c-id="{{$product->category_id}}" data-cmimi="{{$product->cmimi}}" data-sasia="1" class="item dont-show">{{$product->name}} </button>
+                            <button data-id="{{$product->prod_id}}" data-emer="{{$product->name}}"  data-c-id="{{$product->category_id}}" data-cmimi="{{$product->cmimi}}" data-sasia="1" class="item dont-show">{{$product->name}} </button>
                         @endforeach
                     </div>
                 </div>
@@ -129,17 +148,18 @@
                     </div>
                     <div class="pay-button">
                         
-                           Nen Total <input id="subTotal" type="number" value="0" class="btn btn-block form-group" readonly="">
+                        <span>Nen Total </span>  
+                        <span><input id="subTotal" type="number" value="0" class="btn btn-block form-group" readonly></span>
     
                     </div>
                     <div class="pay-button">
-                        
-                           TVSH <input id="tvsh" type="number" value="0" class="btn btn-block form-group" readonly="">
+                        <span>TVSH</span> 
+                        <span><input id="tvsh" type="number" value="0" class="btn btn-block form-group" readonly></span>
     
                     </div>
                     <div class="pay-button">
-                        
-                            Total <input id="sum" type="number" value="0" class="btn btn-block form-group" readonly="">
+                        <span>Total</span> 
+                        <span><input id="sum" type="number" value="0" class="btn btn-block form-group" readonly></span>
     
                     </div>
                     <div class="pay-button">
@@ -171,6 +191,7 @@
                 </div>
             </div>
         </div>
+        <link rel="stylesheet" href="{{ asset('css/inventory.css')}}">
         <link rel="stylesheet" href="{{ asset('css/pos-style.css')}}">
         <link rel="stylesheet" href="{{ asset('css/liste-style.css')}}">
         <script type="text/javascript" src="{{asset('js/orders.js')}}"></script>

@@ -22,39 +22,23 @@
                             </p>
                         </legend>
                         <div class="col-sm-12 ">
-
+                                @php
+                                $category = App\Category::all();
+                            @endphp
+                            @foreach($category as $key=>$category)
                             <div class="form-group col-sm-3 text-center">
-                                <div class="category">
-                                <a href="/1">
-                                    <p class="category-img Alkoolike" c-id="1"></p>
-                                    <div class="category-title">Alkoolike</div>
-                                </a>
-                               </div>
-                            </div>
-                            <div class="form-group col-sm-3 text-center">
-                                <div class="category">
-                                    <a href="/2">
-                                        <p class="category-img cafe" c-id="2"></p>
-                                        <div class="category-title">Cafe</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="form-group col-sm-3 text-center">
+                                
                                     <div class="category">
-                                        <a href="/3">
-                                            <p class="category-img teNgrohta" c-id="3"></p>
-                                            <div class="category-title">Te Ngrohta</div>
-                                        </a>
-                                    </div>
+                                    <a href="/1" data-cat-id={{$category->category_id}}>
+                                        <img class="category-img" src="{{$category->imgurl}}" c-id="1"></p>
+                                        <div class="category-title">{{$category->name}}</div>
+                                    </a>
+                                   </div>
                             </div>
-                            <div class="form-group col-sm-3 text-center">
-                                    <div class="category" c-id="4">
-                                        <a href="/4">
-                                            <p class="category-img teFtohta"></p>
-                                            <div class="category-title">Te Ftohta</div>
-                                        </a>
-                                    </div>
-                            </div>                                
+                               
+                            @endforeach
+                            
+                                                  
                         </div>
                         <table class="table table-striped table-hover table-responsive">
                                 <tbody>

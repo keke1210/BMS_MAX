@@ -60,10 +60,15 @@ jQuery(document).ready(function ($) {
         $('#tvsh').val(($sum.toFixed(2)*0.17).toFixed(2));
         $("#sum").val(($sum+$sum*0.17).toFixed(2));
     }
-    
-    $(".order-detail").on("click", function(){
+
+    $(document).on("click",".order-detail",function(){
         $(this).parent().remove();
         calculateSum();
     });
+    
+    // $(".order-detail").on("click", function(){
+    //     $(this).parent().remove();
+    //     calculateSum();
+    // });
     
 });

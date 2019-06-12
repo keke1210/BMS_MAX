@@ -75,6 +75,7 @@ class ProductsController extends Controller
         $product = Product::findOrFail($id);
         $product->name = $request->input('name');
         $product->cmimi = $request->input('cmimi');
+        $product->category_id = $request->input('category_id');
         $product->save();
         Alert::success('Produkti u modifikua me sukses');
         return redirect('/products')->with('success','Product Updated');
@@ -84,9 +85,11 @@ class ProductsController extends Controller
     /*  Destroy */
     public function destroy($id)
     {
-        Product::find($id)->delete();
+        // Product::find($id)->delete();
         // Product::find($id)->shfaq = 0;
-
+        $product = Product::findOrFail($id);
+        $product->shfaq=0;
+        $product->save();
         Alert::success('Produkti u fshi me sukses');
         return redirect('/products')->with('success','Product Deleted');
     }

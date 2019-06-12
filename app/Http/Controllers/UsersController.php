@@ -68,7 +68,7 @@ class UsersController extends Controller
        
         $user = User::create($input);
         
-        $user->orari = $input['orari'];
+        $user->orari = $request->orari;
         $user->save();
 
         // if($input['radio'] === 'kamarier') 

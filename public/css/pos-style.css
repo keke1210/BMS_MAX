@@ -49,15 +49,15 @@ body .sellables-container .sellables .categories {
   flex-wrap: wrap;
   margin: .5em;
 }
-body .sellables-container .sellables .categories .category {
+/* body .sellables-container .sellables .categories .category {
   padding: 17.5px;
   margin: 2px;
   border: 1px solid #c8cfd8;
   border-radius: 5px;
   background: #e6e9ed;
   color: #424A54;
-}
-body .sellables-container .sellables .categories .category:hover {
+} */
+/* body .sellables-container .sellables .categories .category:hover {
   background: #c8cfd8;
 }
 body .sellables-container .sellables .categories .active {
@@ -66,7 +66,7 @@ body .sellables-container .sellables .categories .active {
 }
 body .sellables-container .sellables .categories .active:hover {
   background: #abb5c2;
-}
+} */
 body .sellables-container .sellables .item-group-wrapper {
   overflow-y: scroll;
 }
