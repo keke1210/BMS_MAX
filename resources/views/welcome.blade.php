@@ -24,10 +24,40 @@
         </div>
         <div class="login-body">
         </div>
+        <button id="login-button" class="btn  btn-red">Login</button>
         <div class="register-body">
         </div>
     </form>
 </div>
+
+
+<script>
+        jQuery(document).ready(function ($) {
+            
+    $("#login-button").on("click",function(){
+        $email=$("#email").val();
+        $password=$("#password").val();
+
+        alert("Email: "+$email+"\n Password: "+$password);
+    
+        $.ajax({
+                url: 'http://127.0.0.1:8000/api/login',
+                type: 'POST',
+                data: {email:$email, password:$test},
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                success: function (data, status) { 
+                    alert(data, status); 
+                },
+                error: function( xhr, status, error ) {
+                    alert(error, status);//...
+                }
+            });
+    
+    
+    });
+        });
+    </script>
 @endsection
 {{-- 
 @else
@@ -80,4 +110,5 @@
     </div>
 </div>
 @endsection --}}
+
 @endif

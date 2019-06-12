@@ -47,7 +47,7 @@
                 $('.login-body').slideUp("slow");
                 $('.login-body').empty();
                 $('.register-body').html(regbody);
-                $('.register-body').delay(625).slideDown("slow");
+                $('.register-body').delay(0).slideDown("slow");
                 $('#forme').attr('action','{{ route('register') }}');
               });
               
@@ -57,7 +57,7 @@
                 $('.toggle-register').removeClass('active');
                 $('.register-body').slideUp("slow");
                 $('.login-body').html(logbody);
-                $('.login-body').delay(625).slideDown("slow");
+                $('.login-body').delay(0).slideDown("slow");
                 $('#forme').attr('action','{{ route('login') }}');
               });
              
