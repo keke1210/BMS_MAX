@@ -26,3 +26,8 @@
 .panel-yellow .panel-footer span{ color: #F6AE2D }
 .panel-yellow .panel-footer:hover { background-color: #F6AE2D; transition: all 0.2s ease-in }
 .panel-yellow .panel-footer:hover span { color: #fff }
+
+
+button.btn.delete.delete-order-detail.order-detail {
+    color: red;
+}
