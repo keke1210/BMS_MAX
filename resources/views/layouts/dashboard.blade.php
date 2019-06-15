@@ -17,6 +17,7 @@
 
 @section('dashstyles')
 <!-- Dashboard Styles -->
+<link rel="stylesheet" href="{{ asset('css/colors.css')}}">
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{ asset('css/less_php.css')}}">
 <link rel="stylesheet" href="{{ asset('css/animate.min.css')}}">

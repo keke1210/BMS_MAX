@@ -124,6 +124,7 @@ class UsersController extends Controller
             'name' => 'required', 
             'email' => 'required|email', 
             'password' => 'required', 
+            'orari'=>'required'
         ]);
        
 
@@ -133,6 +134,7 @@ class UsersController extends Controller
         $user = User::find($id);
         $user->name = $input['name'];
         $user->email = $input['email'];
+        $user->orari = $input['orari'];
         $user->password = bcrypt($input['password']);
         $user->save();
 

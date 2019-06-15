@@ -11,7 +11,7 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/myJs.js') }}" defer></script>
-        <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}"> --}}
+        {{-- <link rel="stylesheet" href="{{asset('css/bootstrap-theme.min.css')}}"> --}}
         <script src="{{asset('js/jquery.min.js')}}"></script>
     
         @yield('dashscripts')
