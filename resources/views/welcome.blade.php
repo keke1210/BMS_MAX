@@ -47,12 +47,16 @@
                 dataType: 'json',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 success: function (data, status) { 
+                    localStorage.setItem('appname_token', data.success.token);
                     alert(data, status); 
+                    alert(localStorage.getItem('appname_token') );
+
                 },
                 error: function( xhr, status, error ) {
                     alert(error, status);//...
                 }
             });
+
     
     
     });
