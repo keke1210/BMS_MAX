@@ -14,7 +14,7 @@
                 </div>
             </li>
             @role('admin|menaxher')
-            <li class="">
+            <li class="{{ (request()->is('menaxher')) ? 'active' : '' }}">
                 <a href="/menaxher">
                     <i class="ti-id-badge ti-md"></i>
                     <span class="nav-label">Menaxher</span>
@@ -22,7 +22,7 @@
             </li>
             @endrole
             @role('admin|kamarier')
-            <li class="">
+            <li class="{{ (request()->is('kamarier')) ? 'active' : '' }}">
                 <a href="/kamarier">
                     <i class="ti-id-badge ti-md"></i>
                     <span class="nav-label">Kamarier</span>
@@ -30,7 +30,7 @@
             </li>
             @endrole
             @role('admin|ekonomist')
-            <li class="">
+            <li class="{{ (request()->is('ekonomist')) ? 'active' : '' }}">
                 <a href="/ekonomist">
                     <i class="ti-id-badge ti-md"></i>
                     <span class="nav-label">Ekonomist</span>
@@ -38,7 +38,7 @@
             </li>
             @endrole
             @role('admin|menaxher|kamarier|ekonomist')
-            <li class="">
+            <li class="{{ (request()->is('orders')) ? 'active' : '' }}">
                 <a href="/orders">
                     <i class="ti-write ti-md" aria-hidden="true"></i>
                     <span class="nav-label">Porosi</span>
