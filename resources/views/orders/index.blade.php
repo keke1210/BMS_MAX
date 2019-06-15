@@ -97,6 +97,7 @@
                 ->get();
                 
                 $totali = json_decode($totali_query)[0]->totali;
+                // dd($totali);
                 @endphp
                 <tr>
                     <td>{{$order->id}}</td>

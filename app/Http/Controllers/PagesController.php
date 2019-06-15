@@ -27,7 +27,15 @@ class PagesController extends Controller
         ->get();
         $product_name = json_decode($produkti_me_i_shitur)[0]->name;
         $product_sasia_max = json_decode($produkti_me_i_shitur)[0]->sasia_max;
-        return view('pages.ekonomist',compact('product_name','product_sasia_max'));
+
+        //TAavolina e preferuar
+        $tavolina_e_preferuar = DB::table('tavolina_e_preferuar')
+        ->select('t_id','max_total')
+        ->get();
+        $tavolina_id = json_decode($tavolina_e_preferuar)[0]->t_id;
+        $totali_max = json_decode($tavolina_e_preferuar)[0]->max_total;
+
+        return view('pages.ekonomist',compact('product_name','product_sasia_max','tavolina_id','totali_max'));
     }
     
     public function menaxher() {

@@ -46,7 +46,6 @@ class OrdersController extends Controller
      */
     public function store(Request $request, $table)
     {
-        // dd(json_decode($request->vlerat));
         $validator = Validator::make(json_decode($request->vlerat), [ 
             'input.*.prod_id'=>'required|unique',
             'input.*.sasia'=>'required',

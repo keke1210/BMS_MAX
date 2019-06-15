@@ -36,7 +36,6 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <h2>PRODUKTET <b>ME TE SHITURA</b></h2>
-                                    <h2>{{"Produkti: ".$product_name." Sasia: ".$product_sasia_max}}</h2>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +48,7 @@
                                     </tr>
                                 </thead>
                                 <tr>
-                                   <td>{{$product_name}}</td><td>{{$product_sasia_max}}</td>
+                                   <td>{{$product_name}}</td><td>{{$product_sasia_max}} cope</td>
                                 </tr>
                             </table>
                         </div>
@@ -67,6 +66,19 @@
                                     <h2>TAVOLINA <b>ME E PREFERUAR</b></h2>
                                 </div>
                             </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tavolina</th>
+                                        <th>Totali ne lek</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                   <td>{{$tavolina_id}}</td><td>{{$totali_max}}</td> 
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
