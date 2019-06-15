@@ -14,7 +14,7 @@
                 </div>
             </li>
             @role('admin|menaxher')
-            <li class="{{ (request()->is('menaxher')) ? 'active' : '' }}">
+            <li class="{{ (request()->is('menaxher','products','users','tables')) ? 'active' : '' }}">
                 <a href="/menaxher">
                     <i class="ti-id-badge ti-md"></i>
                     <span class="nav-label">Menaxher</span>
@@ -22,7 +22,7 @@
             </li>
             @endrole
             @role('admin|kamarier')
-            <li class="{{ (request()->is('kamarier')) ? 'active' : '' }}">
+            <li class="{{ (request()->is('kamarier','orders/create*')) ? 'active' : '' }}">
                 <a href="/kamarier">
                     <i class="ti-id-badge ti-md"></i>
                     <span class="nav-label">Kamarier</span>
