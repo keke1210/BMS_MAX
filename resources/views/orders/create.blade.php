@@ -162,7 +162,7 @@ $products = App\Product::all();
                         <span><input id="sum" type="number" value="0" class="btn btn-block form-group" readonly></span>
     
                     </div>
-                <form method="POST" action="/orders/{{$tavolina->id}}">
+              <form method="POST" action="/orders/{{$tavolina->id}}">
                 @csrf
                 <input type="hidden" name="vlerat" value="" />
                     <div class="pay-button">

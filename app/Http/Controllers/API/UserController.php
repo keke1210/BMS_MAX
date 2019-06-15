@@ -21,7 +21,13 @@ class UserController extends Controller
         if(Auth::attempt(['email'=>request('email'),'password'=>request('password')])) {
             $user = Auth::user();
             $success['token'] = $user->createToken('MyApp')->accessToken;
+            $token = $success['token'];
+            
+            // $user->token = $token;
+            // dd($rememberToken);
 
+
+            // return response()->json(['user'=>$user],$this->successStatus);
             return response()->json(['success'=>$success],$this->successStatus);
         } 
 
@@ -70,6 +76,7 @@ class UserController extends Controller
     public function details() {
          
         $user = Auth::user(); 
+        // dd($success['token']);
         return response()->json(['success' => $user], $this->successStatus); 
     } 
 }

@@ -46,7 +46,8 @@ class OrdersController extends Controller
      */
     public function store(Request $request, $table)
     {
-        $validator = Validator::make($request->vlerat, [ 
+        // dd(json_decode($request->vlerat));
+        $validator = Validator::make(json_decode($request->vlerat), [ 
             'input.*.prod_id'=>'required|unique',
             'input.*.sasia'=>'required',
             // 'input.*.T_id'=>'required',
@@ -56,12 +57,12 @@ class OrdersController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);            
         }
 
-        $input = $request->vlerat; 
+        $input = json_decode($request->vlerat); 
 
         if(empty($input)) {
             return redirect('/orders')->with('error','Order Not Created');
         }
-        
+        // dd($input[0]->prod_id);
 
         //kthen nga e fundit pasi esht order by desc
         $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->get(); 
@@ -77,9 +78,9 @@ class OrdersController extends Controller
             // Shtohen order_details ne Order
             foreach($input as $orderItem) {
                 $input = array_merge((array)$orderItem,['order_id' => $order->id]);
+                
                 $orderDetails = OrderDetail::create($input);
             }
-
 
             // $products = Product::where('prod_id',$orderItem->prod_id)->get();
                 

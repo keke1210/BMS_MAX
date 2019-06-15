@@ -82,7 +82,7 @@
             </thead>
             <tbody>
                 @php
-                $orders = App\Order::orderBy('id','desc')->paginate(5);
+                // $orders = App\Order::orderBy('id','desc')->paginate(5);
 
                 $useradmin =App\User::find(1)->name;
                 @endphp

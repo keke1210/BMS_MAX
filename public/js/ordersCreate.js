@@ -1,5 +1,35 @@
 jQuery(document).ready(function ($) {
 
+    // var email = "admin@gmail.com";
+    // var password = "admin1";
+    //  // Log in , get the token then store it
+    //  $.ajax({
+    //     method: "POST",
+    //     url: "http://127.0.0.1:8000/api/login",
+    //     contentType: 'application/json',
+    //     data : {email : email, password: password}
+    //   }).done(function(data, status) {
+    //     localStorage.setItem('appname_token', data.token);
+    //     // the following part makes sure that all the requests made later with jqXHR will automatically have this header.
+    //     $( document ).ajaxSend(function( event, jqxhr, settings ) {
+    //         jqxhr.setRequestHeader('Authorization', "Bearer " + data.token); 
+    //     });
+    //   }).fail(function(error){
+    //     // handle the error
+    //     console.log(error);
+    //   });
+
+
+    //   $.ajax({ 
+    //     url: 'foo/bar', 
+    //     headers: { 
+    //       'Authorization': 'Bearer ' + localStorage.getItem('appname_token') 
+    //     } 
+    //   });
+
+
+
+
     $('#payment').on('click', function () {
         var array = [];
         var tbId= parseInt($($('#idtavoline')).data('tbl'));
