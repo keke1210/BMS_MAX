@@ -55,6 +55,7 @@ class OrdersController extends Controller
             foreach($input as $orderItem) {
                 $input = array_merge($orderItem,['order_id' => $order->id]);
                 $orderDetails = OrderDetail::create($input);
+                
             }
             
         

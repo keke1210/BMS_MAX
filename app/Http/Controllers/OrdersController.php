@@ -79,6 +79,12 @@ class OrdersController extends Controller
                 $input = array_merge((array)$orderItem,['order_id' => $order->id]);
                 
                 $orderDetails = OrderDetail::create($input);
+                $product = Product::findOrFail($orderItem->prod_id);
+
+
+                //Zbrit gjendjen nga inventari
+                $product->gjendja = $product->gjendja - $orderItem->sasia;
+                $product->save();
             }
 
             // $products = Product::where('prod_id',$orderItem->prod_id)->get();
