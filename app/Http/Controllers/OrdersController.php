@@ -46,7 +46,8 @@ class OrdersController extends Controller
      */
     public function store(Request $request, $table)
     {
-        $validator = Validator::make($request->vlerat, [ 
+        // dd(json_decode($request->vlerat));
+        $validator = Validator::make(json_decode($request->vlerat), [ 
             'input.*.prod_id'=>'required|unique',
             'input.*.sasia'=>'required',
             // 'input.*.T_id'=>'required',
@@ -56,7 +57,7 @@ class OrdersController extends Controller
             return response()->json(['error'=>$validator->errors()], 401);            
         }
 
-        $input = $request->vlerat; 
+        $input = json_decode($request->vlerat); 
 
         if(empty($input)) {
             return redirect('/orders')->with('error','Order Not Created');
