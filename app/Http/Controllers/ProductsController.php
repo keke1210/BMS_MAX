@@ -39,6 +39,10 @@ class ProductsController extends Controller
         $product->cmimi = $request->input('cmimi');
         $product->category_id = $request->input('category_id');
         $product->gjendja = $request->input('gjendja');
+
+        if($product->gjendja == 0) {
+            $product->shfaq = 0;
+        }
         // dd($product);
         $product->save();
 
