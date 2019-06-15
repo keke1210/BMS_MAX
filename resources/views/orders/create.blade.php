@@ -106,6 +106,7 @@ $products = App\Product::all();
             </div>
         </div>
         <div class="sellables-container">
+            
             <div class="sellables">
                     <div class="categories">
                         
@@ -141,7 +142,6 @@ $products = App\Product::all();
             </div>
 
             <div class="register-wrapper">
-
                 <div class="register">
                     <div class="products">
                         
@@ -162,12 +162,16 @@ $products = App\Product::all();
                         <span><input id="sum" type="number" value="0" class="btn btn-block form-group" readonly></span>
     
                     </div>
+              <form method="POST" action="/orders">
+                @csrf
+                <input type="hidden" name="vlerat" value="" />
                     <div class="pay-button">
-                        <button type="button" class="btn btn-success btn-block btn-flat" id="payment"
+                        <button type="submit" class="btn btn-success btn-block btn-flat" id="payment"
                             style="height:67px;">Prij Fature</button>
                         <button type="button" class="btn btn-cancel btn-block btn-flat" id="reset"
                             style="height:67px;">Anullo</button>
                     </div>
+              </form>
             <style>
             a#test {
                 color: red;

@@ -20,27 +20,29 @@ jQuery(document).ready(function ($) {
             });
         });
         var myJsonString = JSON.stringify(array);
-        
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="_token"]').attr(
-                    'content')
-            }
-        });
 
-        $.ajax({
-            url: '/orders/'+tbId,
-            type: 'POST',
-            data: myJsonString,
-            dataType: 'json',
-            contentType: 'application/json',
-            success: function (data, status) { 
-                console.log(data, status); 
-            },
-            error: function( xhr, status, error ) {
-                console.log(error, status);//...
-            }
-        }); 
+        $('input[name="vlerat"]').val(myJsonString);
+        
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="_token"]').attr(
+        //             'content')
+        //     }
+        // });
+
+        // $.ajax({
+        //     url: '/orders/'+tbId,
+        //     type: 'POST',
+        //     data: myJsonString,
+        //     dataType: 'json',
+        //     contentType: 'application/json',
+        //     success: function (data, status) { 
+        //         console.log(data, status); 
+        //     },
+        //     error: function( xhr, status, error ) {
+        //         console.log(error, status);//...
+        //     }
+        // }); 
     }
     });
 });
