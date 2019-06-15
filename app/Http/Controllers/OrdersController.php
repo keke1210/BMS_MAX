@@ -84,6 +84,9 @@ class OrdersController extends Controller
 
                 //Zbrit gjendjen nga inventari
                 $product->gjendja = $product->gjendja - $orderItem->sasia;
+                if($product->gjendja == 0) {
+                    $product->shfaq = 0;
+                }
                 $product->save();
             }
 

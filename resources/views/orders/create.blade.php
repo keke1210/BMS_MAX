@@ -93,7 +93,7 @@
 {{-- <link rel="stylesheet" href="{{ asset('css/inventory.css')}}"> --}}
 <input hidden type="number" id="idtavoline" data-tbl="{{$tavolina->id}}">
 @php
-$products = App\Product::all();
+$products = App\Product::where('shfaq',1)->get();
 @endphp
 <div>
     <div class="table-wrapper">
