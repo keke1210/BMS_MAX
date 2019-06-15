@@ -64,11 +64,10 @@ class OrdersController extends Controller
         // dd($input[0]->prod_id);
 
         //kthen nga e fundit pasi esht order by desc
-        $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->get(); 
-        // return $orders[0]->id+1;
+        $orders = Order::orderBy('id','desc')->first(); 
+
         // dd($input);
         
-        //return $input;
         $order = new Order;
         $order->user_id = auth()->id();
         $order->T_id =$table;
@@ -87,7 +86,6 @@ class OrdersController extends Controller
                 if($product->gjendja === 0) {
                     $product->shfaq = 0;
                 }
-
                 $product->save();
             }
 
@@ -97,8 +95,8 @@ class OrdersController extends Controller
 
             Alert::success('Porosia u krijua');
        // return redirect()->route('orders');
-       dd($orders[0]->id+1);
-        return redirect('/orders/'.($orders[0]->id+1).'')->with('success','Order Created');
+    //    dd($orders[0]->id+1);
+        return redirect('/orders/'.($orders->id+1).'')->with('success','Order Created');
     }
 
     /**
