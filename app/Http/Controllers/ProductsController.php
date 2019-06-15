@@ -11,7 +11,8 @@ class ProductsController extends Controller
     /*  Index */
     public function index()
     {
-        $products =Product::orderBy('created_at','asc')->where('shfaq',1)->paginate(5);
+        // $products =Product::orderBy('created_at','asc')->where('shfaq',1)->paginate(5);
+        $products =Product::orderBy('created_at','asc')->paginate(5);
         return view('products.index')->with('products',$products);
     }
 
@@ -68,7 +69,8 @@ class ProductsController extends Controller
         $this->validate($request,[
             'name'=>'required',
             'cmimi'=>'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'gjendja'=>'required'
         ]);
 
         // Update products
@@ -76,6 +78,12 @@ class ProductsController extends Controller
         $product->name = $request->input('name');
         $product->cmimi = $request->input('cmimi');
         $product->category_id = $request->input('category_id');
+        $product->gjendja = $request->input('gjendja');
+        
+        if($product->gjendja > 0) {
+            $product->shfaq = 1;
+        }
+
         $product->save();
         Alert::success('Produkti u modifikua me sukses');
         return redirect('/products')->with('success','Product Updated');
