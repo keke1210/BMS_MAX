@@ -135,7 +135,7 @@ $products = App\Product::all();
                 <div class="item-group-wrapper">
                     <div class="item-group">
                         @foreach($products as $key=>$product)
-                            <button data-id="{{$product->prod_id}}" data-emer="{{$product->name}}"  data-c-id="{{$product->category_id}}" data-cmimi="{{$product->cmimi}}" data-sasia="1" class="item dont-show">{{$product->name}} </button>
+                    <button data-id="{{$product->prod_id}}" data-emer="{{$product->name}}"  data-c-id="{{$product->category_id}}" data-cmimi="{{$product->cmimi}}" data-sasia="1" data-gjendja="{{$product->gjendja}}" class="item dont-show">{{$product->name}} </button>
                         @endforeach
                     </div>
                 </div>
