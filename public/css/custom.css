@@ -236,34 +236,6 @@ img.tavoline-img.t_green:hover {
 .panel-heading {
     color: #fff;
 }
-.panel-primary .panel-footer span{ color: #337ab7 }
-.panel-primary .panel-footer:hover { background-color: #337ab7; transition: all 0.2s ease-in }
-.panel-primary .panel-footer:hover span { color: #fff }
-.panel-primary>.panel-heading {
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #337ab7!important;
-}
-.panel-primary {
-    border-color: #337ab7!important;
-}
-.panel-green { border:1px solid #4CAF50; }
-.panel-green .panel-heading{ border:1px solid #4CAF50; background-color: #4CAF50 }
-.panel-green .panel-footer span{ color: #4CAF50 }
-.panel-green .panel-footer:hover { background-color: #4CAF50; transition: all 0.2s ease-in }
-.panel-green .panel-footer:hover span { color: #fff }
-
-.panel-red { border:1px solid #FF5722; }
-.panel-red .panel-heading{ border:1px solid #FF5722; background-color: #FF5722 }
-.panel-red .panel-footer span{ color: #FF5722 }
-.panel-red .panel-footer:hover { background-color: #FF5722; transition: all 0.2s ease-in }
-.panel-red .panel-footer:hover span { color: #fff }
-
-.panel-yellow { border:1px solid #FFC107; }
-.panel-yellow .panel-heading{ border:1px solid #FFC107; background-color: #FFC107 }
-.panel-yellow .panel-footer span{ color: #FFC107 }
-.panel-yellow .panel-footer:hover { background-color: #FFC107; transition: all 0.2s ease-in }
-.panel-yellow .panel-footer:hover span { color: #fff }
 
 p.tavoline-img {
     width:inherit;

@@ -20,3 +20,15 @@
 <div>
     <label>Ekonomist</label><input type="radio" value="ekonomist" name="radio">
 </div>
+
+<div class="form-group">
+    <label>Orari</label>
+    <select name="orari" class="form-control">
+               <option selected disabled>orari</option>
+               <option name="08:00-15:00" value="08:00-15:00">08:00-15:00</option>
+               <option name="15:00-21:00" value="15:00-21:00">15:00-21:00</option>
+               <option name="13:00-19:00" value="13:00-19:00">13:00-19:00</option>
+            </select>
+
+    
+</div>

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @extends('layouts.dashboard')
 @include('inc.liste')
-@section('dash-title')
+{{-- @section('dash-title')
 <h2>
     <div class="m-l-lg">Përdorues</div>
 </h2>
-@endsection
+@endsection --}}
 @section('content')
 <div class="table-wrapper">
     <div class="table-title">
@@ -21,7 +21,8 @@
             </div>
         </div>
     </div>
-    <table class="table table-striped table-hover table-responsive">
+    <div class="table-responsive">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -67,6 +68,7 @@
             @endforeach
         </tbody>
     </table>
+</div>
 </div>
 </div>
 

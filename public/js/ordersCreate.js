@@ -58,8 +58,8 @@ jQuery(document).ready(function ($) {
         });
 
         $.ajax({
-            url: '/orders/'+tbId,
-            headers: {'Authorization': 'Bearer ' + localStorage.getItem('appname_token') } ,
+            url: 'http://127.0.0.1:8000/orders/'+tbId,
+            // headers: {'Authorization': 'Bearer ' + localStorage.getItem('appname_token') } ,
             type: 'POST',
             data: myJsonString,
             dataType: 'json',

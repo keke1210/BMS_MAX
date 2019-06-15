@@ -4,14 +4,8 @@
         @if(Auth::guest()) <img class="site-logo" src="images/BMS-LOGO.png">
         @else <a href="{{ URL::previous() }}"><img class="site-logo" src="images/BMS-LOGO.png"></a> @endif
 </div>
-    @if(Auth::guest())
-
-    @php $users = App\User::where('id','<>',1)->get() @endphp
-
-    @foreach ($users as $user)
-        <h1>{{$user->name}} {{$user->orari}}</h1>
-    @endforeach
-<div class="wrap" style="margin-top:10%;">
+@if(Auth::guest()) 
+<div class="wrap" style="margin-top:5%;">
     <form class="login" id="forme" method="POST" action="{{ route('login') }}" accept-charset="utf-8">
         @csrf
         <div class="toggle-bar">
@@ -23,13 +17,22 @@
             </div>
         </div>
         <div class="login-body">
+                
         </div>
-        <button id="login-button" class="btn  btn-red">Login</button>
+        <div class="login-ajax"><button id="login-button" class="btn btn-red">Login</button></div>
         <div class="register-body">
         </div>
     </form>
 </div>
-
+<style>
+    .login-ajax{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+</style>
 
 <script>
         jQuery(document).ready(function ($) {
@@ -43,7 +46,7 @@
         $.ajax({
                 url: 'http://127.0.0.1:8000/api/login',
                 type: 'POST',
-                data: {email:$email, password:$test},
+                data: {email:$email, password:$password},
                 dataType: 'json',
                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 success: function (data, status) { 
@@ -56,14 +59,12 @@
                     alert(error, status);//...
                 }
             });
-
-    
-    
     });
         });
     </script>
 @endsection
-{{-- 
+
+
 @else
 @section('login')
 <div class="row ibox-content no-padding">
@@ -79,40 +80,46 @@
             <div class="day-header"><?php echo $dite_jave[$i]?></div>
                 <div class="day-content">
                     @php $count=0 @endphp
-                    @foreach ($orar1 as $orari)
+                
+
+    @php $users = App\User::where('id','<>',1)->get() @endphp
+
+    @foreach ($users as $user)
+      
+
                         @if($count%3==1)
                      <div class="event blue">
-                        <span class="title">{{$orari->user->name}}</span>
+                        <span class="title">{{$user->name}}</span>
                         <footer>
-                            <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
+                            <span> {{$user->orari}} </span>
                         </footer>
                     </div>
                     @php $count++ @endphp
                     @elseif($count%3==0)
                     @php $count++ @endphp
                     <div class="event red">
-                        <span class="title">{{$orari->user->name}}</span>
+                        <span class="title">{{$user->name}}</span>
                         <footer>
-                            <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
+                            <span> {{$user->orari}} </span>
                         </footer>
                     </div>
                     @else
                     @php $count++ @endphp
                     <div class="event green">
-                        <span class="title">{{$orari->user->name}}</span>
+                        <span class="title">{{$user->name}}</span>
                         <footer>
-                            <span>{{$orari->koha_fillimit}} -<span>{{$orari->koha_fillimit}}</span>
+                            <span> {{$user->orari}} </span>
                         </footer>
                     </div>
                     @endif
                     @endforeach
                 </div>
-                <div class="day-footer">{{count($orar1)}} Punonjës</div>
+                {{-- <div class="day-footer">{{count($user)}} Punonjës</div> --}}
             </div>
             @endfor
         </div>
     </div>
 </div>
-@endsection --}}
+@endsection
 
 @endif

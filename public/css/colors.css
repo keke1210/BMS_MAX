@@ -1,0 +1,28 @@
+.nav>li.active>a{
+    
+}
+
+.panel-primary {border-color: #16425B!important;}
+.panel-primary .panel-heading { color: #fff; background-color: #16425B!important; border-color: #16425B!important;}
+.panel-primary .panel-footer span{ color: #16425B!important }
+.panel-primary .panel-footer:hover { background-color: #16425B; transition: all 0.2s ease-in !important}
+.panel-primary .panel-footer:hover span { color: #fff!important }
+
+
+.panel-green { border:1px solid #259178!important; }
+.panel-green .panel-heading{ border:1px solid #259178; background-color: #259178 }
+.panel-green .panel-footer span{ color: #259178 }
+.panel-green .panel-footer:hover { background-color: #259178; transition: all 0.2s ease-in }
+.panel-green .panel-footer:hover span { color: #fff }
+
+.panel-red { border:1px solid #FF5722; }
+.panel-red .panel-heading{ border:1px solid #FF5722; background-color: #FF5722 }
+.panel-red .panel-footer span{ color: #FF5722 }
+.panel-red .panel-footer:hover { background-color: #FF5722; transition: all 0.2s ease-in }
+.panel-red .panel-footer:hover span { color: #fff }
+
+.panel-yellow { border:1px solid #F6AE2D; }
+.panel-yellow .panel-heading{ border:1px solid #F6AE2D; background-color: #F6AE2D }
+.panel-yellow .panel-footer span{ color: #F6AE2D }
+.panel-yellow .panel-footer:hover { background-color: #F6AE2D; transition: all 0.2s ease-in }
+.panel-yellow .panel-footer:hover span { color: #fff }

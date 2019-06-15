@@ -2,9 +2,9 @@
 @extends('layouts.dashboard')
 @include('inc.liste')
 @section('dash-title')
-<h2>
+{{-- <h2>
     <div>Ekonomist</div>
-</h2>
+</h2> --}}
 {{-- @php
 
     foreach($total as $key=>$t){
@@ -44,14 +44,12 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Fatura</th>
-                                        <th>Kamarier</th>
-                                        <th>Tavolina</th>
-                                        <th>Koha e krijimit</th>
+                                        <th>Produkti</th>
+                                        <th>Sasia</th>
                                     </tr>
                                 </thead>
                                 <tr>
-                                  
+                                   <td>{{$product_name}}</td><td>{{$product_sasia_max}}</td>
                                 </tr>
                             </table>
                         </div>
