@@ -49,7 +49,7 @@ class ProductsController extends Controller
     /*  Show */
     public function show($id)
     {
-        $product = Product::find($id);
+        // $product = Product::find($id)->where('shfaq',1);
         return view('products.show')->with('product',$product);
     }
 
@@ -85,8 +85,6 @@ class ProductsController extends Controller
     /*  Destroy */
     public function destroy($id)
     {
-        // Product::find($id)->delete();
-        // Product::find($id)->shfaq = 0;
         $product = Product::findOrFail($id);
         $product->shfaq=0;
         $product->save();

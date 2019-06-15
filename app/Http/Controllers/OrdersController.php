@@ -24,7 +24,7 @@ class OrdersController extends Controller
     {
         $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->with('orderItems.product')->paginate(5);
 
-        return view('orders.index')->with('orders',$orders);
+        return view('orders.index', compact('orders'));
     }
 
     /**
@@ -84,6 +84,10 @@ class OrdersController extends Controller
 
                 //Zbrit gjendjen nga inventari
                 $product->gjendja = $product->gjendja - $orderItem->sasia;
+                if($product->gjendja === 0) {
+                    $product->shfaq = 0;
+                }
+
                 $product->save();
             }
 
@@ -93,6 +97,7 @@ class OrdersController extends Controller
 
             Alert::success('Porosia u krijua');
        // return redirect()->route('orders');
+       dd($orders[0]->id+1);
         return redirect('/orders/'.($orders[0]->id+1).'')->with('success','Order Created');
     }
 

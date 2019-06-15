@@ -14,7 +14,7 @@ class AddUrlToCategories extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->text('url');
+            $table->text('imgurl');
         });
     }
 
