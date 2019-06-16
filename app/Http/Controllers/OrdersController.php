@@ -89,11 +89,6 @@ class OrdersController extends Controller
                 $product->save();
             }
 
-            // $products = Product::where('prod_id',$orderItem->prod_id)->get();
-                
-            //  \DB::table('order_details')->where('order_details.order_id','=',$order->id)->update(['order_details.nen_total'=>'order_details.sasia*products.cmimi']);
-
-            // Alert::success('Porosia u krijua');
         return redirect('/orders/'.($orders->id+1).'')->with('success','Order Created');
     }
 

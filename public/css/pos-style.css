@@ -124,6 +124,8 @@ body .sellables-container .register-wrapper .register {
 body .sellables-container .register-wrapper .register .products {
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  /* height:250px; */
 }
 body .sellables-container .register-wrapper .register .products .product-bar {
   display: flex;

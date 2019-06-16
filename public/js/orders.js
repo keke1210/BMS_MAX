@@ -1,4 +1,11 @@
 jQuery(document).ready(function ($) {
+    $(function(){
+        var windowH = $(window).height();
+        var products=windowH-504;
+
+        $('.products').css({'height':products+'px'});
+    });
+
 
     function gjejProdukt($prod_id, $x){
         $i=0;

@@ -19,7 +19,6 @@
         <div class="login-body">
                 
         </div>
-        <div class="login-ajax"><button id="login-button" class="btn btn-red">Login</button></div>
         <div class="register-body">
         </div>
     </form>
