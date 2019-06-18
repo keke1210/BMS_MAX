@@ -64,7 +64,7 @@ class OrdersController extends Controller
         // dd($input[0]->prod_id);
 
         //kthen nga e fundit pasi esht order by desc
-        $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->get(); 
+        $orders = Order::orderBy('id','desc')->first(); //u kry
         // return $orders[0]->id+1;
         // dd($input);
         
@@ -96,10 +96,10 @@ class OrdersController extends Controller
 
             Alert::success('Porosia u krijua');
        // return redirect()->route('orders');
-        return redirect('/orders/'.($orders[0]->id+1).'')->with('success','Order Created');
+        return redirect('/orders/'.($orders->id+1).'')->with('success','Order Created');
     }
 
-    /**
+    /** //jepi ca push ...
      * Display the specified resource.
      *
      * @param  int  $id
