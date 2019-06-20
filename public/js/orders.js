@@ -63,6 +63,7 @@ jQuery(document).ready(function ($) {
     function calculateSum() {
 
         $sum = 0;
+       
         //iterate through each textboxes and add the values
         $(".pr-cmim").each(function() {
         //add only if the value is number
@@ -71,22 +72,17 @@ jQuery(document).ready(function ($) {
         });
         //.toFixed() method will roundoff the final sum to 2 decimal places
         $('#subTotal').val($sum.toFixed(2));
-        $('#tvsh').val(($sum.toFixed(2)*0.17).toFixed(2));
-        $("#sum").val(($sum+$sum*0.17).toFixed(2));
-    }
-
-    $(document).on("change", '#subTotal', function(){
-        if($('#subTotal').val==0)
+        if($('#subTotal').val()==0)
         {
-            $('#payment').attr("disabled",'disabled');
-            alert("test  0");
+            $('#payment').prop("type", "button");
         }
         else
         {
-            $('#payment').removeAttr("disabled",'disabled');
-            alert("test  1");
+            $('#payment').prop("type", "submit");
         }
-    });
+        $('#tvsh').val(($sum.toFixed(2)*0.17).toFixed(2));
+        $("#sum").val(($sum+$sum*0.17).toFixed(2));
+    }
 
     $(document).on("click",".order-detail",function(){
         $(this).parent().remove();
