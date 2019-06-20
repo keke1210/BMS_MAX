@@ -24,7 +24,7 @@ class OrdersController extends Controller
     {
         $orders = Order::where('user_id',auth()->id())->orderBy('id','desc')->with('orderItems.product')->paginate(5);
 
-        return view('orders.index')->with('orders',$orders);
+        return view('orders.index', compact('orders'));
     }
 
     /**
@@ -64,11 +64,10 @@ class OrdersController extends Controller
         // dd($input[0]->prod_id);
 
         //kthen nga e fundit pasi esht order by desc
-        $orders = Order::orderBy('id','desc')->first(); //u kry
-        // return $orders[0]->id+1;
+        $orders = Order::orderBy('id','desc')->first(); 
+
         // dd($input);
         
-        //return $input;
         $order = new Order;
         $order->user_id = auth()->id();
         $order->T_id =$table;
@@ -84,18 +83,12 @@ class OrdersController extends Controller
 
                 //Zbrit gjendjen nga inventari
                 $product->gjendja = $product->gjendja - $orderItem->sasia;
-                if($product->gjendja == 0) {
+                if($product->gjendja === 0) {
                     $product->shfaq = 0;
                 }
                 $product->save();
             }
 
-            // $products = Product::where('prod_id',$orderItem->prod_id)->get();
-                
-            //  \DB::table('order_details')->where('order_details.order_id','=',$order->id)->update(['order_details.nen_total'=>'order_details.sasia*products.cmimi']);
-
-            Alert::success('Porosia u krijua');
-       // return redirect()->route('orders');
         return redirect('/orders/'.($orders->id+1).'')->with('success','Order Created');
     }
 

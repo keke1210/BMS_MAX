@@ -1,4 +1,11 @@
 jQuery(document).ready(function ($) {
+    $(function(){
+        var windowH = $(window).height();
+        var products=windowH-504;
+
+        $('.products').css({'height':products+'px'});
+    });
+
 
     function gjejProdukt($prod_id, $x){
         $i=0;
@@ -28,6 +35,7 @@ jQuery(document).ready(function ($) {
             else
             $($('.product-bar')[$i]).children().find(".pr-quantity").val($sasia);
         }
+        
     }
 
     $(".item").on("click",function(){
@@ -67,11 +75,27 @@ jQuery(document).ready(function ($) {
         $("#sum").val(($sum+$sum*0.17).toFixed(2));
     }
 
+    $(document).on("change", '#subTotal', function(){
+        if($('#subTotal').val==0)
+        {
+            $('#payment').attr("disabled",'disabled');
+            alert("test  0");
+        }
+        else
+        {
+            $('#payment').removeAttr("disabled",'disabled');
+            alert("test  1");
+        }
+    });
+
     $(document).on("click",".order-detail",function(){
         $(this).parent().remove();
         calculateSum();
     });
     
+    $(document).on("click","#reset",function(){
+        window.open('/kamarier', '_self');
+    });
     // $(".order-detail").on("click", function(){
     //     $(this).parent().remove();
     //     calculateSum();

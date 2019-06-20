@@ -166,7 +166,7 @@ $products = App\Product::where('shfaq',1)->get();
                 @csrf
                 <input type="hidden" name="vlerat" value="" />
                     <div class="pay-button">
-                        <button type="submit" class="btn btn-success btn-block btn-flat" id="payment"
+                        <button type="submit"  class="btn btn-success btn-block btn-flat" id="payment"
                             style="height:67px;">Prij Fature</button>
                         <button type="button" class="btn btn-cancel btn-block btn-flat" id="reset"
                             style="height:67px;">Anullo</button>

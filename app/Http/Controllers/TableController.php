@@ -84,6 +84,7 @@ class TableController extends Controller
     {
         $validator = $this->validate($request,[
             'id'=>'required',
+            'description' => 'required'
         ]);
 
         if ($validator) {
@@ -100,8 +101,11 @@ class TableController extends Controller
             $table->rezervuar=0;
             $table->save();
         }
+
+        $table->description = $request->description;
+        $table->save();
         
-        return response()->json(['success'=>'Produkti u krijua me sukses']);
+        return response()->json(['success'=>'Tavolina u ndryshua']);
         
         // return redirect('/tables')->with('success','U rezervua');
     }

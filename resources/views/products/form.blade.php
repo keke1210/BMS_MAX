@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
     <label>Gjendja</label>
-    <input type="gjendja" id="gjendja" name="gjendja" class="form-control" placeholder="Gjendja" min="1" required>
+    <input type="number" id="gjendja" name="gjendja" class="form-control" placeholder="Gjendja" min="1" required>
 </div>
 <div class="form-group">
     <label>Kategoria</label>
